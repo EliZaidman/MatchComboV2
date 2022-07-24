@@ -1,0 +1,60 @@
+{
+"skeleton": {
+	"hash": "qxv7bbyqaEiFCzvImKBHviJ7CmE",
+	"spine": "3.8.99",
+	"x": -141,
+	"y": -154,
+	"width": 282,
+	"height": 308,
+	"images": "./Square Glow/images/",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Layer 1", "bone": "root", "color": "18a9ffff", "attachment": "Layer 1", "blend": "additive" },
+	{ "name": "Layer 2", "bone": "root", "color": "18a9ffff", "attachment": "Layer 1", "blend": "additive" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Layer 1": {
+				"Layer 1": { "width": 282, "height": 308 }
+			},
+			"Layer 2": {
+				"Layer 1": { "width": 282, "height": 308 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"bones": {
+			"root": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 1, "curve": "stepped" },
+					{ "time": 2 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 1, "curve": "stepped" },
+					{ "time": 2 }
+				],
+				"scale": [
+					{ "x": 1.2, "y": 1.2, "curve": 0.684, "c3": 0.377 },
+					{ "time": 1, "curve": 0.684, "c3": 0.377 },
+					{ "time": 2, "x": 1.2, "y": 1.2 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 1, "curve": "stepped" },
+					{ "time": 2 }
+				]
+			}
+		}
+	}
+}
+}
