@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeachBall Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6166212927735700162, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     - target: {fileID: 6166212927735700172, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -77,6 +81,11 @@ PrefabInstance:
 --- !u!1 &1994016246582154602 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6166212927735700162, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+  m_PrefabInstance: {fileID: 5638193144936304552}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1994016246582154597 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6166212927735700173, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
   m_PrefabInstance: {fileID: 5638193144936304552}
   m_PrefabAsset: {fileID: 0}
 --- !u!33 &2574861280951120581
@@ -165,3 +174,60 @@ MonoBehaviour:
   _animationName: BeachBall
   loop: 0
   timeScale: 0
+--- !u!1001 &8681665669041798921
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1994016246582154597}
+    m_Modifications:
+    - target: {fileID: 4777696078316465608, guid: f5cf10271e115fc45adbfec89bfb4ac9, type: 3}
+      propertyPath: m_Name
+      value: BenMartch_57
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744526452754768405, guid: f5cf10271e115fc45adbfec89bfb4ac9, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744526452754768405, guid: f5cf10271e115fc45adbfec89bfb4ac9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744526452754768405, guid: f5cf10271e115fc45adbfec89bfb4ac9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744526452754768405, guid: f5cf10271e115fc45adbfec89bfb4ac9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744526452754768405, guid: f5cf10271e115fc45adbfec89bfb4ac9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744526452754768405, guid: f5cf10271e115fc45adbfec89bfb4ac9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744526452754768405, guid: f5cf10271e115fc45adbfec89bfb4ac9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744526452754768405, guid: f5cf10271e115fc45adbfec89bfb4ac9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744526452754768405, guid: f5cf10271e115fc45adbfec89bfb4ac9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744526452754768405, guid: f5cf10271e115fc45adbfec89bfb4ac9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744526452754768405, guid: f5cf10271e115fc45adbfec89bfb4ac9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f5cf10271e115fc45adbfec89bfb4ac9, type: 3}

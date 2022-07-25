@@ -6,7 +6,7 @@ using Spine.Unity;
 
 public class TileInput : MonoBehaviour
 {
-    private bool Interactable = true;
+    public bool Interactable = true;
     Tile tile;
     public bool Comboable = false;
     private SkeletonAnimation skeleton;
@@ -48,10 +48,9 @@ public class TileInput : MonoBehaviour
         EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
         EventManager.Instance.CheckLostEvent?.Invoke(this, EventArgs.Empty);
 
-
     }
 
-    public IEnumerator PlayAnim()
+    public IEnumerator Destory()
     {
         skeleton.timeScale = 1;
         Magazine.Instance.TilesInMagazine.Remove(this.tile);

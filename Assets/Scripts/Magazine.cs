@@ -94,7 +94,7 @@ public class Magazine : MonoBehaviour
             }
         }
     }
-
+        
     private void TileCounter()
     {
         _NumberOfones = 0;
@@ -164,7 +164,7 @@ public class Magazine : MonoBehaviour
         {
             if (item.Type == num)
             {
-                StartCoroutine(item.input.PlayAnim());
+                StartCoroutine(item.input.Destory());
                 //SortedMagazine.Remove(item);
                 counter++;
                 print("inside if");

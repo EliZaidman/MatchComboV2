@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public int Type;
+    public bool Joker;
     [HideInInspector]public TileInput input;
     private void Start()
     {

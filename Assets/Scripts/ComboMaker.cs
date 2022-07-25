@@ -21,7 +21,11 @@ public class ComboMaker : MonoBehaviour
     }
     private void JokerCombo(object sender, EventArgs e)
     {
-        print("Joker Combo (Called From" + this + ")");
+        foreach (var item in mag.SortedMagazine)
+        {
+            StartCoroutine(item.input.Destory());
+        }
+
     }
     private void MagazineAddCombo(object sender, EventArgs e)
     {

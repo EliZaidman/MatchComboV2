@@ -7,13 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -989492822412582040, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: layerOrderID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 119711222611755238, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: Type
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6166212927735700162, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_Name
-      value: Popsticle Variant
+      value: Popsticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166212927735700162, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     - target: {fileID: 6166212927735700172, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_Sprite
@@ -62,6 +70,14 @@ PrefabInstance:
     - target: {fileID: 6166212927735700173, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166212927735700174, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: m_Size.x
+      value: 6.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166212927735700174, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: m_Size.y
+      value: 7.35
       objectReference: {fileID: 0}
     - target: {fileID: 7168146333265692493, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_RootOrder
