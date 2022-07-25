@@ -27,7 +27,7 @@ public class Magazine : MonoBehaviour
     public int mSize;
     public int _NumberOfones, _NumberOftwos, _NumberOfthrees, _NumberOffours, _NumberOffives, _NumberOfsix;
     public bool MagazineIsFull = false;
-
+    public GameObject UI;
 
     private void Start()
     {
