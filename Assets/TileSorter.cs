@@ -50,26 +50,26 @@ public class TileSorter : MonoBehaviour
 
     }
 
-    public IEnumerator TileMover(float duration, Tile tile)
-    {
-        EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
-        print("TIleMoverr");
-        float t = 0;
-        while (t < duration)
-        {
-            yield return new WaitForEndOfFrame();
-            for (int i = 0; i < Magazine.Instance.SortedMagazine.Count; i++)
-            {
-                t += Time.deltaTime;
-                _mag.SortedMagazine[i].transform.position = Vector2.Lerp(_mag.SortedMagazine[i].transform.position, _mag.MagazineSlots[i].position, t / duration);
-                //print("Inside");          
-                //duration = 0;
-            }
-        }
+    //public IEnumerator TileMover(float duration, Tile tile)
+    //{
+    //    EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
+    //    print("TIleMoverr");
+    //    float t = 0;
+    //    while (t < duration)
+    //    {
+    //        yield return new WaitForEndOfFrame();
+    //        for (int i = 0; i < Magazine.Instance.SortedMagazine.Count; i++)
+    //        {
+    //            t += Time.deltaTime;
+    //            _mag.SortedMagazine[i].transform.position = Vector2.Lerp(_mag.SortedMagazine[i].transform.position, _mag.MagazineSlots[i].position, t / duration);
+    //            //print("Inside");          
+    //            //duration = 0;
+    //        }
+    //    }
 
-        if (tile.Joker)
-        {
-            tile.transform.position = _mag.MagazineSlots[0].transform.position;
-        }
-    }
+    //    if (tile.Joker)
+    //    {
+    //        tile.transform.position = _mag.MagazineSlots[0].transform.position;
+    //    }
+    //}
 }

@@ -11,9 +11,11 @@ public class TileInput : MonoBehaviour
     public bool Comboable = false;
     private SkeletonAnimation skeleton;
     public SkeletonAnimation VFX;
+    private LayerChecker check;
 
     private void Start()
     {
+        check = new LayerChecker();
         tile = GetComponent<Tile>();
         skeleton = GetComponent<SkeletonAnimation>();
        // VFX = gameObject.transform.GetChild(0).GetComponent<SkeletonAnimation>();
@@ -30,6 +32,8 @@ public class TileInput : MonoBehaviour
     {
         if (Interactable && !Magazine.Instance.MagazineIsFull)
         {
+            Interactable = false;
+            gameObject.GetComponent<LayerChecker>().enabled = false;
             TileSelected();
             print("ClickedOnTile");
         }
@@ -42,12 +46,11 @@ public class TileInput : MonoBehaviour
 
     private void TileSelected()
     {
-        Interactable = false;
         Magazine.Instance.TilesInMagazine.Add(gameObject.GetComponent<Tile>());
         EventManager.Instance.onClickOnTile?.Invoke(this, EventArgs.Empty);
         EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
         EventManager.Instance.CheckLostEvent?.Invoke(this, EventArgs.Empty);
-
+        Interactable = false;
     }
 
     public IEnumerator Destory()
