@@ -25,15 +25,22 @@ public class Magazine : MonoBehaviour
     public List<Tile> SortedMagazine;
     public List<Transform> MagazineSlots;
     public int mSize;
-    [SerializeField] int _NumberOfones, _NumberOftwos, _NumberOfthrees, _NumberOffours, _NumberOffives, _NumberOfsix;
+    public int _NumberOfones, _NumberOftwos, _NumberOfthrees, _NumberOffours, _NumberOffives, _NumberOfsix;
     public bool MagazineIsFull = false;
 
 
     private void Start()
     {
         EventManager.Instance.MagazineSorterEve += SortMagazine;
-        // EventManager.Instance.ComboEvent += ;
+        CheckSlots();
 
+    }
+    public void CheckSlots()
+    {
+        for (int i = 0; i < mSize; i++)
+        {
+            MagazineSlots[i].gameObject.SetActive(true);
+        }
     }
     private void Update()
     {
@@ -148,7 +155,7 @@ public class Magazine : MonoBehaviour
         tile.input.Comboable = true;
 
     }
-    public void DestoryCombo(int num)
+    public void DestoryTiles(int num)
     {
         int counter = 0;
         print("outsideif");
@@ -157,16 +164,13 @@ public class Magazine : MonoBehaviour
         {
             if (item.Type == num)
             {
-                // Do Destory Animation StartCoroutine(PlayAnim(item));
-                item.gameObject.SetActive(false);
+                StartCoroutine(item.input.PlayAnim());
                 //SortedMagazine.Remove(item);
-                TilesInMagazine.Remove(item);
                 counter++;
                 print("inside if");
             }
         }
         Combos(counter);
-        SederInMachsanit();
 
     }
 
@@ -176,7 +180,7 @@ public class Magazine : MonoBehaviour
         switch (amount)
         {
             case 3:
-                print("Destoyed 3");
+                EventManager.Instance.MatchEvent?.Invoke(this, EventArgs.Empty);
                 break;
             case 4:
                 EventManager.Instance.JokerEvent?.Invoke(this, EventArgs.Empty);
@@ -190,6 +194,7 @@ public class Magazine : MonoBehaviour
             default:
                 break;
         }
+        EventManager.Instance.CheckWinEvent?.Invoke(this, EventArgs.Empty);
     }
     //Check For Win
 }

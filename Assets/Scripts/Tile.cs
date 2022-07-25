@@ -9,5 +9,6 @@ public class Tile : MonoBehaviour
     private void Start()
     {
         input = GetComponent<TileInput>();
+        BoardManager.Instance.TilesInBoard.Add(this);
     }
 }

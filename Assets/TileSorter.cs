@@ -19,14 +19,11 @@ public class TileSorter : MonoBehaviour
             Instance = this;
         }
     }
-
-
     Magazine _mag;
     private void Start()
     {
         _mag = Magazine.Instance;
         EventManager.Instance.SortTileEvent += called;
-
     }
 
     private void called(object sender, EventArgs e)

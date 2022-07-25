@@ -31,6 +31,8 @@ public class EventManager : MonoBehaviour
     public  EventHandler MatchEvent;
     public  EventHandler JokerEvent;
     public  EventHandler MagazineSizeIncrease;
+    public EventHandler CheckLostEvent;
+    public EventHandler CheckWinEvent;
 
     //Sort Events
     public  EventHandler MagazineSorterEve;
