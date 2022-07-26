@@ -18,6 +18,7 @@ public class LayerChecker : MonoBehaviour
         layerOrder = GetComponent<MeshRenderer>();
         layerOrder.sortingOrder = layerOrderID;
         tile = GetComponent<Tile>();
+        dim.GetComponent<MeshRenderer>().sortingOrder = layerOrderID;
     }
     private void Update()
     {
