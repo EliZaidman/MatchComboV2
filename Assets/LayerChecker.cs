@@ -18,7 +18,7 @@ public class LayerChecker : MonoBehaviour
         layerOrder = GetComponent<MeshRenderer>();
         layerOrder.sortingOrder = layerOrderID;
         tile = GetComponent<Tile>();
-        dim.GetComponent<MeshRenderer>().sortingOrder = layerOrderID;
+        dim.GetComponent<SpriteRenderer>().sortingOrder = layerOrderID;
     }
     private void Update()
     {
@@ -32,6 +32,8 @@ public class LayerChecker : MonoBehaviour
             if (layerOrderID < other.gameObject.GetComponent <LayerChecker>().layerOrderID)
             {
                 tile.input.Interactable = false;
+                layerOrder.sortingOrder -= 1;
+
                 dim.gameObject.SetActive(true);
                 print("inside");
             }
@@ -44,5 +46,7 @@ public class LayerChecker : MonoBehaviour
 
                 tile.input.Interactable = true;
                 dim.gameObject.SetActive(false);
+                layerOrder.sortingOrder = layerOrderID;
+    
     }
 }
