@@ -17,7 +17,7 @@ public class TileInput : MonoBehaviour
     private void Start()
     {
         lc = GetComponent<LayerChecker>();
-        check = new LayerChecker();
+        check = GetComponent<LayerChecker>();
         tile = GetComponent<Tile>();
         skeleton = GetComponent<SkeletonAnimation>();
        // VFX = gameObject.transform.GetChild(0).GetComponent<SkeletonAnimation>();
@@ -35,8 +35,7 @@ public class TileInput : MonoBehaviour
         if (Interactable && !Magazine.Instance.MagazineIsFull)
         {
             Interactable = false;
-
-            Destroy(gameObject.GetComponent<LayerChecker>());
+            StartCoroutine(WaitBefore());
             TileSelected();
             print("ClickedOnTile");
         }
@@ -65,5 +64,12 @@ public class TileInput : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         gameObject.SetActive(false);
         EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
+    }
+
+    private IEnumerator WaitBefore()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject.GetComponent<LayerChecker>());
+
     }
 }
