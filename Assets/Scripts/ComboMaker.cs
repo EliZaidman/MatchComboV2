@@ -23,7 +23,7 @@ public class ComboMaker : MonoBehaviour
     {
         foreach (var item in mag.SortedMagazine)
         {
-            StartCoroutine(item.input.Destory());
+            StartCoroutine(item.input.DestoryTile());
         }
 
     }

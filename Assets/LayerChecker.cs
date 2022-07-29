@@ -16,23 +16,27 @@ public class LayerChecker : MonoBehaviour
     private void Start()
     {
         layerOrder = GetComponent<MeshRenderer>();
-        layerOrder.sortingOrder = layerOrderID;
+        layerOrder.sortingOrder = (layerOrderID * 10) -5;
         tile = GetComponent<Tile>();
+        dim.GetComponent<SpriteRenderer>().sortingOrder = (layerOrderID * 10) - 2;
     }
     private void Update()
     {
-
+        
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Tile" || other.gameObject.tag == "Joker")
         {
-            if (layerOrderID < other.gameObject.GetComponent <LayerChecker>().layerOrderID)
+            if (other.gameObject.GetComponent<LayerChecker>())
             {
-                tile.input.Interactable = false;
-                dim.gameObject.SetActive(true);
-                print("inside");
+                if (layerOrderID < other.gameObject.GetComponent<LayerChecker>().layerOrderID)
+                {
+                    tile.input.Interactable = false;
+                    dim.gameObject.SetActive(true);
+                    print("inside");
+                }
             }
         }
     }

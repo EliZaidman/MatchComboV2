@@ -11,12 +11,12 @@ PrefabInstance:
       propertyPath: dim
       value: 
       objectReference: {fileID: 7585125371127111068}
-    - target: {fileID: 119711222611755238, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
-      propertyPath: Type
+    - target: {fileID: -989492822412582040, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: layerOrderID
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4980210476852504823, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
-      propertyPath: m_SortingOrder
+    - target: {fileID: 119711222611755238, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: Type
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6166212927735700162, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
@@ -32,12 +32,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6166212927735700173, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166212927735700173, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166212927735700173, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166212927735700173, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.065
+      value: 0.072
       objectReference: {fileID: 0}
     - target: {fileID: 6166212927735700173, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.801
+      value: 3.9163995
       objectReference: {fileID: 0}
     - target: {fileID: 6166212927735700173, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_LocalPosition.z
@@ -77,6 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6166212927735700172, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+    - {fileID: 5555207068711049103, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
 --- !u!1 &9016149975089951937 stripped
 GameObject:
@@ -174,3 +187,21 @@ MonoBehaviour:
   _animationName: Surfboard
   loop: 0
   timeScale: 0
+--- !u!143 &1489898221
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9016149975089951937}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 7.2
+  m_Radius: 3.126
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}

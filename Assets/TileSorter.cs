@@ -37,8 +37,8 @@ public class TileSorter : MonoBehaviour
         print("TIleMoverr");
         float t = 0;
         while (t < duration)
-        {
             yield return new WaitForEndOfFrame();
+        {
             for (int i = 0; i < Magazine.Instance.SortedMagazine.Count; i++)
             {
                 t += Time.deltaTime;

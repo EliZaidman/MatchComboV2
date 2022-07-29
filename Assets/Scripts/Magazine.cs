@@ -164,7 +164,7 @@ public class Magazine : MonoBehaviour
         {
             if (item.Type == num)
             {
-                StartCoroutine(item.input.Destory());
+                StartCoroutine(item.input.DestoryTile());
                 //SortedMagazine.Remove(item);
                 counter++;
                 print("inside if");
