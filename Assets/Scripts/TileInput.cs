@@ -12,10 +12,16 @@ public class TileInput : MonoBehaviour
     private SkeletonAnimation skeleton;
     public SkeletonAnimation VFX;
     private LayerChecker check;
+    private LayerChecker lc;
 
     private void Start()
     {
+<<<<<<< HEAD
         check = GetComponent<LayerChecker>();
+=======
+        lc = GetComponent<LayerChecker>();
+        check = new LayerChecker();
+>>>>>>> 3da65aa87081fb82e33755c2f87058769b18dd16
         tile = GetComponent<Tile>();
         skeleton = GetComponent<SkeletonAnimation>();
        // VFX = gameObject.transform.GetChild(0).GetComponent<SkeletonAnimation>();
@@ -34,7 +40,8 @@ public class TileInput : MonoBehaviour
         {
             Destroy(check);
             Interactable = false;
-            gameObject.GetComponent<LayerChecker>().enabled = false;
+
+            Destroy(gameObject.GetComponent<LayerChecker>());
             TileSelected();
             print("ClickedOnTile");
         }
@@ -48,6 +55,7 @@ public class TileInput : MonoBehaviour
    
     private void TileSelected()
     {
+        lc.dim.SetActive(false);
         Magazine.Instance.TilesInMagazine.Add(gameObject.GetComponent<Tile>());
         EventManager.Instance.onClickOnTile?.Invoke(this, EventArgs.Empty);
         EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
