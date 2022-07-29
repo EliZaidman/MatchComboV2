@@ -94,7 +94,7 @@ public class Magazine : MonoBehaviour
             }
         }
     }
-        
+
     private void TileCounter()
     {
         _NumberOfones = 0;
