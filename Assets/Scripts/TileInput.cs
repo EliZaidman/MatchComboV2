@@ -25,7 +25,10 @@ public class TileInput : MonoBehaviour
         if (Comboable)
         {
             tile.input.VFX.gameObject.SetActive(true);
-
+        }
+        else
+        {
+            tile.input.VFX.gameObject.SetActive(false);
         }
     }
     private void OnMouseDown()

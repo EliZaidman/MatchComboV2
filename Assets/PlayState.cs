@@ -35,7 +35,17 @@ public class PlayState : MonoBehaviour
     {
         if (true)
         {
-            if (mag.SortedMagazine.Count == mag.mSize && mag._NumberOfones < 3 && mag._NumberOftwos < 3 && mag._NumberOfthrees < 3 && mag._NumberOffours < 3 && mag._NumberOffives < 3 && mag._NumberOfsix < 3)
+            if (mag.SortedMagazine.Count == mag.mSize 
+                && mag._NumberOfones   < 3 
+                && mag._NumberOftwos   < 3 
+                && mag._NumberOfthrees < 3 
+                && mag._NumberOffours  < 3 
+                && mag._NumberOffives  < 3 
+                && mag._NumberOfsix    < 3 
+                && mag._NumberOfSeven  < 3 
+                && mag._NumberOfEight  < 3 
+                && mag.NumberOfNine    < 3
+                )
             {
                 mag.UI.SetActive(true);
             }

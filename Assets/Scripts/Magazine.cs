@@ -25,7 +25,7 @@ public class Magazine : MonoBehaviour
     public List<Tile> SortedMagazine;
     public List<Transform> MagazineSlots;
     public int mSize;
-    public int _NumberOfones, _NumberOftwos, _NumberOfthrees, _NumberOffours, _NumberOffives, _NumberOfsix, NumOfJokers;
+    public int _NumberOfones, _NumberOftwos, _NumberOfthrees, _NumberOffours, _NumberOffives, _NumberOfsix, _NumberOfSeven, _NumberOfEight, NumberOfNine, NumOfJokers;
     public bool MagazineIsFull = false;
     public GameObject UI;
 
@@ -68,10 +68,13 @@ public class Magazine : MonoBehaviour
             Sidur(_NumberOfones, 1, i);
             Sidur(_NumberOftwos, 2, i);
             Sidur(_NumberOfthrees, 3, i);
-            Sidur(NumOfJokers, 99, i);
             Sidur(_NumberOffours, 4, i);
             Sidur(_NumberOffives, 5, i);
             Sidur(_NumberOfsix, 6, i);
+            Sidur(_NumberOfSeven, 7, i);
+            Sidur(_NumberOfEight, 8, i);
+            Sidur(NumberOfNine, 9, i);
+            Sidur(NumOfJokers, 99, i);
         }
 
         ComboMaker(_NumberOfones, 1);
@@ -80,6 +83,11 @@ public class Magazine : MonoBehaviour
         ComboMaker(_NumberOffours, 4);
         ComboMaker(_NumberOffives, 5);
         ComboMaker(_NumberOfsix, 6);
+        ComboMaker(_NumberOfSeven, 7);
+        ComboMaker(_NumberOfEight, 8);
+        ComboMaker(NumberOfNine, 9);
+
+
     }
 
     private void Sidur(int Seira, int Mispar, int Rezef)
@@ -104,6 +112,9 @@ public class Magazine : MonoBehaviour
         _NumberOffours = 0;
         _NumberOffives = 0;
         _NumberOfsix = 0;
+        _NumberOfSeven = 0;
+        _NumberOfEight = 0;
+        NumberOfNine = 0;
         NumOfJokers = 0;
         foreach (var item in TilesInMagazine)
         {
@@ -124,8 +135,14 @@ public class Magazine : MonoBehaviour
                 case 5:
                     _NumberOffives++;
                     break;
-                case 6:
-                    _NumberOfsix++;
+                case 7:
+                    _NumberOfSeven++;
+                    break;
+                case 8:
+                    _NumberOfEight++;
+                    break;
+                case 9:
+                    NumberOfNine++;
                     break;
                 case 99:
                     NumOfJokers++;
@@ -207,7 +224,7 @@ public class Magazine : MonoBehaviour
                     //TilesInMagazine.Remove(item);
                 }
             }
-             if (item.Type == num)
+            if (item.Type == num)
             {
                 StartCoroutine(item.input.DestoryTile());
                 //SortedMagazine.Remove(item);
@@ -222,7 +239,7 @@ public class Magazine : MonoBehaviour
             Combos(counter + 1);
         }
         else Combos(counter);
-
+        StartCoroutine(DelayedChack());
 
     }
 
@@ -248,5 +265,10 @@ public class Magazine : MonoBehaviour
         }
         EventManager.Instance.CheckWinEvent?.Invoke(this, EventArgs.Empty);
     }
-    //Check For Win
+
+    private IEnumerator DelayedChack()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SederInMachsanit();
+    }
 }
