@@ -25,7 +25,7 @@ public class Magazine : MonoBehaviour
     public List<Tile> SortedMagazine;
     public List<Transform> MagazineSlots;
     public int mSize;
-    public int _NumberOfones, _NumberOftwos, _NumberOfthrees, _NumberOffours, _NumberOffives, _NumberOfsix;
+    public int _NumberOfones, _NumberOftwos, _NumberOfthrees, _NumberOffours, _NumberOffives, _NumberOfsix, NumOfJokers;
     public bool MagazineIsFull = false;
     public GameObject UI;
 
@@ -71,6 +71,7 @@ public class Magazine : MonoBehaviour
             Sidur(_NumberOffours, 4, i);
             Sidur(_NumberOffives, 5, i);
             Sidur(_NumberOfsix, 6, i);
+            Sidur(NumOfJokers, 99, i);
         }
 
         ComboMaker(_NumberOfones, 1);
@@ -79,6 +80,7 @@ public class Magazine : MonoBehaviour
         ComboMaker(_NumberOffours, 4);
         ComboMaker(_NumberOffives, 5);
         ComboMaker(_NumberOfsix, 6);
+        ComboMaker(NumOfJokers, 99);
     }
 
     private void Sidur(int Seira, int Mispar, int Rezef)
@@ -102,7 +104,7 @@ public class Magazine : MonoBehaviour
         _NumberOfthrees = 0;
         _NumberOffours = 0;
         _NumberOffives = 0;
-        _NumberOfsix = 0;
+        NumOfJokers = 0;
         foreach (var item in TilesInMagazine)
         {
             switch (item.Type)
@@ -125,6 +127,9 @@ public class Magazine : MonoBehaviour
                 case 6:
                     _NumberOfsix++;
                     break;
+                case 99:
+                    NumOfJokers++;
+                    break;
                 default:
                     Debug.Log("error in switch");
                     break;
@@ -134,7 +139,19 @@ public class Magazine : MonoBehaviour
 
     public void ComboMaker(int numberOf, int imgNumber)
     {
-        if (numberOf > 2)
+        if (ComboIsActive && numberOf > 1)
+        {
+            foreach (var Combo in SortedMagazine)
+            {
+
+                if (Combo.Type == imgNumber)
+                {
+
+                    StartCoroutine(Wait(Combo));
+                }
+            }
+        }
+        else if (numberOf > 2)
         {
             foreach (var Combo in SortedMagazine)
             {
@@ -148,6 +165,7 @@ public class Magazine : MonoBehaviour
         }
     }
 
+    public bool ComboIsActive;
     public IEnumerator Wait(Tile tile)
     {
 
@@ -169,8 +187,21 @@ public class Magazine : MonoBehaviour
                 counter++;
                 print("inside if");
             }
+            if (ComboIsActive)
+            {
+                if (item.Type == 99)
+                {
+                    item.gameObject.SetActive(false);
+                }  
+            }
         }
-        Combos(counter);
+        if (ComboIsActive)
+        {
+          Combos(counter + 1);
+          ComboIsActive = false;
+        }
+        else Combos(counter);
+
 
     }
 

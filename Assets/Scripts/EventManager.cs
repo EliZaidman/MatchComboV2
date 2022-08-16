@@ -33,6 +33,7 @@ public class EventManager : MonoBehaviour
     public  EventHandler MagazineSizeIncrease;
     public EventHandler CheckLostEvent;
     public EventHandler CheckWinEvent;
+    public EventHandler ComboCaller;
 
     //Sort Events
     public  EventHandler MagazineSorterEve;

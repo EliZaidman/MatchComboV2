@@ -30,19 +30,7 @@ public class TileInput : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (Interactable && !Magazine.Instance.MagazineIsFull)
-        {
-            Destroy(check);
-            Interactable = false;
-            gameObject.GetComponent<LayerChecker>().enabled = false;
-            TileSelected();
-            print("ClickedOnTile");
-        }
-
-        if (Comboable)
-        {
-            Magazine.Instance.DestoryTiles(tile.Type);
-        }
+        PressedOnTile();
     }
 
 
@@ -63,5 +51,25 @@ public class TileInput : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         gameObject.SetActive(false);
         EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void PressedOnTile()
+    {
+        if (Interactable && !Magazine.Instance.MagazineIsFull)
+        {
+            Destroy(check);
+            Interactable = false;
+            if (gameObject.GetComponent<LayerChecker>())
+            {
+                gameObject.GetComponent<LayerChecker>().enabled = false;
+            }
+            TileSelected();
+            print("ClickedOnTile");
+        }
+
+        if (Comboable)
+        {
+            Magazine.Instance.DestoryTiles(tile.Type);
+        }
     }
 }
