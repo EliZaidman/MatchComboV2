@@ -135,6 +135,9 @@ public class Magazine : MonoBehaviour
                 case 5:
                     _NumberOffives++;
                     break;
+                case 6:
+                    _NumberOfsix++;
+                    break;
                 case 7:
                     _NumberOfSeven++;
                     break;

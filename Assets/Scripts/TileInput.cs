@@ -24,11 +24,11 @@ public class TileInput : MonoBehaviour
     {
         if (Comboable)
         {
-            tile.input.VFX.gameObject.SetActive(true);
+           VFX.gameObject.SetActive(true);
         }
         else
         {
-            tile.input.VFX.gameObject.SetActive(false);
+           VFX.gameObject.SetActive(false);
         }
     }
     private void OnMouseDown()
@@ -48,15 +48,20 @@ public class TileInput : MonoBehaviour
 
     public IEnumerator DestoryTile()
     {
-        Destroy(VFX);
+        VFX.gameObject.SetActive(false);
         skeleton.timeScale = 1;
         Magazine.Instance.TilesInMagazine.Remove(this.tile);
         BoardManager.Instance.TilesInBoard.Remove(this.tile);
         yield return new WaitForSeconds(0.25f);
-        PoofPS.Play();
-        yield return new WaitForSeconds(0.4f);
+        //PoofPS.Play();
+        skeleton.AnimationState.End += AnimationState_End;
         gameObject.SetActive(false);
         EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void AnimationState_End(Spine.TrackEntry trackEntry)
+    {
+        throw new NotImplementedException();
     }
 
     public void PressedOnTile()
@@ -77,5 +82,8 @@ public class TileInput : MonoBehaviour
         {
             Magazine.Instance.DestoryTiles(tile.Type);
         }
+        EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
+
     }
 }
+
