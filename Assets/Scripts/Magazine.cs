@@ -20,7 +20,7 @@ public class Magazine : MonoBehaviour
             Instance = this;
         }
     }
-
+    //public List<int> numTiles;
     public List<Tile> TilesInMagazine;
     public List<Tile> SortedMagazine;
     public List<Transform> MagazineSlots;
@@ -49,11 +49,11 @@ public class Magazine : MonoBehaviour
         else
             MagazineIsFull = false;
 
-        //for (int i = 0; i < SortedMagazine.Count; i++)
-        //{
-        //    SortedMagazine[i].transform.position = MagazineSlots[i].position;
-        //}
+
+        if (NumOfJokers > 0) ComboIsActive = true;
+        else ComboIsActive = false;
     }
+
     public void SortMagazine(object sender, EventArgs e)
     {
         TileCounter();
@@ -68,10 +68,10 @@ public class Magazine : MonoBehaviour
             Sidur(_NumberOfones, 1, i);
             Sidur(_NumberOftwos, 2, i);
             Sidur(_NumberOfthrees, 3, i);
+            Sidur(NumOfJokers, 99, i);
             Sidur(_NumberOffours, 4, i);
             Sidur(_NumberOffives, 5, i);
             Sidur(_NumberOfsix, 6, i);
-            Sidur(NumOfJokers, 99, i);
         }
 
         ComboMaker(_NumberOfones, 1);
@@ -80,7 +80,6 @@ public class Magazine : MonoBehaviour
         ComboMaker(_NumberOffours, 4);
         ComboMaker(_NumberOffives, 5);
         ComboMaker(_NumberOfsix, 6);
-        ComboMaker(NumOfJokers, 99);
     }
 
     private void Sidur(int Seira, int Mispar, int Rezef)
@@ -95,8 +94,8 @@ public class Magazine : MonoBehaviour
                 }
             }
         }
-    }
 
+    }
     private void TileCounter()
     {
         _NumberOfones = 0;
@@ -104,6 +103,7 @@ public class Magazine : MonoBehaviour
         _NumberOfthrees = 0;
         _NumberOffours = 0;
         _NumberOffives = 0;
+        _NumberOfsix = 0;
         NumOfJokers = 0;
         foreach (var item in TilesInMagazine)
         {
@@ -149,9 +149,15 @@ public class Magazine : MonoBehaviour
 
                     StartCoroutine(Wait(Combo));
                 }
+                if (Combo.Type == 99)
+                {
+                    NumOfJokers++;
+                }
             }
+
         }
-        else if (numberOf > 2)
+        else
+        if (numberOf > 2)
         {
             foreach (var Combo in SortedMagazine)
             {
@@ -160,6 +166,18 @@ public class Magazine : MonoBehaviour
                 {
 
                     StartCoroutine(Wait(Combo));
+                }
+            }
+        }
+        else
+        {
+            foreach (var Combo in SortedMagazine)
+            {
+
+                if (Combo.Type == imgNumber)
+                {
+
+                    Combo.input.Comboable = false;
                 }
             }
         }
@@ -180,25 +198,28 @@ public class Magazine : MonoBehaviour
 
         foreach (var item in SortedMagazine)
         {
-            if (item.Type == num)
+            if (ComboIsActive)
+            {
+                if (item.Type == 99)
+                {
+                    StartCoroutine(item.input.DestoryTile());
+                    //SortedMagazine.Remove(item);
+                    //TilesInMagazine.Remove(item);
+                }
+            }
+             if (item.Type == num)
             {
                 StartCoroutine(item.input.DestoryTile());
                 //SortedMagazine.Remove(item);
                 counter++;
                 print("inside if");
+
             }
-            if (ComboIsActive)
-            {
-                if (item.Type == 99)
-                {
-                    item.gameObject.SetActive(false);
-                }  
-            }
+
         }
         if (ComboIsActive)
         {
-          Combos(counter + 1);
-          ComboIsActive = false;
+            Combos(counter + 1);
         }
         else Combos(counter);
 

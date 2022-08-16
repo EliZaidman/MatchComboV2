@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6166212927735700162, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_Name
-      value: SurfBoard
+      value: SurfBoard Variant 1
       objectReference: {fileID: 0}
     - target: {fileID: 6166212927735700162, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_TagString
@@ -49,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6166212927735700173, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.9163995
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6166212927735700173, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_LocalPosition.z
@@ -101,6 +101,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4741940812301743007, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
   m_PrefabInstance: {fileID: 2921997630860537347}
   m_PrefabAsset: {fileID: 0}
+--- !u!143 &1489898221
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9016149975089951937}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 7.2
+  m_Radius: 3.126
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &3847800302963436454
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -128,7 +146,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cfe3d6d0abd2aac439e6cef765619f0b, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -187,21 +205,3 @@ MonoBehaviour:
   _animationName: Surfboard
   loop: 0
   timeScale: 0
---- !u!143 &1489898221
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9016149975089951937}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 7.2
-  m_Radius: 3.126
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}

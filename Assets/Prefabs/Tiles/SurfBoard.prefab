@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156847c87c968aa48be21228ae7f5bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
+  Type: 1
   Joker: 0
   input: {fileID: 0}
 --- !u!114 &-989492822412582040

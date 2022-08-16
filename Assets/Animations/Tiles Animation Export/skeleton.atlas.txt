@@ -1,6 +1,6 @@
 
 skeleton.png
-size: 4096,1024
+size: 8192,1024
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
@@ -11,37 +11,58 @@ BeachBall
   orig: 521, 600
   offset: 0, 0
   index: -1
-Popsicle
+Kokus
   rotate: false
   xy: 525, 2
   size: 521, 600
   orig: 521, 600
   offset: 0, 0
   index: -1
-SeaConch
+Mugiwara
   rotate: false
   xy: 1048, 2
   size: 521, 600
   orig: 521, 600
   offset: 0, 0
   index: -1
-SeaShell
+PalmTree
+  rotate: false
+  xy: 4186, 2
+  size: 521, 600
+  orig: 521, 600
+  offset: 0, 0
+  index: -1
+Popsicle
   rotate: false
   xy: 1571, 2
   size: 521, 600
   orig: 521, 600
   offset: 0, 0
   index: -1
-Starfish
+SeaConch
   rotate: false
   xy: 2094, 2
   size: 521, 600
   orig: 521, 600
   offset: 0, 0
   index: -1
-Surfboard
+SeaShell
   rotate: false
   xy: 2617, 2
+  size: 521, 600
+  orig: 521, 600
+  offset: 0, 0
+  index: -1
+Starfish
+  rotate: false
+  xy: 3140, 2
+  size: 521, 600
+  orig: 521, 600
+  offset: 0, 0
+  index: -1
+Surfboard
+  rotate: false
+  xy: 3663, 2
   size: 521, 600
   orig: 521, 600
   offset: 0, 0

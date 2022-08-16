@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6166212927735700173, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.78
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6166212927735700173, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_LocalPosition.z
@@ -155,7 +155,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cfe3d6d0abd2aac439e6cef765619f0b, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -185,6 +185,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7573566749219996404}
   m_Mesh: {fileID: 0}
+--- !u!114 &1344039605382205687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7573566749219996404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a899efcb28884f42a5361b4500c36a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dim: {fileID: 9027110462638025641}
+  layerOrderID: 2
 --- !u!114 &8331274361066366757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +233,6 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
-  _animationName: Starfish
+  _animationName: Popsicle
   loop: 0
   timeScale: 0

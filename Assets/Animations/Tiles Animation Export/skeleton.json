@@ -1,8 +1,8 @@
 {
 "skeleton": {
-	"hash": "MkdlgwuNw8Bsjnf1R2aw08CBpiQ",
+	"hash": "1DbUe2Zzqr94vdBCxcIDyBpjX+Q",
 	"spine": "3.8.99",
-	"x": -260.5,
+	"x": -260,
 	"y": -300,
 	"width": 521,
 	"height": 600,
@@ -13,7 +13,7 @@
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "BeachBall", "bone": "root", "attachment": "Surfboard" }
+	{ "name": "BeachBall", "bone": "root", "attachment": "PalmTree" }
 ],
 "skins": [
 	{
@@ -21,6 +21,9 @@
 		"attachments": {
 			"BeachBall": {
 				"BeachBall": { "width": 521, "height": 600 },
+				"Kokus": { "x": 0.5, "width": 521, "height": 600 },
+				"Mugiwara": { "x": 0.5, "width": 521, "height": 600 },
+				"PalmTree": { "x": 0.5, "width": 521, "height": 600 },
 				"Popsicle": { "x": 0.5, "width": 521, "height": 600 },
 				"SeaConch": { "x": 0.5, "width": 521, "height": 600 },
 				"SeaShell": { "x": 0.5, "width": 521, "height": 600 },
@@ -35,33 +38,63 @@
 		"slots": {
 			"BeachBall": {
 				"attachment": [
-					{ "name": "BeachBall" },
-					{ "time": 0.0667, "name": "BeachBall" },
-					{ "time": 0.1667, "name": "BeachBall" }
+					{ "name": "BeachBall" }
 				]
 			}
 		},
 		"bones": {
 			"root": {
-				"rotate": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
-				],
-				"translate": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
-				],
 				"scale": [
 					{ "x": 1.2, "y": 1.2 },
-					{ "time": 0.0667 },
-					{ "time": 0.1667, "x": 0, "y": 0 }
-				],
-				"shear": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
+					{ "time": 0.1 },
+					{ "time": 0.2333, "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"Kokus": {
+		"slots": {
+			"BeachBall": {
+				"attachment": [
+					{ "name": "Kokus" }
+				]
+			}
+		},
+		"bones": {
+			"root": {
+				"scale": [
+					{ "x": 1.2, "y": 1.2 },
+					{ "time": 0.1 },
+					{ "time": 0.2333, "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"Mugiwara": {
+		"slots": {
+			"BeachBall": {
+				"attachment": [
+					{ "name": "Mugiwara" }
+				]
+			}
+		},
+		"bones": {
+			"root": {
+				"scale": [
+					{ "x": 1.2, "y": 1.2 },
+					{ "time": 0.1 },
+					{ "time": 0.2333, "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"PalmTree": {
+		"bones": {
+			"root": {
+				"scale": [
+					{ "x": 1.2, "y": 1.2 },
+					{ "time": 0.1 },
+					{ "time": 0.2333, "x": 0, "y": 0 }
 				]
 			}
 		}
@@ -70,33 +103,16 @@
 		"slots": {
 			"BeachBall": {
 				"attachment": [
-					{ "name": "Popsicle" },
-					{ "time": 0.0667, "name": "Popsicle" },
-					{ "time": 0.1667, "name": "Popsicle" }
+					{ "name": "Popsicle" }
 				]
 			}
 		},
 		"bones": {
 			"root": {
-				"rotate": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
-				],
-				"translate": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
-				],
 				"scale": [
 					{ "x": 1.2, "y": 1.2 },
-					{ "time": 0.0667 },
-					{ "time": 0.1667, "x": 0, "y": 0 }
-				],
-				"shear": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
+					{ "time": 0.1 },
+					{ "time": 0.2333, "x": 0, "y": 0 }
 				]
 			}
 		}
@@ -105,33 +121,16 @@
 		"slots": {
 			"BeachBall": {
 				"attachment": [
-					{ "name": "SeaConch" },
-					{ "time": 0.0667, "name": "SeaConch" },
-					{ "time": 0.1667, "name": "SeaConch" }
+					{ "name": "SeaConch" }
 				]
 			}
 		},
 		"bones": {
 			"root": {
-				"rotate": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
-				],
-				"translate": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
-				],
 				"scale": [
 					{ "x": 1.2, "y": 1.2 },
-					{ "time": 0.0667 },
-					{ "time": 0.1667, "x": 0, "y": 0 }
-				],
-				"shear": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
+					{ "time": 0.1 },
+					{ "time": 0.2333, "x": 0, "y": 0 }
 				]
 			}
 		}
@@ -140,33 +139,16 @@
 		"slots": {
 			"BeachBall": {
 				"attachment": [
-					{ "name": "SeaShell" },
-					{ "time": 0.0667, "name": "SeaShell" },
-					{ "time": 0.1667, "name": "SeaShell" }
+					{ "name": "SeaShell" }
 				]
 			}
 		},
 		"bones": {
 			"root": {
-				"rotate": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
-				],
-				"translate": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
-				],
 				"scale": [
 					{ "x": 1.2, "y": 1.2 },
-					{ "time": 0.0667 },
-					{ "time": 0.1667, "x": 0, "y": 0 }
-				],
-				"shear": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
+					{ "time": 0.1 },
+					{ "time": 0.2333, "x": 0, "y": 0 }
 				]
 			}
 		}
@@ -176,32 +158,16 @@
 			"BeachBall": {
 				"attachment": [
 					{ "name": "Starfish" },
-					{ "time": 0.0667, "name": "Starfish" },
 					{ "time": 0.1667, "name": "Surfboard" }
 				]
 			}
 		},
 		"bones": {
 			"root": {
-				"rotate": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
-				],
-				"translate": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
-				],
 				"scale": [
 					{ "x": 1.2, "y": 1.2 },
-					{ "time": 0.0667 },
-					{ "time": 0.1667, "x": 0, "y": 0 }
-				],
-				"shear": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
+					{ "time": 0.1 },
+					{ "time": 0.2333, "x": 0, "y": 0 }
 				]
 			}
 		}
@@ -210,33 +176,16 @@
 		"slots": {
 			"BeachBall": {
 				"attachment": [
-					{ "name": "Surfboard" },
-					{ "time": 0.0667, "name": "Surfboard" },
-					{ "time": 0.1667, "name": "Surfboard" }
+					{ "name": "Surfboard" }
 				]
 			}
 		},
 		"bones": {
 			"root": {
-				"rotate": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
-				],
-				"translate": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
-				],
 				"scale": [
 					{ "x": 1.2, "y": 1.2 },
-					{ "time": 0.0667 },
-					{ "time": 0.1667, "x": 0, "y": 0 }
-				],
-				"shear": [
-					{ "curve": "stepped" },
-					{ "time": 0.0667, "curve": "stepped" },
-					{ "time": 0.1667 }
+					{ "time": 0.1 },
+					{ "time": 0.2333, "x": 0, "y": 0 }
 				]
 			}
 		}

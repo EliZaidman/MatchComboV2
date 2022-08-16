@@ -24,9 +24,8 @@ public class ComboManager : MonoBehaviour
     {
         GameObject joker;
         joker = Instantiate(Joker);
-        joker.GetComponent<TileInput>().PressedOnTile();
-        mag.ComboIsActive = true;
-        EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
+        StartCoroutine(WaitBeforeRegister(joker));
+        //EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
 
     }
     private void MagazineAddCombo(object sender, EventArgs e)
@@ -46,5 +45,9 @@ public class ComboManager : MonoBehaviour
 
     }
 
-
+    IEnumerator WaitBeforeRegister(GameObject tile)
+    {
+        yield return new WaitForSeconds(0.1f);
+        tile.GetComponent<TileInput>().PressedOnTile();
+    }
 }
