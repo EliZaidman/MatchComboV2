@@ -12,7 +12,7 @@ public class TileInput : MonoBehaviour
     private SkeletonAnimation skeleton;
     public SkeletonAnimation VFX;
     private LayerChecker check;
-
+    public ParticleSystem PoofPS;
     private void Start()
     {
         check = GetComponent<LayerChecker>();
@@ -48,10 +48,13 @@ public class TileInput : MonoBehaviour
 
     public IEnumerator DestoryTile()
     {
+        Destroy(VFX);
         skeleton.timeScale = 1;
         Magazine.Instance.TilesInMagazine.Remove(this.tile);
         BoardManager.Instance.TilesInBoard.Remove(this.tile);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.25f);
+        PoofPS.Play();
+        yield return new WaitForSeconds(0.4f);
         gameObject.SetActive(false);
         EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
     }
