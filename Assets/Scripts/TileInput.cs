@@ -63,10 +63,9 @@ public class TileInput : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         PoofPS.Play();
         skeleton.AnimationState.End += AnimationState_End;
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.2f);
         gameObject.SetActive(false);
         EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
-
     }
 
     private void AnimationState_End(Spine.TrackEntry trackEntry)
@@ -87,15 +86,16 @@ public class TileInput : MonoBehaviour
             TileSelected();
             print("ClickedOnTile");
         }
-        else if (tile.Joker)
+        else if (tile.Joker && !Comboable)
         {
             TileSelected();
         }
         if (Comboable)
         {
             Magazine.Instance.DestoryTiles(tile.Type);
+            print("Combo");
         }
-      //  EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
+
 
     }
 }

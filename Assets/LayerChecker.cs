@@ -40,7 +40,6 @@ public class LayerChecker : MonoBehaviour
                 {
                     tile.input.Interactable = false;
                     _Sprite.sprite = Dimmed;
-                    print("DIM");
                 }
 
             }

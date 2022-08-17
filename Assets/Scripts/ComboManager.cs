@@ -21,8 +21,9 @@ public class ComboManager : MonoBehaviour
     {
         foreach (var item in mag.SortedMagazine)
         {
-            StartCoroutine(item.input.DestoryTile());
+            item.gameObject.SetActive(false);
         }
+        print("Burn");
     }
 
     private void MatchCombo(object sender, EventArgs e)

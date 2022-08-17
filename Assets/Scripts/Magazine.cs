@@ -50,8 +50,8 @@ public class Magazine : MonoBehaviour
             MagazineIsFull = false;
 
 
-        if (NumOfJokers > 0) ComboIsActive = true;
-        else ComboIsActive = false;
+        if (NumOfJokers > 0) JokerIsActive = true;
+        else JokerIsActive = false;
     }
 
     public void SortMagazine(object sender, EventArgs e)
@@ -159,7 +159,7 @@ public class Magazine : MonoBehaviour
 
     public void ComboMaker(int numberOf, int imgNumber)
     {
-        if (ComboIsActive && numberOf > 1)
+        if (JokerIsActive && numberOf > 1)
         {
             foreach (var Combo in SortedMagazine)
             {
@@ -203,7 +203,7 @@ public class Magazine : MonoBehaviour
         }
     }
 
-    public bool ComboIsActive;
+    public bool JokerIsActive;
     public IEnumerator Wait(Tile tile)
     {
 
@@ -214,18 +214,16 @@ public class Magazine : MonoBehaviour
     public void DestoryTiles(int num)
     {
         int counter = 0;
-        print("outsideif");
 
         foreach (var item in SortedMagazine)
         {
-            if (ComboIsActive)
+            if (JokerIsActive)
             {
                 if (item.Type == 99)
                 {
                     StartCoroutine(item.input.DestoryTile());
                     //SortedMagazine.Remove(item);
                     //TilesInMagazine.Remove(item);
-                    print("insiide");
                 }
             }
             if (item.Type == num)
@@ -233,17 +231,18 @@ public class Magazine : MonoBehaviour
                 StartCoroutine(item.input.DestoryTile());
                 //SortedMagazine.Remove(item);
                 counter++;
-                print("inside if");
 
             }
+            if (JokerIsActive)
+            {
+                Combos(counter + 1);
+                print("Joker Combo");
+            }
+            else Combos(counter);
+            print("Normal Combo");
+        }
 
-        }
-        if (ComboIsActive)
-        {
-            Combos(counter + 1);
-        }
-        else Combos(counter);
-        //StartCoroutine(DelayedChack());
+
 
     }
 
@@ -256,7 +255,7 @@ public class Magazine : MonoBehaviour
                 EventManager.Instance.MatchEvent?.Invoke(this, EventArgs.Empty);
                 break;
             case 4:
-                EventManager.Instance.BurnClipEvent ?.Invoke(this, EventArgs.Empty);
+                EventManager.Instance.BurnClipEvent?.Invoke(this, EventArgs.Empty);
                 break;
             case 5:
                 EventManager.Instance.JokerEvent?.Invoke(this, EventArgs.Empty);
@@ -265,6 +264,8 @@ public class Magazine : MonoBehaviour
                 EventManager.Instance.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
                 break;
             default:
+                print("Bad Switch Combo Count");
+
                 break;
         }
         EventManager.Instance.CheckWinEvent?.Invoke(this, EventArgs.Empty);

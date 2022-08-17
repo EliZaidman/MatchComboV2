@@ -35,6 +35,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cfe3d6d0abd2aac439e6cef765619f0b, type: 2}
+    - target: {fileID: 7525523555420626008, guid: b727a657704e1074298b8d2201b3e984, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5473171230381303814, guid: bdf9bf07a5bfe934d8d17ce669e327a6, type: 3}
     - target: {fileID: 9016149975089951937, guid: b727a657704e1074298b8d2201b3e984, type: 3}
       propertyPath: m_Name
       value: Mugiwara Variant
