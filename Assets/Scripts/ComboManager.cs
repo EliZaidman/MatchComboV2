@@ -14,16 +14,16 @@ public class ComboManager : MonoBehaviour
         EventManager.Instance.MatchEvent += MatchCombo;
         EventManager.Instance.JokerEvent += JokerCombo;
         EventManager.Instance.MagazineSizeIncrease += MagazineAddCombo;
-        EventManager.Instance.MagazineSizeIncrease += BurnClipEvent;
+        EventManager.Instance.BurnClipEvent += BurnClipEvent;
     }
 
     private void BurnClipEvent(object sender, EventArgs e)
     {
         foreach (var item in mag.SortedMagazine)
         {
-            item.gameObject.SetActive(false);
-        }
+            item.input.DestoryTile();
         print("Burn");
+        }
     }
 
     private void MatchCombo(object sender, EventArgs e)
@@ -32,6 +32,7 @@ public class ComboManager : MonoBehaviour
     }
     private void JokerCombo(object sender, EventArgs e)
     {
+        
         GameObject joker;
         joker = Instantiate(Joker, new Vector3(0, -3.8f, 0), Quaternion.identity);
         StartCoroutine(WaitBeforeRegister(joker));
@@ -40,15 +41,10 @@ public class ComboManager : MonoBehaviour
     }
     private void MagazineAddCombo(object sender, EventArgs e)
     {
-        //if (mag.mSize >= 8)
-        //{
-        //    foreach (var item in mag.SortedMagazine)
-        //    {
-        //        StartCoroutine(item.input.DestoryTile());
-        //    }
-        //}
-        //else
-        //{
+        if (mag.mSize >= 8)
+        {
+            return;
+        }
             mag.transform.localScale = new Vector3(0.42f, 0.4f, 0.4f);
             Magazine.Instance.mSize++;
             mag.CheckSlots();
@@ -56,7 +52,7 @@ public class ComboManager : MonoBehaviour
             {
                 item.transform.position = new Vector3(item.transform.position.x - 0.3f, item.transform.position.y, item.transform.position.z);
             }
-        //}
+      
     }
 
     // Update is called once per frame
@@ -67,7 +63,7 @@ public class ComboManager : MonoBehaviour
 
     IEnumerator WaitBeforeRegister(GameObject tile)
     {
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.15f);
         tile.GetComponent<TileInput>().PressedOnTile();
     }
 }

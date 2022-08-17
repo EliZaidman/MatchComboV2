@@ -233,15 +233,15 @@ public class Magazine : MonoBehaviour
                 counter++;
 
             }
-            if (JokerIsActive)
-            {
-                Combos(counter + 1);
-                print("Joker Combo");
-            }
-            else Combos(counter);
-            print("Normal Combo");
-        }
 
+        }
+        if (JokerIsActive)
+        {
+            Combos(counter + 1);
+            print("Joker Combo");
+        }
+        else Combos(counter);
+        print("Normal Combo");
 
 
     }
