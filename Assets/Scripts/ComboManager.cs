@@ -14,6 +14,16 @@ public class ComboManager : MonoBehaviour
         EventManager.Instance.MatchEvent += MatchCombo;
         EventManager.Instance.JokerEvent += JokerCombo;
         EventManager.Instance.MagazineSizeIncrease += MagazineAddCombo;
+        EventManager.Instance.MagazineSizeIncrease += BurnClipEvent;
+    }
+
+    private void BurnClipEvent(object sender, EventArgs e)
+    {
+        for (int i = 0; i < mag.SortedMagazine.Count; i++)
+        {
+
+           // mag.DestoryTiles(SortedMagazine[i]);
+        }
     }
 
     private void MatchCombo(object sender, EventArgs e)
