@@ -21,8 +21,7 @@ public class ComboManager : MonoBehaviour
     {
         foreach (var item in mag.SortedMagazine)
         {
-            item.input.DestoryTile();
-        print("Burn");
+            StartCoroutine(item.input.DestoryTile());
         }
     }
 
