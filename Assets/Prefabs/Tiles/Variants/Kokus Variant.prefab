@@ -8,9 +8,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1202402749084341856, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
+      propertyPath: Dimmed
+      value: 
+      objectReference: {fileID: 4752479058180827701, guid: ceced54b2addb3b4f91a38e86ca073fa, type: 3}
+    - target: {fileID: 1202402749084341856, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
+      propertyPath: Normal
+      value: 
+      objectReference: {fileID: 2590671308665496357, guid: bdf9bf07a5bfe934d8d17ce669e327a6, type: 3}
+    - target: {fileID: 1202402749084341856, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
       propertyPath: layerOrderID
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2456245184849725267, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2590671308665496357, guid: bdf9bf07a5bfe934d8d17ce669e327a6, type: 3}
     - target: {fileID: 3997400518253555653, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
       propertyPath: m_RootOrder
       value: 0

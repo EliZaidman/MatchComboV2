@@ -8,6 +8,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 598417264778297204, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
+      propertyPath: Dimmed
+      value: 
+      objectReference: {fileID: 6971346710274640413, guid: ceced54b2addb3b4f91a38e86ca073fa, type: 3}
+    - target: {fileID: 598417264778297204, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
+      propertyPath: Normal
+      value: 
+      objectReference: {fileID: 6809175661764310959, guid: bdf9bf07a5bfe934d8d17ce669e327a6, type: 3}
+    - target: {fileID: 598417264778297204, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
       propertyPath: layerOrderID
       value: 9
       objectReference: {fileID: 0}
@@ -59,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTree Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4249038778452766279, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6809175661764310959, guid: bdf9bf07a5bfe934d8d17ce669e327a6, type: 3}
     - target: {fileID: 7347491049264723310, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
       propertyPath: _animationName
       value: PalmTree

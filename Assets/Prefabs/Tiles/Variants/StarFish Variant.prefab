@@ -31,6 +31,26 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4682902005442146907, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: m_Size.x
+      value: 5.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682902005442146907, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: m_Size.y
+      value: 6.030742
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682902005442146907, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3075734342074956841, guid: bdf9bf07a5bfe934d8d17ce669e327a6, type: 3}
+    - target: {fileID: 4682902005442146907, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682902005442146907, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ff1e67fe8b7b64b4aaf45701cc21db81, type: 2}
     - target: {fileID: 6166212927735700162, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_Name
       value: StarFish Variant
@@ -106,6 +126,10 @@ PrefabInstance:
     - target: {fileID: 7168146333265692494, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066899788131064055, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6166212927735700172, guid: d3f19664169bcc348a2119a4836c3717, type: 3}

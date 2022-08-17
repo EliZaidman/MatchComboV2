@@ -12,18 +12,22 @@ public class LayerChecker : MonoBehaviour
     private SkeletonAnimation skel;
     MeshRenderer layerOrder;
     public int layerOrderID;
-
+    public Sprite Normal;
+    public Sprite Dimmed;
+    public bool SpineActivated;
+    public SpriteRenderer _Sprite;
+    private void Awake()
+    {
+        SpineActivated = true;
+    }
     private void Start()
     {
         layerOrder = GetComponent<MeshRenderer>();
         layerOrder.sortingOrder = (layerOrder.sortingOrder * 10) - 2;
-        layerOrderID = layerOrder.sortingOrder - 1;
+        _Sprite.sortingOrder = layerOrderID;
         tile = GetComponent<Tile>();
-        dim.GetComponent<SpriteRenderer>().sortingOrder = layerOrder.sortingOrder +1;
-    }
-    private void Update()
-    {
-
+        //dim.GetComponent<SpriteRenderer>().sortingOrder = layerOrder.sortingOrder + 1;
+        CheckSpineCondition();
     }
 
     private void OnTriggerStay(Collider other)
@@ -35,7 +39,7 @@ public class LayerChecker : MonoBehaviour
                 if (layerOrderID < other.gameObject.GetComponent<LayerChecker>().layerOrderID)
                 {
                     tile.input.Interactable = false;
-                    dim.gameObject.SetActive(true);
+                    _Sprite.sprite = Dimmed;
                     print("inside");
                 }
             }
@@ -47,6 +51,22 @@ public class LayerChecker : MonoBehaviour
     {
 
         tile.input.Interactable = true;
-        dim.gameObject.SetActive(false);
+        _Sprite.sprite = Normal;
+    }
+
+    private void CheckSpineCondition()
+    {
+        SpineActivated = !SpineActivated;
+
+        if (SpineActivated)
+        {
+            layerOrder.enabled = true;
+            skel.enabled = true;
+        }
+        else if (!SpineActivated)
+        {
+            layerOrder.enabled = false;
+            skel.enabled = false;
+        }
     }
 }
