@@ -36,16 +36,13 @@ public class LayerChecker : MonoBehaviour
         {
             if (other.gameObject.GetComponent<LayerChecker>())
             {
-                if (layerOrderID < other.gameObject.GetComponent<LayerChecker>().layerOrderID)
+                if (_Sprite.sortingOrder < other.gameObject.GetComponent<LayerChecker>()._Sprite.sortingOrder)
                 {
                     tile.input.Interactable = false;
                     _Sprite.sprite = Dimmed;
-                    print("inside");
+                    print("DIM");
                 }
-                else
-                {
-                    _Sprite.sprite = Normal;
-                }
+
             }
 
         }
