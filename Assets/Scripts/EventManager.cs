@@ -30,6 +30,7 @@ public class EventManager : MonoBehaviour
     public  EventHandler ComboEvent;
     public  EventHandler MatchEvent;
     public  EventHandler JokerEvent;
+    public  EventHandler BurnClipEvent;
     public  EventHandler MagazineSizeIncrease;
     public EventHandler CheckLostEvent;
     public EventHandler CheckWinEvent;

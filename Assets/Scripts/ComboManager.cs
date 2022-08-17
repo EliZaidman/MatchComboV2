@@ -14,6 +14,16 @@ public class ComboManager : MonoBehaviour
         EventManager.Instance.MatchEvent += MatchCombo;
         EventManager.Instance.JokerEvent += JokerCombo;
         EventManager.Instance.MagazineSizeIncrease += MagazineAddCombo;
+        EventManager.Instance.MagazineSizeIncrease += BurnClipEvent;
+    }
+
+    private void BurnClipEvent(object sender, EventArgs e)
+    {
+        for (int i = 0; i < mag.SortedMagazine.Count; i++)
+        {
+
+           // mag.DestoryTiles(SortedMagazine[i]);
+        }
     }
 
     private void MatchCombo(object sender, EventArgs e)
@@ -23,7 +33,7 @@ public class ComboManager : MonoBehaviour
     private void JokerCombo(object sender, EventArgs e)
     {
         GameObject joker;
-        joker = Instantiate(Joker);
+        joker = Instantiate(Joker, new Vector3(0, -3.8f, 0), Quaternion.identity);
         StartCoroutine(WaitBeforeRegister(joker));
         //EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
 

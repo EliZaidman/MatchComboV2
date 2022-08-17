@@ -44,10 +44,18 @@ public class TileInput : MonoBehaviour
         EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
         EventManager.Instance.CheckLostEvent?.Invoke(this, EventArgs.Empty);
         Interactable = false;
+        if (check)
+        {
+        check.ToggleSpine();
+        }
     }
 
     public IEnumerator DestoryTile()
     {
+        if (tile.Type == 99)
+        {
+            gameObject.SetActive(false);
+        }
         VFX.GetComponent<MeshRenderer>().enabled = false;
         skeleton.timeScale = 0.85f;
         Magazine.Instance.TilesInMagazine.Remove(this.tile);
@@ -68,7 +76,7 @@ public class TileInput : MonoBehaviour
 
     public void PressedOnTile()
     {
-        if (Interactable && !Magazine.Instance.MagazineIsFull)
+        if (Interactable && !Magazine.Instance.MagazineIsFull && !Comboable)
         {
             Destroy(check);
             Interactable = false;
@@ -79,7 +87,10 @@ public class TileInput : MonoBehaviour
             TileSelected();
             print("ClickedOnTile");
         }
-
+        else if (tile.Joker)
+        {
+            TileSelected();
+        }
         if (Comboable)
         {
             Magazine.Instance.DestoryTiles(tile.Type);

@@ -4062,6 +4062,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1690095919}
     m_Modifications:
+    - target: {fileID: 1518917875864103455, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1518917875864103455, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1994016246582154597, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
       propertyPath: m_RootOrder
       value: 48
@@ -4118,6 +4126,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cfe3d6d0abd2aac439e6cef765619f0b, type: 2}
+    - target: {fileID: 5966944316413182377, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5966944316413182377, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
 --- !u!4 &1506107814 stripped
@@ -4482,6 +4498,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6913623788676341624, guid: 82871f959c25a2148813b5efb8f9a303, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7573566749219996404, guid: 82871f959c25a2148813b5efb8f9a303, type: 3}
       propertyPath: m_Name
       value: Popsticle (5)
@@ -4689,6 +4709,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cfe3d6d0abd2aac439e6cef765619f0b, type: 2}
+    - target: {fileID: 1775702271869979877, guid: 6feff01922bb9fa42a3f2ddb6d567ad8, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3336069112268034406, guid: 6feff01922bb9fa42a3f2ddb6d567ad8, type: 3}
       propertyPath: m_RootOrder
       value: 4
