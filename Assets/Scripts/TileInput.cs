@@ -48,6 +48,10 @@ public class TileInput : MonoBehaviour
 
     public IEnumerator DestoryTile()
     {
+        if (tile.Type == 99)
+        {
+            gameObject.SetActive(false);
+        }
         VFX.GetComponent<MeshRenderer>().enabled = false;
         skeleton.timeScale = 0.85f;
         Magazine.Instance.TilesInMagazine.Remove(this.tile);

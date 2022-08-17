@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: cfe3d6d0abd2aac439e6cef765619f0b, type: 2}
     - target: {fileID: 9016149975089951937, guid: b727a657704e1074298b8d2201b3e984, type: 3}
       propertyPath: m_Name
-      value: Mugiwara
+      value: Mugiwara Variant
       objectReference: {fileID: 0}
     - target: {fileID: 9016149975089951950, guid: b727a657704e1074298b8d2201b3e984, type: 3}
       propertyPath: m_RootOrder

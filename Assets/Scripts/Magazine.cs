@@ -225,6 +225,7 @@ public class Magazine : MonoBehaviour
                     StartCoroutine(item.input.DestoryTile());
                     //SortedMagazine.Remove(item);
                     //TilesInMagazine.Remove(item);
+                    print("insiide");
                 }
             }
             if (item.Type == num)

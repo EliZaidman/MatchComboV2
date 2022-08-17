@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3429584769980368606, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
       propertyPath: m_Name
-      value: PalmTree
+      value: PalmTree Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7347491049264723310, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
       propertyPath: _animationName

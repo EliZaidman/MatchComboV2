@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3997400518253555658, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
       propertyPath: m_Name
-      value: Kokus
+      value: Kokus Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7152309748166718958, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
       propertyPath: Type
