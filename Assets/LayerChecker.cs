@@ -16,9 +16,10 @@ public class LayerChecker : MonoBehaviour
     private void Start()
     {
         layerOrder = GetComponent<MeshRenderer>();
-        layerOrder.sortingOrder = (layerOrderID * 10) - 5;
+        layerOrder.sortingOrder = (layerOrder.sortingOrder * 10) - 2;
+        layerOrderID = layerOrder.sortingOrder - 1;
         tile = GetComponent<Tile>();
-        dim.GetComponent<SpriteRenderer>().sortingOrder = (layerOrderID * 10) - 2;
+        dim.GetComponent<SpriteRenderer>().sortingOrder = layerOrder.sortingOrder +1;
     }
     private void Update()
     {

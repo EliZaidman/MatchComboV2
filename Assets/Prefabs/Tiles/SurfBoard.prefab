@@ -117,6 +117,7 @@ MonoBehaviour:
   Interactable: 1
   Comboable: 0
   VFX: {fileID: 7168146333265692492}
+  PoofPS: {fileID: 0}
 --- !u!114 &119711222611755238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +146,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dim: {fileID: 7684267052625914179, guid: 37dccb8e52ce6694da916333eb2ab656, type: 3}
-  layerOrderID: 0
 --- !u!54 &5555207068711049103
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -216,14 +216,6 @@ PrefabInstance:
     - target: {fileID: 7684267052625914179, guid: 37dccb8e52ce6694da916333eb2ab656, type: 3}
       propertyPath: m_Name
       value: Dim (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7684267052625914179, guid: 37dccb8e52ce6694da916333eb2ab656, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7959972885858464299, guid: 37dccb8e52ce6694da916333eb2ab656, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37dccb8e52ce6694da916333eb2ab656, type: 3}
