@@ -23,11 +23,11 @@ public class LayerChecker : MonoBehaviour
     private void Start()
     {
         layerOrder = GetComponent<MeshRenderer>();
-        layerOrder.sortingOrder = (layerOrder.sortingOrder * 10) - 2;
-        _Sprite.sortingOrder = layerOrderID;
+        skel = GetComponent<SkeletonAnimation>();
+        layerOrder.sortingOrder = _Sprite.sortingOrder;
         tile = GetComponent<Tile>();
         //dim.GetComponent<SpriteRenderer>().sortingOrder = layerOrder.sortingOrder + 1;
-        CheckSpineCondition();
+        ToggleSpine();
     }
 
     private void OnTriggerStay(Collider other)
@@ -54,7 +54,7 @@ public class LayerChecker : MonoBehaviour
         _Sprite.sprite = Normal;
     }
 
-    private void CheckSpineCondition()
+    public void ToggleSpine()
     {
         SpineActivated = !SpineActivated;
 
@@ -62,11 +62,13 @@ public class LayerChecker : MonoBehaviour
         {
             layerOrder.enabled = true;
             skel.enabled = true;
+            _Sprite.enabled = false;
         }
         else if (!SpineActivated)
         {
             layerOrder.enabled = false;
             skel.enabled = false;
+            _Sprite.enabled = true;
         }
     }
 }

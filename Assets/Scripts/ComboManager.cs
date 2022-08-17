@@ -33,7 +33,7 @@ public class ComboManager : MonoBehaviour
     private void JokerCombo(object sender, EventArgs e)
     {
         GameObject joker;
-        joker = Instantiate(Joker);
+        joker = Instantiate(Joker, new Vector3(0, -3.8f, 0), Quaternion.identity);
         StartCoroutine(WaitBeforeRegister(joker));
         //EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
 

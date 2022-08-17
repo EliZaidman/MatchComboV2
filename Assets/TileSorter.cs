@@ -28,7 +28,7 @@ public class TileSorter : MonoBehaviour
 
     private void MoveTile(object sender, EventArgs e)
     {
-        StartCoroutine(TileMover(5f));
+        StartCoroutine(TileMover(3f));
     }
 
     public IEnumerator TileMover(float duration)
