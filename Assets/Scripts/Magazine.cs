@@ -242,7 +242,7 @@ public class Magazine : MonoBehaviour
             Combos(counter + 1);
         }
         else Combos(counter);
-        StartCoroutine(DelayedChack());
+        //StartCoroutine(DelayedChack());
 
     }
 

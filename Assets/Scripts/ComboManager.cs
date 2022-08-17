@@ -7,7 +7,7 @@ public class ComboManager : MonoBehaviour
 {
 
     Magazine mag;
-    [SerializeField]private GameObject Joker;
+    [SerializeField] private GameObject Joker;
     void Start()
     {
         mag = Magazine.Instance;
@@ -18,7 +18,7 @@ public class ComboManager : MonoBehaviour
 
     private void MatchCombo(object sender, EventArgs e)
     {
-        print("Combo Of 3 (Called From" + this +")");
+        print("Combo Of 3 (Called From" + this + ")");
     }
     private void JokerCombo(object sender, EventArgs e)
     {
@@ -30,6 +30,8 @@ public class ComboManager : MonoBehaviour
     }
     private void MagazineAddCombo(object sender, EventArgs e)
     {
+        if (mag.mSize == 8)
+            return;
         mag.transform.localScale = new Vector3(0.42f, 0.4f, 0.4f);
         Magazine.Instance.mSize++;
         mag.CheckSlots();
@@ -47,7 +49,7 @@ public class ComboManager : MonoBehaviour
 
     IEnumerator WaitBeforeRegister(GameObject tile)
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         tile.GetComponent<TileInput>().PressedOnTile();
     }
 }

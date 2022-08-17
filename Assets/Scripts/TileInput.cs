@@ -48,15 +48,17 @@ public class TileInput : MonoBehaviour
 
     public IEnumerator DestoryTile()
     {
-        VFX.gameObject.SetActive(false);
-        skeleton.timeScale = 1;
+        VFX.GetComponent<MeshRenderer>().enabled = false;
+        skeleton.timeScale = 0.85f;
         Magazine.Instance.TilesInMagazine.Remove(this.tile);
         BoardManager.Instance.TilesInBoard.Remove(this.tile);
         yield return new WaitForSeconds(0.25f);
-        //PoofPS.Play();
+        PoofPS.Play();
         skeleton.AnimationState.End += AnimationState_End;
+        yield return new WaitForSeconds(0.4f);
         gameObject.SetActive(false);
         EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
+
     }
 
     private void AnimationState_End(Spine.TrackEntry trackEntry)
@@ -82,7 +84,7 @@ public class TileInput : MonoBehaviour
         {
             Magazine.Instance.DestoryTiles(tile.Type);
         }
-        EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
+      //  EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
 
     }
 }

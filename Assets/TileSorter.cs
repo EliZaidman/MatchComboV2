@@ -45,6 +45,6 @@ public class TileSorter : MonoBehaviour
                 _mag.SortedMagazine[i].transform.position = Vector2.Lerp(_mag.SortedMagazine[i].transform.position, _mag.MagazineSlots[i].position, t / duration);
             }
         }
-
+        EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
     }
 }

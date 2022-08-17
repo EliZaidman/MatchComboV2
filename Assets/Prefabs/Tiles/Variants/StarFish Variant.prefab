@@ -81,6 +81,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26d070506888215458a75d98a0707229, type: 3}
+--- !u!198 &7198782275235006507 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1221720051919068227, guid: 26d070506888215458a75d98a0707229, type: 3}
+  m_PrefabInstance: {fileID: 8292074403762099304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8502353696459593303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88,6 +93,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5233263552046073154, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: PoofPS
+      value: 
+      objectReference: {fileID: 7198782275235006507}
     - target: {fileID: -989492822412582040, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: dim
       value: 
@@ -106,7 +115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6166212927735700162, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_Name
-      value: StarFish
+      value: StarFish Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6166212927735700162, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: m_TagString
