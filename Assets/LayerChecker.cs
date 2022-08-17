@@ -24,7 +24,7 @@ public class LayerChecker : MonoBehaviour
     {
         layerOrder = GetComponent<MeshRenderer>();
         skel = GetComponent<SkeletonAnimation>();
-        layerOrder.sortingOrder = _Sprite.sortingOrder;
+        _Sprite.sortingOrder = layerOrder.sortingOrder;
         tile = GetComponent<Tile>();
         //dim.GetComponent<SpriteRenderer>().sortingOrder = layerOrder.sortingOrder + 1;
         ToggleSpine();
