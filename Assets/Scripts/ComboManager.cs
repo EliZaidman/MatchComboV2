@@ -19,10 +19,9 @@ public class ComboManager : MonoBehaviour
 
     private void BurnClipEvent(object sender, EventArgs e)
     {
-        for (int i = 0; i < mag.SortedMagazine.Count; i++)
+        foreach (var item in mag.SortedMagazine)
         {
-
-           // mag.DestoryTiles(SortedMagazine[i]);
+            StartCoroutine(item.input.DestoryTile());
         }
     }
 
@@ -40,15 +39,23 @@ public class ComboManager : MonoBehaviour
     }
     private void MagazineAddCombo(object sender, EventArgs e)
     {
-        if (mag.mSize == 8)
-            return;
-        mag.transform.localScale = new Vector3(0.42f, 0.4f, 0.4f);
-        Magazine.Instance.mSize++;
-        mag.CheckSlots();
-        foreach (var item in mag.MagazineSlots)
-        {
-            item.transform.position = new Vector3(item.transform.position.x - 0.3f, item.transform.position.y, item.transform.position.z);
-        }
+        //if (mag.mSize >= 8)
+        //{
+        //    foreach (var item in mag.SortedMagazine)
+        //    {
+        //        StartCoroutine(item.input.DestoryTile());
+        //    }
+        //}
+        //else
+        //{
+            mag.transform.localScale = new Vector3(0.42f, 0.4f, 0.4f);
+            Magazine.Instance.mSize++;
+            mag.CheckSlots();
+            foreach (var item in mag.MagazineSlots)
+            {
+                item.transform.position = new Vector3(item.transform.position.x - 0.3f, item.transform.position.y, item.transform.position.z);
+            }
+        //}
     }
 
     // Update is called once per frame

@@ -256,13 +256,13 @@ public class Magazine : MonoBehaviour
                 EventManager.Instance.MatchEvent?.Invoke(this, EventArgs.Empty);
                 break;
             case 4:
-                EventManager.Instance.JokerEvent?.Invoke(this, EventArgs.Empty);
+                EventManager.Instance.BurnClipEvent ?.Invoke(this, EventArgs.Empty);
                 break;
             case 5:
-                EventManager.Instance.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
+                EventManager.Instance.JokerEvent?.Invoke(this, EventArgs.Empty);
                 break;
             case 6:
-                print("Destoyed 6");
+                EventManager.Instance.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
                 break;
             default:
                 break;
