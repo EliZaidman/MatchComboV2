@@ -42,7 +42,12 @@ public class LayerChecker : MonoBehaviour
                     _Sprite.sprite = Dimmed;
                     print("inside");
                 }
+                else
+                {
+                    _Sprite.sprite = Normal;
+                }
             }
+
         }
     }
 
