@@ -63,7 +63,7 @@ public class TileInput : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         PoofPS.Play();
         skeleton.AnimationState.End += AnimationState_End;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.35f);
         gameObject.SetActive(false);
         EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
     }
