@@ -62,15 +62,9 @@ public class TileInput : MonoBehaviour
         BoardManager.Instance.TilesInBoard.Remove(this.tile);
         yield return new WaitForSeconds(0.25f);
         PoofPS.Play();
-        skeleton.AnimationState.End += AnimationState_End;
         yield return new WaitForSeconds(0.35f);
         gameObject.SetActive(false);
         EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
-    }
-
-    private void AnimationState_End(Spine.TrackEntry trackEntry)
-    {
-        throw new NotImplementedException();
     }
 
     public void PressedOnTile()
