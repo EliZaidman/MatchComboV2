@@ -23,26 +23,36 @@ public class TileSorter : MonoBehaviour
     private void Start()
     {
         _mag = Magazine.Instance;
-        EventManager.Instance.SortTileEvent += MoveTile;
+        EventManager.Instance.CorutineStopper += StopCorutine;
+        EventManager.Instance.CorutineStarter += StartCorutine;
     }
 
-    private void MoveTile(object sender, EventArgs e)
+    public bool PlayAnimation = true;
+    private void LateUpdate()
     {
-        StartCoroutine(SortMagazineCorutine(0.40f));
+        if (PlayAnimation)
+        {
+            StartCoroutine(SortMagazineCorutine(0.15f));
+        }
+    }
+    private void StartCorutine(object sender, EventArgs e)
+    {
+        PlayAnimation = true;
+    }
+    private void StopCorutine(object sender, EventArgs e)
+    {
+        PlayAnimation = false;
     }
 
     public IEnumerator SortMagazineCorutine(float duration)
     {
-        print("TIleMoverr");
+        yield return new WaitForEndOfFrame();
         float t = 0;
-        while (t < duration)
+        for (int i = 0; i < Magazine.Instance.SortedMagazine.Count; i++)
         {
-            yield return new WaitForEndOfFrame();
-            for (int i = 0; i < Magazine.Instance.SortedMagazine.Count; i++)
-            {
-                t += Time.deltaTime;
-                _mag.SortedMagazine[i].transform.position = Vector2.Lerp(_mag.SortedMagazine[i].transform.position, _mag.MagazineSlots[i].position, t / duration);
-            }
+            t += Time.deltaTime;
+            _mag.SortedMagazine[i].transform.position = Vector2.MoveTowards(_mag.SortedMagazine[i].transform.position, _mag.MagazineSlots[i].position, t / duration);
         }
+
     }
 }

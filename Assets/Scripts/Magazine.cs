@@ -285,10 +285,9 @@ public class Magazine : MonoBehaviour
         yield return new WaitForSeconds(SortDelay);
         TileCounter();
         SederInMachsanit();
-        EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
         yield return new WaitForSeconds(SortDelay);
         EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
-
+        //EventManager.Instance.CorutineStarter?.Invoke(this, EventArgs.Empty);
     }
 
     private void DelayedSortEvent(object sender, EventArgs e)

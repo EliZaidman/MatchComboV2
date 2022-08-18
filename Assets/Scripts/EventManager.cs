@@ -24,7 +24,8 @@ public class EventManager : MonoBehaviour
     //Tiles Events
     public  EventHandler onClickOnTile;
     public  EventHandler onComboMake;
-    public  EventHandler SortTileEvent;
+    public  EventHandler CorutineStopper;
+    public  EventHandler CorutineStarter;
 
     //Combo Events
     public  EventHandler ComboEvent;

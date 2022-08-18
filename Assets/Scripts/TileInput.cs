@@ -51,7 +51,6 @@ public class TileInput : MonoBehaviour
         Magazine.Instance.TilesInMagazine.Add(gameObject.GetComponent<Tile>());
         EventManager.Instance.onClickOnTile?.Invoke(this, EventArgs.Empty);
         EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
-        EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
         Interactable = false;
         EventManager.Instance.CheckLostEvent?.Invoke(this, EventArgs.Empty);
     }
@@ -63,14 +62,15 @@ public class TileInput : MonoBehaviour
             gameObject.SetActive(false);
         }
         VFX.GetComponent<MeshRenderer>().enabled = false;
-        skeleton.timeScale = 0.85f;
+        skeleton.timeScale = 1f;
         Magazine.Instance.TilesInMagazine.Remove(this.tile);
         BoardManager.Instance.TilesInBoard.Remove(this.tile);
         yield return new WaitForSeconds(0.25f);
         PoofPS.Play();
+        EventManager.Instance.CorutineStopper?.Invoke(this, EventArgs.Empty);
         yield return new WaitForSeconds(0.33f);
+        EventManager.Instance.CorutineStarter?.Invoke(this, EventArgs.Empty);
         gameObject.SetActive(false);
-        //EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
     }
 
     public void PressedOnTile()
