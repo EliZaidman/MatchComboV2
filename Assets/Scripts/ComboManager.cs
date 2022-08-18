@@ -42,6 +42,7 @@ public class ComboManager : MonoBehaviour
     {
         if (mag.mSize >= 8)
         {
+            EventManager.Instance.JokerEvent?.Invoke(this, EventArgs.Empty);
             return;
         }
             mag.transform.localScale = new Vector3(0.42f, 0.4f, 0.4f);

@@ -32,6 +32,7 @@ public class Magazine : MonoBehaviour
     private void Start()
     {
         EventManager.Instance.MagazineSorterEve += SortMagazine;
+        EventManager.Instance.DelayedSort += DelayedSortEvent;
         CheckSlots();
 
     }
@@ -234,6 +235,7 @@ public class Magazine : MonoBehaviour
 
             }
 
+            //StartCoroutine(DelayedSort(0.45f));
         }
         if (JokerIsActive)
         {
@@ -243,7 +245,7 @@ public class Magazine : MonoBehaviour
         }
         else Combos(counter);
         print("Normal Combo");
-        StartCoroutine(DelayedSort(0.5f));
+
 
 
     }
@@ -273,11 +275,16 @@ public class Magazine : MonoBehaviour
         EventManager.Instance.CheckWinEvent?.Invoke(this, EventArgs.Empty);
     }
 
-    private IEnumerator DelayedSort(float SortDelay)
+    private IEnumerator DelayedsSort(float SortDelay)
     {
         yield return new WaitForSeconds(SortDelay);
         TileCounter();
         SederInMachsanit();
         EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void DelayedSortEvent(object sender, EventArgs e)
+    {
+        StartCoroutine(DelayedsSort(0.05f));
     }
 }

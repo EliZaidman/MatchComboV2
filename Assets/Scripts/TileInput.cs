@@ -44,15 +44,15 @@ public class TileInput : MonoBehaviour
 
     private void TileSelected()
     {
+        if (check)
+        {
+            check.ToggleSpine();
+        }
         Magazine.Instance.TilesInMagazine.Add(gameObject.GetComponent<Tile>());
-        //EventManager.Instance.onClickOnTile?.Invoke(this, EventArgs.Empty);
+        EventManager.Instance.onClickOnTile?.Invoke(this, EventArgs.Empty);
         EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
         EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
         Interactable = false;
-        if (check)
-        {
-        check.ToggleSpine();
-        }
         EventManager.Instance.CheckLostEvent?.Invoke(this, EventArgs.Empty);
     }
 
@@ -68,9 +68,11 @@ public class TileInput : MonoBehaviour
         BoardManager.Instance.TilesInBoard.Remove(this.tile);
         yield return new WaitForSeconds(0.25f);
         PoofPS.Play();
-        yield return new WaitForSeconds(0.33f);
-        gameObject.SetActive(false);
 
+        yield return new WaitForSeconds(0.33f);
+        EventManager.Instance.DelayedSort?.Invoke(this, EventArgs.Empty);
+
+        gameObject.SetActive(false);
     }
 
     public void PressedOnTile()
