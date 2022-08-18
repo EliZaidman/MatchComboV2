@@ -172,7 +172,10 @@ public class Magazine : MonoBehaviour
                 }
                 if (Combo.Type == 99)
                 {
+                    if (NumOfJokers <1)
+                    {
                     NumOfJokers++;
+                    }
                 }
             }
 
@@ -245,6 +248,8 @@ public class Magazine : MonoBehaviour
         }
         else Combos(counter);
         print("Normal Combo");
+        EventManager.Instance.DelayedSort?.Invoke(this, EventArgs.Empty);
+
 
 
 
@@ -281,10 +286,13 @@ public class Magazine : MonoBehaviour
         TileCounter();
         SederInMachsanit();
         EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
+        yield return new WaitForSeconds(SortDelay);
+        EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
+
     }
 
     private void DelayedSortEvent(object sender, EventArgs e)
     {
-        StartCoroutine(DelayedsSort(0.05f));
+        StartCoroutine(DelayedsSort(0.25f));
     }
 }

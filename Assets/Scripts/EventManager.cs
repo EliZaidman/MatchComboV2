@@ -39,12 +39,4 @@ public class EventManager : MonoBehaviour
     //Magazine Events
     public  EventHandler MagazineSorterEve;
     public  EventHandler DelayedSort;
-    public class TileCounterEventArgs : EventArgs
-    {
-        public int NumberOfones, NumberOftwos, NumberOfthrees, NumberOffours, NumberOffives, NumberOfsix;
-
-    }
-
-
-
 }

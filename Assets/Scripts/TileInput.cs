@@ -68,11 +68,9 @@ public class TileInput : MonoBehaviour
         BoardManager.Instance.TilesInBoard.Remove(this.tile);
         yield return new WaitForSeconds(0.25f);
         PoofPS.Play();
-
         yield return new WaitForSeconds(0.33f);
-        EventManager.Instance.DelayedSort?.Invoke(this, EventArgs.Empty);
-
         gameObject.SetActive(false);
+        //EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
     }
 
     public void PressedOnTile()
@@ -96,24 +94,6 @@ public class TileInput : MonoBehaviour
         {
             Magazine.Instance.DestoryTiles(tile.Type);
             print("Combo");
-        }
-
-
-
-    }
-
-    public IEnumerator TileMover(float duration)
-    {
-        EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
-        float t = 0;
-        while (t < duration)
-        {
-            yield return new WaitForEndOfFrame();
-            for (int i = 0; i < _mag.SortedMagazine.Count; i++)
-            {
-                t += Time.deltaTime;
-                transform.position = Vector2.Lerp(transform.position, _mag.MagazineSlots[i].position, t / duration);
-            }
         }
     }
 }
