@@ -27,7 +27,7 @@ public class LayerChecker : MonoBehaviour
         _Sprite.sortingOrder = layerOrder.sortingOrder;
         tile = GetComponent<Tile>();
         //dim.GetComponent<SpriteRenderer>().sortingOrder = layerOrder.sortingOrder + 1;
-        ToggleSpine();
+        ToggleSpine();  
     }
 
     private void OnTriggerStay(Collider other)
@@ -47,10 +47,8 @@ public class LayerChecker : MonoBehaviour
         }
     }
 
-
     private void OnTriggerExit(Collider other)
     {
-
         tile.input.Interactable = true;
         _Sprite.sprite = Normal;
     }

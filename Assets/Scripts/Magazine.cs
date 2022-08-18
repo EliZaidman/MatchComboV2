@@ -238,10 +238,12 @@ public class Magazine : MonoBehaviour
         if (JokerIsActive)
         {
             Combos(counter + 1);
+
             print("Joker Combo");
         }
         else Combos(counter);
         print("Normal Combo");
+        StartCoroutine(DelayedSort(0.5f));
 
 
     }
@@ -271,9 +273,11 @@ public class Magazine : MonoBehaviour
         EventManager.Instance.CheckWinEvent?.Invoke(this, EventArgs.Empty);
     }
 
-    private IEnumerator DelayedChack()
+    private IEnumerator DelayedSort(float SortDelay)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(SortDelay);
+        TileCounter();
         SederInMachsanit();
+        EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
     }
 }

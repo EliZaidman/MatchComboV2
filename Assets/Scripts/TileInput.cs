@@ -8,6 +8,7 @@ public class TileInput : MonoBehaviour
 {
     public bool Interactable = true;
     Tile tile;
+    Magazine _mag;
     public bool Comboable = false;
     private SkeletonAnimation skeleton;
     public SkeletonAnimation VFX;
@@ -15,6 +16,7 @@ public class TileInput : MonoBehaviour
     public ParticleSystem PoofPS;
     private void Start()
     {
+        _mag = Magazine.Instance;
         check = GetComponent<LayerChecker>();
         tile = GetComponent<Tile>();
         skeleton = GetComponent<SkeletonAnimation>();
@@ -35,19 +37,23 @@ public class TileInput : MonoBehaviour
     {
         PressedOnTile();
     }
-
+    private void OnMouseEnter()
+    {
+        
+    }
 
     private void TileSelected()
     {
         Magazine.Instance.TilesInMagazine.Add(gameObject.GetComponent<Tile>());
-        EventManager.Instance.onClickOnTile?.Invoke(this, EventArgs.Empty);
+        //EventManager.Instance.onClickOnTile?.Invoke(this, EventArgs.Empty);
+        EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
         EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
-        EventManager.Instance.CheckLostEvent?.Invoke(this, EventArgs.Empty);
         Interactable = false;
         if (check)
         {
         check.ToggleSpine();
         }
+        EventManager.Instance.CheckLostEvent?.Invoke(this, EventArgs.Empty);
     }
 
     public IEnumerator DestoryTile()
@@ -62,9 +68,9 @@ public class TileInput : MonoBehaviour
         BoardManager.Instance.TilesInBoard.Remove(this.tile);
         yield return new WaitForSeconds(0.25f);
         PoofPS.Play();
-        yield return new WaitForSeconds(0.35f);
+        yield return new WaitForSeconds(0.33f);
         gameObject.SetActive(false);
-        EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
+
     }
 
     public void PressedOnTile()
@@ -91,6 +97,22 @@ public class TileInput : MonoBehaviour
         }
 
 
+
+    }
+
+    public IEnumerator TileMover(float duration)
+    {
+        EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
+        float t = 0;
+        while (t < duration)
+        {
+            yield return new WaitForEndOfFrame();
+            for (int i = 0; i < _mag.SortedMagazine.Count; i++)
+            {
+                t += Time.deltaTime;
+                transform.position = Vector2.Lerp(transform.position, _mag.MagazineSlots[i].position, t / duration);
+            }
+        }
     }
 }
 

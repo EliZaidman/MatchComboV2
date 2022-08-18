@@ -28,12 +28,11 @@ public class TileSorter : MonoBehaviour
 
     private void MoveTile(object sender, EventArgs e)
     {
-        StartCoroutine(SortMagazineCorutine(3f));
+        StartCoroutine(SortMagazineCorutine(0.40f));
     }
 
     public IEnumerator SortMagazineCorutine(float duration)
     {
-        EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
         print("TIleMoverr");
         float t = 0;
         while (t < duration)
@@ -45,22 +44,6 @@ public class TileSorter : MonoBehaviour
                 _mag.SortedMagazine[i].transform.position = Vector2.Lerp(_mag.SortedMagazine[i].transform.position, _mag.MagazineSlots[i].position, t / duration);
             }
         }
-    }
 
-    public IEnumerator TileMover(float duration)
-    {
-        EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
-        print("TIleMoverr");
-        float t = 0;
-        while (t < duration)
-        {
-            yield return new WaitForEndOfFrame();
-            for (int i = 0; i < Magazine.Instance.SortedMagazine.Count; i++)
-            {
-                t += Time.deltaTime;
-                _mag.SortedMagazine[i].transform.position = Vector2.Lerp(_mag.SortedMagazine[i].transform.position, _mag.MagazineSlots[i].position, t / duration);
-            }
-        }
-        EventManager.Instance.SortTileEvent?.Invoke(this, EventArgs.Empty);
     }
 }
