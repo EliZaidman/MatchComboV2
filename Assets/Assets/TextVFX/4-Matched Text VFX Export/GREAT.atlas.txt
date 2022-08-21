@@ -1,0 +1,104 @@
+
+GREAT.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Exclamation Mark
+  rotate: true
+  xy: 371, 28
+  size: 217, 517
+  orig: 217, 517
+  offset: 0, 0
+  index: -1
+Exclamation Mark copy
+  rotate: true
+  xy: 371, 28
+  size: 217, 517
+  orig: 217, 517
+  offset: 0, 0
+  index: -1
+Red A
+  rotate: false
+  xy: 333, 626
+  size: 346, 383
+  orig: 346, 383
+  offset: 0, 0
+  index: -1
+Red E
+  rotate: false
+  xy: 1394, 410
+  size: 258, 337
+  orig: 258, 337
+  offset: 0, 0
+  index: -1
+Red E 2
+  rotate: true
+  xy: 1067, 749
+  size: 260, 338
+  orig: 260, 338
+  offset: 0, 0
+  index: -1
+Red M
+  rotate: true
+  xy: 714, 301
+  size: 373, 339
+  orig: 373, 339
+  offset: 0, 0
+  index: -1
+Red O
+  rotate: false
+  xy: 2, 173
+  size: 367, 367
+  orig: 367, 367
+  offset: 0, 0
+  index: -1
+Red S
+  rotate: true
+  xy: 890, 2
+  size: 297, 367
+  orig: 297, 367
+  offset: 0, 0
+  index: -1
+Red W
+  rotate: true
+  xy: 2, 542
+  size: 467, 329
+  orig: 467, 329
+  offset: 0, 0
+  index: -1
+WigWag A 1
+  rotate: false
+  xy: 371, 247
+  size: 341, 377
+  orig: 341, 377
+  offset: 0, 0
+  index: -1
+WigWag E 1
+  rotate: true
+  xy: 1407, 751
+  size: 258, 337
+  orig: 258, 337
+  offset: 0, 0
+  index: -1
+WigWag G 1
+  rotate: false
+  xy: 1055, 328
+  size: 337, 346
+  orig: 337, 346
+  offset: 0, 0
+  index: -1
+WigWag R 1
+  rotate: true
+  xy: 1259, 12
+  size: 314, 348
+  orig: 314, 348
+  offset: 0, 0
+  index: -1
+WigWag T 1
+  rotate: true
+  xy: 681, 676
+  size: 333, 384
+  orig: 333, 384
+  offset: 0, 0
+  index: -1

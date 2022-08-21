@@ -26,20 +26,16 @@ public class TileInput : MonoBehaviour
     {
         if (Comboable)
         {
-           VFX.gameObject.SetActive(true);
+            VFX.gameObject.SetActive(true);
         }
         else
         {
-           VFX.gameObject.SetActive(false);
+            VFX.gameObject.SetActive(false);
         }
     }
     private void OnMouseDown()
     {
         PressedOnTile();
-    }
-    private void OnMouseEnter()
-    {
-        
     }
 
     private void TileSelected()
@@ -50,13 +46,13 @@ public class TileInput : MonoBehaviour
         }
         Interactable = false;
         Magazine.Instance.TilesInMagazine.Add(gameObject.GetComponent<Tile>());
-        //EventManager.Instance.onClickOnTile?.Invoke(this, EventArgs.Empty);
         EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
         EventManager.Instance.CheckLostEvent?.Invoke(this, EventArgs.Empty);
     }
 
     public IEnumerator DestoryTile()
     {
+
         if (tile.Type == 99)
         {
             gameObject.SetActive(false);
@@ -70,12 +66,13 @@ public class TileInput : MonoBehaviour
         EventManager.Instance.CorutineStopper?.Invoke(this, EventArgs.Empty);
         yield return new WaitForSeconds(0.33f);
         EventManager.Instance.CorutineStarter?.Invoke(this, EventArgs.Empty);
+
         gameObject.SetActive(false);
     }
 
     public void PressedOnTile()
     {
-        EventManager.Instance.CorutineStarter?.Invoke(this, EventArgs.Empty);
+        StartCoroutine(PlayAnim(0));
         if (Interactable && !Magazine.Instance.MagazineIsFull && !Comboable)
         {
             Destroy(LayerCheck);
@@ -93,9 +90,26 @@ public class TileInput : MonoBehaviour
         }
         if (Comboable)
         {
+            EventManager.Instance.VFXAllign += AllignVfxText;
             Magazine.Instance.DestoryTiles(tile.Type);
             print("Combo");
-        }
+        } 
+    }
+
+    private IEnumerator PlayAnim(float Timer)
+    {
+        yield return new WaitForSeconds(Timer);
+        EventManager.Instance.CorutineStarter?.Invoke(this, EventArgs.Empty);
+    }
+    private IEnumerator StopAnim(float Timer)
+    {
+        yield return new WaitForSeconds(Timer);
+        EventManager.Instance.CorutineStopper?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void AllignVfxText(object sender, EventArgs e)
+    {
+        VFXTest.Instance.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z);
     }
 }
 

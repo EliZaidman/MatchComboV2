@@ -22,22 +22,29 @@ public class EventManager : MonoBehaviour
 
 
     //Tiles Events
-    public  EventHandler onClickOnTile;
-    public  EventHandler onComboMake;
-    public  EventHandler CorutineStopper;
-    public  EventHandler CorutineStarter;
+    public EventHandler onClickOnTile;
+    public EventHandler onComboMake;
+    public EventHandler CorutineStopper;
+    public EventHandler CorutineStarter;
 
     //Combo Events
-    public  EventHandler ComboEvent;
-    public  EventHandler MatchEvent;
-    public  EventHandler JokerEvent;
-    public  EventHandler BurnClipEvent;
-    public  EventHandler MagazineSizeIncrease;
+    public EventHandler ComboEvent;
+    public EventHandler MatchEvent;
+    public EventHandler JokerEvent;
+    public EventHandler BurnClipEvent;
+    public EventHandler MagazineSizeIncrease;
     public EventHandler CheckLostEvent;
     public EventHandler CheckWinEvent;
     public EventHandler ComboCaller;
 
     //Magazine Events
-    public  EventHandler MagazineSorterEve;
-    public  EventHandler DelayedSort;
+    public EventHandler MagazineSorterEve;
+    public EventHandler DelayedSort;
+
+    //Spine Events
+    public EventHandler VFXAllign;
+    public EventHandler Match4Event;
+    public EventHandler Match5Event;
+    public EventHandler Match6Event;
+
 }
