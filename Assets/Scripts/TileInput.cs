@@ -12,12 +12,12 @@ public class TileInput : MonoBehaviour
     public bool Comboable = false;
     private SkeletonAnimation skeleton;
     public SkeletonAnimation VFX;
-    private LayerChecker check;
+    private LayerChecker LayerCheck;
     public ParticleSystem PoofPS;
     private void Start()
     {
         _mag = Magazine.Instance;
-        check = GetComponent<LayerChecker>();
+        LayerCheck = GetComponent<LayerChecker>();
         tile = GetComponent<Tile>();
         skeleton = GetComponent<SkeletonAnimation>();
         // VFX = gameObject.transform.GetChild(0).GetComponent<SkeletonAnimation>();
@@ -44,14 +44,14 @@ public class TileInput : MonoBehaviour
 
     private void TileSelected()
     {
-        if (check)
+        if (LayerCheck)
         {
-            check.ToggleSpine();
+            LayerCheck.ToggleSpine();
         }
-        Magazine.Instance.TilesInMagazine.Add(gameObject.GetComponent<Tile>());
-        EventManager.Instance.onClickOnTile?.Invoke(this, EventArgs.Empty);
-        EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
         Interactable = false;
+        Magazine.Instance.TilesInMagazine.Add(gameObject.GetComponent<Tile>());
+        //EventManager.Instance.onClickOnTile?.Invoke(this, EventArgs.Empty);
+        EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
         EventManager.Instance.CheckLostEvent?.Invoke(this, EventArgs.Empty);
     }
 
@@ -75,9 +75,10 @@ public class TileInput : MonoBehaviour
 
     public void PressedOnTile()
     {
+        EventManager.Instance.CorutineStarter?.Invoke(this, EventArgs.Empty);
         if (Interactable && !Magazine.Instance.MagazineIsFull && !Comboable)
         {
-            Destroy(check);
+            Destroy(LayerCheck);
             Interactable = false;
             if (gameObject.GetComponent<LayerChecker>())
             {
