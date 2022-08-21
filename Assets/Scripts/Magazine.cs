@@ -172,9 +172,9 @@ public class Magazine : MonoBehaviour
                 }
                 if (Combo.Type == 99)
                 {
-                    if (NumOfJokers <1)
+                    if (NumOfJokers < 1)
                     {
-                    NumOfJokers++;
+                        NumOfJokers++;
                     }
                 }
             }
@@ -265,12 +265,15 @@ public class Magazine : MonoBehaviour
                 break;
             case 4:
                 EventManager.Instance.BurnClipEvent?.Invoke(this, EventArgs.Empty);
+                EventManager.Instance.Match4Event?.Invoke(this, EventArgs.Empty);
                 break;
             case 5:
                 EventManager.Instance.JokerEvent?.Invoke(this, EventArgs.Empty);
+                EventManager.Instance.Match5Event?.Invoke(this, EventArgs.Empty);
                 break;
             case 6:
                 EventManager.Instance.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
+                EventManager.Instance.Match6Event?.Invoke(this, EventArgs.Empty);
                 break;
             default:
                 print("Bad Switch Combo Count");

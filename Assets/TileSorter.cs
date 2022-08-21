@@ -34,6 +34,8 @@ public class TileSorter : MonoBehaviour
         {
             StartCoroutine(SortMagazineCorutine(0.15f));
         }
+
+
     }
     private void StartCorutine(object sender, EventArgs e)
     {
@@ -46,6 +48,7 @@ public class TileSorter : MonoBehaviour
 
     public IEnumerator SortMagazineCorutine(float duration)
     {
+        
         yield return new WaitForEndOfFrame();
         float t = 0;
         for (int i = 0; i < Magazine.Instance.SortedMagazine.Count; i++)
@@ -53,6 +56,8 @@ public class TileSorter : MonoBehaviour
             t += Time.deltaTime;
             _mag.SortedMagazine[i].transform.position = Vector2.MoveTowards(_mag.SortedMagazine[i].transform.position, _mag.MagazineSlots[i].position, t / duration);
         }
-
+        //if (_mag.SortedMagazine.Count > 0)
+        //    if (_mag.TilesInMagazine[_mag.TilesInMagazine.Count - 1].transform.position == _mag.MagazineSlots[_mag.TilesInMagazine.Count - 1].transform.position)
+        //        PlayAnimation = false;
     }
 }

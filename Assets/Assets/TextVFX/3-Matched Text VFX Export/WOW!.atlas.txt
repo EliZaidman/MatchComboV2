@@ -1,0 +1,83 @@
+
+WOW!.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Blue C
+  rotate: false
+  xy: 2, 159
+  size: 293, 344
+  orig: 293, 344
+  offset: 0, 0
+  index: -1
+Blue L
+  rotate: false
+  xy: 225, 665
+  size: 248, 341
+  orig: 248, 341
+  offset: 0, 0
+  index: -1
+Blue O
+  rotate: true
+  xy: 542, 325
+  size: 338, 337
+  orig: 338, 337
+  offset: 0, 0
+  index: -1
+Exclamation Mark
+  rotate: false
+  xy: 2, 505
+  size: 221, 501
+  orig: 221, 501
+  offset: 0, 0
+  index: -1
+Green C
+  rotate: false
+  xy: 550, 6
+  size: 271, 317
+  orig: 271, 317
+  offset: 0, 0
+  index: -1
+Green E
+  rotate: false
+  xy: 307, 2
+  size: 241, 318
+  orig: 241, 318
+  offset: 0, 0
+  index: -1
+Green I
+  rotate: true
+  xy: 2, 32
+  size: 125, 303
+  orig: 125, 303
+  offset: 0, 0
+  index: -1
+Green N
+  rotate: false
+  xy: 823, 25
+  size: 258, 298
+  orig: 258, 298
+  offset: 0, 0
+  index: -1
+Left W
+  rotate: true
+  xy: 297, 322
+  size: 341, 243
+  orig: 341, 243
+  offset: 0, 0
+  index: -1
+O
+  rotate: false
+  xy: 720, 748
+  size: 258, 258
+  orig: 258, 258
+  offset: 0, 0
+  index: -1
+Right W
+  rotate: true
+  xy: 475, 665
+  size: 341, 243
+  orig: 341, 243
+  offset: 0, 0
+  index: -1

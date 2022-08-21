@@ -1,0 +1,55 @@
+
+AMAZING.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Red A
+  rotate: false
+  xy: 2, 538
+  size: 346, 383
+  orig: 346, 383
+  offset: 0, 0
+  index: -1
+Red A copy
+  rotate: false
+  xy: 2, 153
+  size: 346, 383
+  orig: 346, 383
+  offset: 0, 0
+  index: -1
+Red M
+  rotate: false
+  xy: 350, 582
+  size: 373, 339
+  orig: 373, 339
+  offset: 0, 0
+  index: -1
+WigWag G 2
+  rotate: false
+  xy: 350, 232
+  size: 339, 348
+  orig: 339, 348
+  offset: 0, 0
+  index: -1
+WigWag I 1
+  rotate: true
+  xy: 2, 2
+  size: 149, 353
+  orig: 149, 353
+  offset: 0, 0
+  index: -1
+WigWag N 1
+  rotate: false
+  xy: 725, 580
+  size: 296, 341
+  orig: 296, 341
+  offset: 0, 0
+  index: -1
+WigWag Z 1
+  rotate: false
+  xy: 691, 230
+  size: 312, 348
+  orig: 312, 348
+  offset: 0, 0
+  index: -1
