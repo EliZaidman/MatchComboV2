@@ -51,7 +51,10 @@ public class VFXTest : MonoBehaviour
     }
     private void Match4(object sender, EventArgs e)
     {
+        if (Magazine.Instance.MagazineIsFull)
+        {
         transform.position = _MiddlePos.position;
+        }
         AnimationIndex = UnityEngine.Random.Range(0, 3);
         skel.skeletonDataAsset = _Match4;
         skel.Initialize(true);

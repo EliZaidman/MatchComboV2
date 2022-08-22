@@ -11,7 +11,7 @@ public class ComboManager : MonoBehaviour
     void Start()
     {
         mag = Magazine.Instance;
-        EventManager.Instance.MatchEvent += MatchCombo;
+        EventManager.Instance.Match3Event += MatchCombo;
         EventManager.Instance.JokerEvent += JokerCombo;
         EventManager.Instance.MagazineSizeIncrease += MagazineAddCombo;
         EventManager.Instance.BurnClipEvent += BurnClipEvent;
@@ -19,6 +19,10 @@ public class ComboManager : MonoBehaviour
 
     private void BurnClipEvent(object sender, EventArgs e)
     {
+        if (!mag.MagazineIsFull)
+        {
+            EventManager.Instance.VFXAllign?.Invoke(this, EventArgs.Empty);
+        }
         foreach (var item in mag.SortedMagazine)
         {
             StartCoroutine(item.input.DestoryTile());

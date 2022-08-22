@@ -261,7 +261,7 @@ public class Magazine : MonoBehaviour
         switch (amount)
         {
             case 3:
-                EventManager.Instance.MatchEvent?.Invoke(this, EventArgs.Empty);
+                EventManager.Instance.Match3Event?.Invoke(this, EventArgs.Empty);
                 break;
             case 4:
                 EventManager.Instance.BurnClipEvent?.Invoke(this, EventArgs.Empty);
@@ -297,4 +297,5 @@ public class Magazine : MonoBehaviour
     {
         StartCoroutine(DelayedsSort(0.25f));
     }
+
 }

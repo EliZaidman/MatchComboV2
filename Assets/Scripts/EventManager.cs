@@ -29,7 +29,6 @@ public class EventManager : MonoBehaviour
 
     //Combo Events
     public EventHandler ComboEvent;
-    public EventHandler MatchEvent;
     public EventHandler JokerEvent;
     public EventHandler BurnClipEvent;
     public EventHandler MagazineSizeIncrease;
@@ -43,6 +42,7 @@ public class EventManager : MonoBehaviour
 
     //Spine Events
     public EventHandler VFXAllign;
+    public EventHandler Match3Event;
     public EventHandler Match4Event;
     public EventHandler Match5Event;
     public EventHandler Match6Event;
