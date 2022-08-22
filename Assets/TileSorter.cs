@@ -27,23 +27,23 @@ public class TileSorter : MonoBehaviour
         EventManager.Instance.CorutineStarter += StartCorutine;
     }
 
-    public bool PlayAnimation = true;
+    public bool WeWon = false;
     private void LateUpdate()
     {
-        if (PlayAnimation)
-        {
+        if (!WeWon)
             StartCoroutine(SortMagazineCorutine(0.15f));
-        }
+        else
+            StartCoroutine(SortMagazineCorutine(0.01f));
 
 
     }
     private void StartCorutine(object sender, EventArgs e)
     {
-        PlayAnimation = true;
+        WeWon = false;
     }
     private void StopCorutine(object sender, EventArgs e)
     {
-        PlayAnimation = false;
+        WeWon = true;
     }
 
     public IEnumerator SortMagazineCorutine(float duration)

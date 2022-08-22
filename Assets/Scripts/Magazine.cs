@@ -280,7 +280,6 @@ public class Magazine : MonoBehaviour
 
                 break;
         }
-        EventManager.Instance.CheckWinEvent?.Invoke(this, EventArgs.Empty);
     }
 
     private IEnumerator DelayedsSort(float SortDelay)

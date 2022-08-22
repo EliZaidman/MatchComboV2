@@ -38,7 +38,7 @@ public class TileInput : MonoBehaviour
         PressedOnTile();
     }
 
-    private void TileSelected()
+    public void TileSelected()
     {
         if (LayerCheck)
         {
@@ -60,7 +60,6 @@ public class TileInput : MonoBehaviour
         VFX.GetComponent<MeshRenderer>().enabled = false;
         skeleton.timeScale = 1f;
         Magazine.Instance.TilesInMagazine.Remove(this.tile);
-        BoardManager.Instance.TilesInBoard.Remove(this.tile);
         yield return new WaitForSeconds(0.25f);
         PoofPS.Play();
         EventManager.Instance.CorutineStopper?.Invoke(this, EventArgs.Empty);
@@ -72,6 +71,7 @@ public class TileInput : MonoBehaviour
 
     public void PressedOnTile()
     {
+        BoardManager.Instance.TilesInBoard.Remove(this.tile);
         StartCoroutine(PlayAnim(0));
         if (Interactable && !Magazine.Instance.MagazineIsFull && !Comboable)
         {

@@ -27,6 +27,8 @@ public class ComboManager : MonoBehaviour
         {
             StartCoroutine(item.input.DestoryTile());
         }
+        //CheckForCombo(0.2f);
+
     }
 
     private void MatchCombo(object sender, EventArgs e)
@@ -39,6 +41,8 @@ public class ComboManager : MonoBehaviour
         GameObject joker;
         joker = Instantiate(Joker, new Vector3(0, -3.8f, 0), Quaternion.identity);
         StartCoroutine(WaitBeforeRegister(joker));
+        //CheckForCombo(0.2f);
+
     }
     private void MagazineAddCombo(object sender, EventArgs e)
     {
@@ -47,6 +51,7 @@ public class ComboManager : MonoBehaviour
         {
             EventManager.Instance.JokerEvent?.Invoke(this, EventArgs.Empty);
 
+        //CheckForCombo(0.2f);
             return;
         }
         mag.transform.localScale = new Vector3(0.42f, 0.4f, 0.4f);
@@ -56,7 +61,7 @@ public class ComboManager : MonoBehaviour
         {
             item.transform.position = new Vector3(item.transform.position.x - 0.3f, item.transform.position.y, item.transform.position.z);
         }
-
+        //CheckForCombo(0.2f);
     }
 
     // Update is called once per frame
@@ -69,5 +74,12 @@ public class ComboManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.15f);
         tile.GetComponent<TileInput>().PressedOnTile();
+    }  
+    
+    IEnumerator CheckForCombo(float time)
+    {
+        yield return new WaitForSeconds(time);
+        EventManager.Instance.ComboEvent?.Invoke(this, EventArgs.Empty);
     }
+
 }
