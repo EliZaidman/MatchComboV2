@@ -297,4 +297,29 @@ public class Magazine : MonoBehaviour
         StartCoroutine(DelayedsSort(0.25f));
     }
 
+    public bool IsJokerActive()
+    {
+        bool FoundJoker = false;
+        foreach (var item in TilesInMagazine)
+        {
+            if (item == item.Joker)
+            {
+                FoundJoker = true;
+
+            }
+            else
+            {
+                FoundJoker = false;
+            }
+        }
+
+        if (FoundJoker)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
