@@ -37,15 +37,20 @@ public class ComboManager : MonoBehaviour
     }
     private void JokerCombo(object sender, EventArgs e)
     {
+        print("Combo Of JokerCombo (Called From" + this + ")");
+
         EventManager.Instance.VFXAllign?.Invoke(this, EventArgs.Empty);
         GameObject joker;
         joker = Instantiate(Joker, new Vector3(0, -3.8f, 0), Quaternion.identity);
-        StartCoroutine(WaitBeforeRegister(joker));
+        mag.TilesInMagazine.Add(joker.GetComponent<Tile>());
+        //StartCoroutine(WaitBeforeRegister(joker));
         //CheckForCombo(0.2f);
 
     }
     private void MagazineAddCombo(object sender, EventArgs e)
     {
+        print("Combo Of MagazineAddCombo (Called From" + this + ")");
+
         EventManager.Instance.VFXAllign?.Invoke(this, EventArgs.Empty);
         if (mag.mSize >= 8)
         {
@@ -72,7 +77,7 @@ public class ComboManager : MonoBehaviour
 
     IEnumerator WaitBeforeRegister(GameObject tile)
     {
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.35f);
         tile.GetComponent<TileInput>().PressedOnTile();
     }  
     

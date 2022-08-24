@@ -41,41 +41,79 @@ public class PlayState : MonoBehaviour
     }
     private void LostEvent(object sender, EventArgs e)
     {
-        if (true)
+        if (!mag.JokerIsActive)
         {
             if (mag.SortedMagazine.Count == mag.mSize
-                && mag._NumberOfones < 3
-                && mag._NumberOftwos < 3
-                && mag._NumberOfthrees < 3
-                && mag._NumberOffours < 3
-                && mag._NumberOffives < 3
-                && mag._NumberOfsix < 3
-                && mag._NumberOfSeven < 3
-                && mag._NumberOfEight < 3
-                && mag.NumberOfNine < 3
-                )
+            && mag._NumberOfones < 3
+            && mag._NumberOftwos < 3
+            && mag._NumberOfthrees < 3
+            && mag._NumberOffours < 3
+            && mag._NumberOffives < 3
+            && mag._NumberOfsix < 3
+            && mag._NumberOfSeven < 3
+            && mag._NumberOfEight < 3
+            && mag.NumberOfNine < 3
+
+            )
             {
                 mag.UI.SetActive(true);
+                foreach (var item in mag.TilesInMagazine)
+                {
+                    item.input.Interactable = false;
+                }
+                foreach (var item in BoardManager.Instance.TilesInBoard)
+                {
+                    item.input.Interactable = false;
+                }
+            }
+        }
+        else if(mag.JokerIsActive)
+        {
+            if (mag.SortedMagazine.Count == mag.mSize
+            && mag._NumberOfones < 2
+            && mag._NumberOftwos < 2
+            && mag._NumberOfthrees < 2
+            && mag._NumberOffours < 2
+            && mag._NumberOffives < 2
+            && mag._NumberOfsix < 2
+            && mag._NumberOfSeven < 2
+            && mag._NumberOfEight < 2
+            && mag.NumberOfNine < 2
+
+            )
+            {
+                mag.UI.SetActive(true);
+                foreach (var item in mag.TilesInMagazine)
+                {
+                    item.input.Interactable = false;
+                }
+                foreach (var item in BoardManager.Instance.TilesInBoard)
+                {
+                    item.input.Interactable = false;
+                }
             }
         }
 
+
+
     }
 
-    bool CheckedIfWon = false;
+    public bool CheckedIfWon = false;
     private IEnumerator WinEvent()
     {
-        EventManager.Instance.CorutineStarter?.Invoke(this, EventArgs.Empty);
+        EventManager.Instance.BurnClipEvent?.Invoke(this, EventArgs.Empty);
         CheckedIfWon = true;
         print("You Win!!!!");
 
 
         // Version 1 // 
-
+        yield return new WaitForSeconds(0.4f);
+        EventManager.Instance.CorutineStarter?.Invoke(this, EventArgs.Empty);
         foreach (var item in BoardManager.Instance.TilesInBoard)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.4f);
             item.GetComponent<Tile>().input.TileSelected();
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.4f);
             StartCoroutine(item.GetComponent<Tile>().input.DestoryTile());
         }
 

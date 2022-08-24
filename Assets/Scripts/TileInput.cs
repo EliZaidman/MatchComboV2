@@ -35,7 +35,10 @@ public class TileInput : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        if (!PlayState.Instance.CheckedIfWon)
+        {
         PressedOnTile();
+        }
     }
 
     public void TileSelected()
