@@ -6,6 +6,7 @@ using Spine.Unity;
 
 public class TileInput : MonoBehaviour
 {
+    EventManager Emanager;
     public bool Interactable = true;
     Tile tile;
     Magazine _mag;
@@ -16,7 +17,10 @@ public class TileInput : MonoBehaviour
     public ParticleSystem PoofPS;
     private void Start()
     {
+
+        //Caching alot of shit
         _mag = Magazine.Instance;
+        Emanager = EventManager.Instance;
         LayerCheck = GetComponent<LayerChecker>();
         tile = GetComponent<Tile>();
         skeleton = GetComponent<SkeletonAnimation>();
@@ -24,6 +28,7 @@ public class TileInput : MonoBehaviour
     }
     private void Update()
     {
+        //Active And Deactivate VFX
         if (Comboable)
         {
             VFX.gameObject.SetActive(true);
@@ -35,51 +40,65 @@ public class TileInput : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        //If You didnt win you can press on the tiles.
         if (!PlayState.Instance.CheckedIfWon)
         {
-        PressedOnTile();
+            PressedOnTile();
         }
-    }   
+    }
 
     public void TileSelected()
     {
+        //Checking if there is LayerCheck its the same as ? and swapping to Spine instad
         if (LayerCheck)
         {
             LayerCheck.ToggleSpine();
         }
+        //Making the tile Uninterectable, adds it to the UNSORTED list and then sorting it while checking if you lost(noob)
+        //disabling input here as well, if i want for example to fake press it from other place and i dont use the PressedOnTile()
         Interactable = false;
-        Magazine.Instance.TilesInMagazine.Add(gameObject.GetComponent<Tile>());
-        EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
-        EventManager.Instance.CheckLostEvent?.Invoke(this, EventArgs.Empty);
+        _mag.TilesInMagazine.Add(gameObject.GetComponent<Tile>());
+        Emanager.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
+        Emanager.CheckLostEvent?.Invoke(this, EventArgs.Empty);
     }
 
     public IEnumerator DestoryTile()
     {
-
+        //If its joker dont destory it
         if (tile.Type == 99)
         {
             gameObject.SetActive(false);
         }
+        //Turrning of VFX
         VFX.GetComponent<MeshRenderer>().enabled = false;
+        //Activating the BIG BRAIN Animation STRAT
         skeleton.timeScale = 1f;
-        Magazine.Instance.TilesInMagazine.Remove(this.tile);
+        _mag.TilesInMagazine.Remove(this.tile);
         yield return new WaitForSeconds(0.25f);
+        //Giving time to VFX to play (1/4 second)
         PoofPS.Play();
-        EventManager.Instance.CorutineStopper?.Invoke(this, EventArgs.Empty);
+        //Stops the Sorter from moving the tiles to the right place beacuse VFX is playing.
+        Emanager.CorutineStopper?.Invoke(this, EventArgs.Empty);
         yield return new WaitForSeconds(0.33f);
-        EventManager.Instance.CorutineStarter?.Invoke(this, EventArgs.Empty);
-
+        //Starts the Sorter from moving the tiles to the right place beacuse VFX is stopped playing.
+        Emanager.CorutineStarter?.Invoke(this, EventArgs.Empty);
+        //Deactivating the GameObject(AKA Tile)
         gameObject.SetActive(false);
     }
 
     public void PressedOnTile()
     {
+        //Removes the tile from the Board list
         BoardManager.Instance.TilesInBoard.Remove(this.tile);
+        //FailSafe for sorter not activating right
+        //Its Corutine beacuse i need delay in other placeses
         StartCoroutine(PlayAnim(0));
-        if (Interactable && !Magazine.Instance.MagazineIsFull && !Comboable)
+        if (Interactable && !_mag.MagazineIsFull && !Comboable)
         {
+            //Force Removing The Layer Checker for Pain in the ass bugs
             Destroy(LayerCheck);
             Interactable = false;
+            //FailSafe if it didnt remove the LayerChecker!
             if (GetComponent<LayerChecker>())
             {
                 GetComponent<LayerChecker>().enabled = false;
@@ -93,10 +112,11 @@ public class TileInput : MonoBehaviour
         }
         if (Comboable)
         {
-            EventManager.Instance.VFXAllign += AllignVfxText;
-            Magazine.Instance.DestoryTiles(tile.Type);
+            //If its Comboable use the Text VFX and destory the tiles Sadge
+            Emanager.VFXAllign += AllignVfxText;
+            _mag.DestoryTiles(tile.Type);
             print("Combo");
-        } 
+        }
     }
 
     private IEnumerator PlayAnim(float Timer)
@@ -110,6 +130,7 @@ public class TileInput : MonoBehaviour
         EventManager.Instance.CorutineStopper?.Invoke(this, EventArgs.Empty);
     }
 
+    //This is what you use to make the VFX Appear in the right place
     private void AllignVfxText(object sender, EventArgs e)
     {
         VFXTest.Instance.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z);

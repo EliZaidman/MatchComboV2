@@ -7,6 +7,7 @@ using UnityEngine;
 public class Magazine : MonoBehaviour
 {
     public static Magazine Instance { get; private set; }
+    EventManager Emanager;
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -29,10 +30,12 @@ public class Magazine : MonoBehaviour
     public bool MagazineIsFull = false;
     public GameObject UI;
 
+
     private void Start()
     {
-        EventManager.Instance.MagazineSorterEve += SortMagazine;
-        EventManager.Instance.DelayedSort += DelayedSortEvent;
+        Emanager = EventManager.Instance;
+        Emanager.MagazineSorterEve += SortMagazine;
+        Emanager.DelayedSort += DelayedSortEvent;
         CheckSlots();
 
     }
@@ -101,10 +104,10 @@ public class Magazine : MonoBehaviour
 
 
     }
-
+    bool wentInto = false;
     private void Sidur(int Seira, int Mispar, int Rezef)
     {
-
+        // If Joker //IS NOT\\ You Have Same Type And Same Name Add +1 To The Counter
         if (Seira == Rezef && !JokerIsActive)
         {
             foreach (var item in TilesInMagazine)
@@ -118,6 +121,7 @@ public class Magazine : MonoBehaviour
             }
         }
 
+        // If Joker //IS Active\\ And You Have Same Type And Same Name Add +1 And Fix JokerPoS
         else
         {
             if (Seira == Rezef && JokerIsActive)
@@ -132,26 +136,29 @@ public class Magazine : MonoBehaviour
                     }
 
                 }
+                //Checking From Highest Combo To Lowest So it allways will be with Highest Combo Possible.
                 JokerPlace(6);
                 JokerPlace(5);
                 JokerPlace(4);
                 JokerPlace(3);
                 JokerPlace(2);
+
+                //It Dose it only when thereis Combo/Its First Tile So It Will Be Registerd
                 foreach (var item in TilesInMagazine)
                 {
 
-                    if (item.Type == 99 && !SortedMagazine.Contains(item) && !wentInto)
+                    if (item.Type == 99 && !SortedMagazine.Contains(item))
                     {
                         SortedMagazine.Add(item);
                         print("ADDED JOKER");
                     }
                 }
+
             }
         }
 
     }
 
-    bool wentInto = false;
 
     private void JokerPlace(int combo)
     {
@@ -167,6 +174,7 @@ public class Magazine : MonoBehaviour
         {
             foreach (var item in TilesInMagazine)
             {
+                //Adding The Joker To List Beacuse i dont do it manualy above(It Dose Alot Of Bugs)
 
                 if (item.Type == 99 && !SortedMagazine.Contains(item) && NumOfJokers == 1)
                 {
@@ -175,23 +183,29 @@ public class Magazine : MonoBehaviour
                 }
                 if (item == item.Joker && NumOfJokers <= 2)
                 {
+                    //If It Found Combo Take it Place and Announce to everyone not to take "Joker Spot"
                     if (combo > 2)
                     {
                         wentInto = true;
                         Swap(SortedMagazine, combo, combo);
-
+                        break;
                     }
                     else
-
+                    //Forcses the List To Take the slot after Combo
+                    //If The Highest Combo 4 For Example, it will take slot 4
+                    //Beacuse The list Start From 0 its easy to manuly and effectivly place the Joker at the right place
                     if (!wentInto)
                     {
                         SortedMagazine[combo] = item;
-                        print("ELSEEEEE");
+                        print("Place Joker At The Right Place");
+
                     }
                 }
             }
         }
     }
+
+    //Black Magic Ignore This
     public static IList<T> Swap<T>(IList<T> list, int indexA, int indexB)
     {
         (list[indexA], list[indexB]) = (list[indexB], list[indexA]);
@@ -199,6 +213,7 @@ public class Magazine : MonoBehaviour
     }
     private void TileCounter()
     {
+        //Reset The Counters
         _NumberOfones = 0;
         _NumberOftwos = 0;
         _NumberOfthrees = 0;
@@ -209,6 +224,7 @@ public class Magazine : MonoBehaviour
         _NumberOfEight = 0;
         NumberOfNine = 0;
         NumOfJokers = 0;
+        //Search for right Tile Type and add it to the right counter
         foreach (var item in TilesInMagazine)
         {
             switch (item.Type)
@@ -250,20 +266,23 @@ public class Magazine : MonoBehaviour
         }
     }
 
-    public void ComboMaker(int numberOf, int imgNumber)
+    public void ComboMaker(int TileAmountIs, int TileType)
     {
-        if (JokerIsActive && numberOf > 1)
+        //If Joker is active The Lowest amount of the same tiles is 2 for Combo
+        if (JokerIsActive && TileAmountIs > 1)
         {
             foreach (var Combo in SortedMagazine)
             {
 
-                if (Combo.Type == imgNumber)
+                if (Combo.Type == TileType)
                 {
-
+                    //Waits for Other Methods to be over so it will register just in time
                     StartCoroutine(Wait(Combo));
                 }
+                //99 is Joker
                 if (Combo.Type == 99)
                 {
+                    //FailSafe if it dosnt Add The Joker For SomeReason(May happen on slow phones)
                     if (NumOfJokers < 1)
                     {
                         NumOfJokers++;
@@ -273,14 +292,16 @@ public class Magazine : MonoBehaviour
 
         }
         else
-        if (numberOf > 2)
+
+        //Normal Combos, Lowest amount of tiles is for combo is 3
+        if (TileAmountIs > 2)
         {
             foreach (var Combo in SortedMagazine)
             {
 
-                if (Combo.Type == imgNumber)
+                if (Combo.Type == TileType)
                 {
-
+                    //Waits for Other Methods to be over so it will register just in time to Annouce this tile can be Interactable AKA Comboable
                     StartCoroutine(Wait(Combo));
                 }
             }
@@ -290,9 +311,9 @@ public class Magazine : MonoBehaviour
             foreach (var Combo in SortedMagazine)
             {
 
-                if (Combo.Type == imgNumber)
+                if (Combo.Type == TileType)
                 {
-
+                    //Waits for Other Methods to be over so it will register just in time to Annouce this tile can be Interactable AKA Comboable
                     Combo.input.Comboable = false;
                 }
             }
@@ -312,6 +333,7 @@ public class Magazine : MonoBehaviour
         int counter = 0;
         foreach (var item in SortedMagazine)
         {
+            //If Joker is Active Make Sure its Beeing Deleted as well as the other tiles
             if (JokerIsActive)
             {
                 if (item.Type == 99)
@@ -321,6 +343,7 @@ public class Magazine : MonoBehaviour
                     //TilesInMagazine.Remove(item);
                 }
             }
+            //For Everytile that beeing destory add +1 To The Counter, in the end it will annouce the combo 
             if (item.Type == num)
             {
                 counter++;
@@ -332,46 +355,47 @@ public class Magazine : MonoBehaviour
             //StartCoroutine(DelayedSort(0.45f));
         }
 
+        //Easy way to make the combo +1
         if (JokerIsActive)
             Combos(counter + 1);
         else
             Combos(counter);
 
-
-        EventManager.Instance.DelayedSort?.Invoke(this, EventArgs.Empty);
+        //Call The Sort Little bit later so it will have enough time to finish all the methods.
+        Emanager.DelayedSort?.Invoke(this, EventArgs.Empty);
 
 
 
 
     }
 
-
+    //Take the Combo And call the right event
     public void Combos(int amount)
     {
         switch (amount)
         {
             case 3:
-                EventManager.Instance.Match3Event?.Invoke(this, EventArgs.Empty);
+                Emanager.Match3Event?.Invoke(this, EventArgs.Empty);
                 break;
             case 4:
-                EventManager.Instance.BurnClipEvent?.Invoke(this, EventArgs.Empty);
-                EventManager.Instance.Match4Event?.Invoke(this, EventArgs.Empty);
+                Emanager.BurnClipEvent?.Invoke(this, EventArgs.Empty);
+                Emanager.Match4Event?.Invoke(this, EventArgs.Empty);
                 break;
             case 5:
-                EventManager.Instance.JokerEvent?.Invoke(this, EventArgs.Empty);
-                EventManager.Instance.Match5Event?.Invoke(this, EventArgs.Empty);
+                Emanager.JokerEvent?.Invoke(this, EventArgs.Empty);
+                Emanager.Match5Event?.Invoke(this, EventArgs.Empty);
                 break;
             case 6:
-                EventManager.Instance.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
-                EventManager.Instance.Match6Event?.Invoke(this, EventArgs.Empty);
+                Emanager.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
+                Emanager.Match6Event?.Invoke(this, EventArgs.Empty);
                 break;
             case 7:
-                EventManager.Instance.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
-                EventManager.Instance.Match6Event?.Invoke(this, EventArgs.Empty);
+                Emanager.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
+                Emanager.Match6Event?.Invoke(this, EventArgs.Empty);
                 break;
             case 8:
-                EventManager.Instance.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
-                EventManager.Instance.Match6Event?.Invoke(this, EventArgs.Empty);
+                Emanager.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
+                Emanager.Match6Event?.Invoke(this, EventArgs.Empty);
                 break;
             default:
                 print("Bad Switch Combo Count");
@@ -386,7 +410,7 @@ public class Magazine : MonoBehaviour
         TileCounter();
         SederInMachsanit();
         yield return new WaitForSeconds(SortDelay);
-        EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
+        Emanager.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
         //EventManager.Instance.CorutineStarter?.Invoke(this, EventArgs.Empty);
     }
 
@@ -395,6 +419,8 @@ public class Magazine : MonoBehaviour
         StartCoroutine(DelayedsSort(0.25f));
     }
 
+
+    //Maybe Good Bool to check for Joker?
     public bool IsJokerActive()
     {
         bool FoundJoker = false;
