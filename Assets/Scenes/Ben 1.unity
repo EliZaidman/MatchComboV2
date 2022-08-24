@@ -5776,7 +5776,7 @@ PrefabInstance:
       objectReference: {fileID: 994317096}
     - target: {fileID: 729445769481108488, guid: f5724896b90f09343ad68fbb8870ab1f, type: 3}
       propertyPath: NumOfJokers
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 729445769481108488, guid: f5724896b90f09343ad68fbb8870ab1f, type: 3}
       propertyPath: numTiles.Array.size

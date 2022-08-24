@@ -39,7 +39,7 @@ public class TileInput : MonoBehaviour
         {
         PressedOnTile();
         }
-    }
+    }   
 
     public void TileSelected()
     {
@@ -80,9 +80,9 @@ public class TileInput : MonoBehaviour
         {
             Destroy(LayerCheck);
             Interactable = false;
-            if (gameObject.GetComponent<LayerChecker>())
+            if (GetComponent<LayerChecker>())
             {
-                gameObject.GetComponent<LayerChecker>().enabled = false;
+                GetComponent<LayerChecker>().enabled = false;
             }
             TileSelected();
             print("ClickedOnTile");

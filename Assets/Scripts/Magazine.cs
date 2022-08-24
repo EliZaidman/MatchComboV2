@@ -140,7 +140,7 @@ public class Magazine : MonoBehaviour
                 foreach (var item in TilesInMagazine)
                 {
 
-                    if (item.Type == 99 && !SortedMagazine.Contains(item) && NumOfJokers == 1)
+                    if (item.Type == 99 && !SortedMagazine.Contains(item) && !wentInto)
                     {
                         SortedMagazine.Add(item);
                         print("ADDED JOKER");

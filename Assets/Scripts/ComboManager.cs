@@ -42,7 +42,6 @@ public class ComboManager : MonoBehaviour
         EventManager.Instance.VFXAllign?.Invoke(this, EventArgs.Empty);
         GameObject joker;
         joker = Instantiate(Joker, new Vector3(0, -3.8f, 0), Quaternion.identity);
-        mag.TilesInMagazine.Add(joker.GetComponent<Tile>());
         //StartCoroutine(WaitBeforeRegister(joker));
         //CheckForCombo(0.2f);
 
