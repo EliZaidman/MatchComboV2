@@ -53,6 +53,17 @@ public class Magazine : MonoBehaviour
 
         if (NumOfJokers > 0) JokerIsActive = true;
         else JokerIsActive = false;
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            foreach (var item in SortedMagazine)
+            {
+                if (item == item.Joker)
+                {
+                    SortedMagazine[4] = item;
+                }
+            }
+        }
     }
 
     public void SortMagazine(object sender, EventArgs e)
@@ -75,7 +86,7 @@ public class Magazine : MonoBehaviour
             Sidur(_NumberOfSeven, 7, i);
             Sidur(_NumberOfEight, 8, i);
             Sidur(NumberOfNine, 9, i);
-            Sidur(NumOfJokers, 99, i);
+            //Sidur(NumOfJokers, 99, i);
         }
 
         ComboMaker(_NumberOfones, 1);
@@ -93,17 +104,90 @@ public class Magazine : MonoBehaviour
 
     private void Sidur(int Seira, int Mispar, int Rezef)
     {
-        if (Seira == Rezef)
+
+        if (Seira == Rezef && !JokerIsActive)
         {
             foreach (var item in TilesInMagazine)
             {
+
                 if (item.Type == Mispar)
                 {
                     SortedMagazine.Add(item);
+                    print("NOT ACTIVE");
                 }
             }
         }
 
+        else
+        {
+            if (Seira == Rezef && JokerIsActive)
+            {
+
+                foreach (var item in TilesInMagazine)
+                {
+                    if (item.Type == Mispar)
+                    {
+                        SortedMagazine.Add(item);
+
+                    }
+
+                }
+                JokerPlace(6);
+                JokerPlace(5);
+                JokerPlace(4);
+                JokerPlace(3);
+                JokerPlace(2);
+
+            }
+        }
+
+    }
+
+    bool wentInto = false;
+
+    private void JokerPlace(int combo)
+    {
+        if (_NumberOfones == combo
+        || _NumberOftwos == combo
+        || _NumberOfthrees == combo
+        || _NumberOffours == combo
+        || _NumberOffives == combo
+        || _NumberOfsix == combo
+        || _NumberOfSeven == combo
+        || _NumberOfEight == combo
+        || NumberOfNine == combo)
+        {
+            foreach (var item in TilesInMagazine)
+            {
+
+                if (item.Type == 99 && !SortedMagazine.Contains(item) && NumOfJokers == 1)
+                {
+                    SortedMagazine.Add(item);
+                    print("ADDED JOKER");
+                }
+                if (item == item.Joker && NumOfJokers <= 2)
+                {
+                    if (combo > 2)
+                    {
+                        wentInto = true;
+                        Swap(SortedMagazine, combo, combo);
+
+                    }
+                    else
+
+                    if (!wentInto)
+                    {
+                        SortedMagazine[combo] = item;
+                        print("ELSEEEEE");
+                    }
+                }
+            }
+        }
+    }
+    public static IList<T> Swap<T>(IList<T> list, int indexA, int indexB)
+    {
+        (list[indexA], list[indexB]) = (list[indexB], list[indexA]);
+        return list;
     }
     private void TileCounter()
     {
@@ -218,7 +302,6 @@ public class Magazine : MonoBehaviour
     public void DestoryTiles(int num)
     {
         int counter = 0;
-
         foreach (var item in SortedMagazine)
         {
             if (JokerIsActive)
@@ -232,22 +315,21 @@ public class Magazine : MonoBehaviour
             }
             if (item.Type == num)
             {
+                counter++;
                 StartCoroutine(item.input.DestoryTile());
                 //SortedMagazine.Remove(item);
-                counter++;
-
+                //EventManager.Instance.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
             }
 
             //StartCoroutine(DelayedSort(0.45f));
         }
-        if (JokerIsActive)
-        {
-            Combos(counter + 1);
 
-            print("Joker Combo");
-        }
-        else Combos(counter);
-        print("Normal Combo");
+        if (JokerIsActive)
+            Combos(counter + 1);
+        else
+            Combos(counter);
+
+
         EventManager.Instance.DelayedSort?.Invoke(this, EventArgs.Empty);
 
 
@@ -272,6 +354,14 @@ public class Magazine : MonoBehaviour
                 EventManager.Instance.Match5Event?.Invoke(this, EventArgs.Empty);
                 break;
             case 6:
+                EventManager.Instance.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
+                EventManager.Instance.Match6Event?.Invoke(this, EventArgs.Empty);
+                break;
+            case 7:
+                EventManager.Instance.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
+                EventManager.Instance.Match6Event?.Invoke(this, EventArgs.Empty);
+                break;
+            case 8:
                 EventManager.Instance.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
                 EventManager.Instance.Match6Event?.Invoke(this, EventArgs.Empty);
                 break;

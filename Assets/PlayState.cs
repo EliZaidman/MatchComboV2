@@ -98,22 +98,22 @@ public class PlayState : MonoBehaviour
 
     }
 
-    bool CheckedIfWon = false;
+    public bool CheckedIfWon = false;
     private IEnumerator WinEvent()
     {
-        EventManager.Instance.CorutineStarter?.Invoke(this, EventArgs.Empty);
+        EventManager.Instance.BurnClipEvent?.Invoke(this, EventArgs.Empty);
         CheckedIfWon = true;
         print("You Win!!!!");
-        EventManager.Instance.BurnClipEvent?.Invoke(this, EventArgs.Empty);
 
 
         // Version 1 // 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
+        EventManager.Instance.CorutineStarter?.Invoke(this, EventArgs.Empty);
         foreach (var item in BoardManager.Instance.TilesInBoard)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.4f);
             item.GetComponent<Tile>().input.TileSelected();
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.4f);
             StartCoroutine(item.GetComponent<Tile>().input.DestoryTile());
         }
 
