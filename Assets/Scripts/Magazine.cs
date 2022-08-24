@@ -137,7 +137,15 @@ public class Magazine : MonoBehaviour
                 JokerPlace(4);
                 JokerPlace(3);
                 JokerPlace(2);
+                foreach (var item in TilesInMagazine)
+                {
 
+                    if (item.Type == 99 && !SortedMagazine.Contains(item) && NumOfJokers == 1)
+                    {
+                        SortedMagazine.Add(item);
+                        print("ADDED JOKER");
+                    }
+                }
             }
         }
 
