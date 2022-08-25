@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoardManager : MonoBehaviour
 {
+    public  List<Tile> TilesInBoard;
     public static BoardManager Instance { get; private set; }
     private void Awake()
     {
@@ -19,7 +20,6 @@ public class BoardManager : MonoBehaviour
         }
     }
 
-    public  List<Tile> TilesInBoard;
 
 
 }

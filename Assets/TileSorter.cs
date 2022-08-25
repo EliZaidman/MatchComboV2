@@ -23,28 +23,28 @@ public class TileSorter : MonoBehaviour
     private void Start()
     {
         _mag = Magazine.Instance;
-        EventManager.Instance.CorutineStopper += StopCorutine;
-        EventManager.Instance.CorutineStarter += StartCorutine;
+        EventManager.Instance.CorutineStopper += StopAnimCor;
+        EventManager.Instance.CorutineStarter += StartAnim;
     }
 
-    public bool WeWon = false;
+    public bool StopAnim = false;
     private void LateUpdate()
     {
         //Change The Speed Depending if you won or not
-        if (!WeWon)
-            SortMagazineCorutine(0.15f);
-        else
-            SortMagazineCorutine(0.01f);
+        if (!StopAnim)
+            SortMagazineCorutine(0.03f);
+        //else
+        //    SortMagazineCorutine(0.01f);
 
 
     }
-    private void StartCorutine(object sender, EventArgs e)
+    private void StartAnim(object sender, EventArgs e)
     {
-        WeWon = false;
+        StopAnim = false;
     }
-    private void StopCorutine(object sender, EventArgs e)
+    private void StopAnimCor(object sender, EventArgs e)
     {
-        WeWon = true;
+        StopAnim = true;
     }
 
     public void SortMagazineCorutine(float duration)

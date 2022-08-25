@@ -86,6 +86,14 @@ public class TileInput : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public IEnumerator WinDes()
+    {
+        skeleton.timeScale = 1.2f;
+        PoofPS.Play();
+        _mag.TilesInMagazine.Remove(this.tile);
+        yield return new WaitForSeconds(0.33f);
+        gameObject.SetActive(false);
+    }
     public void PressedOnTile()
     {
         //Removes the tile from the Board list

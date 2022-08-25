@@ -185,6 +185,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Popsticle (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7573566749219996404, guid: 82871f959c25a2148813b5efb8f9a303, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7573566749219996411, guid: 82871f959c25a2148813b5efb8f9a303, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -249,6 +253,10 @@ PrefabInstance:
     - target: {fileID: 9002333861647379190, guid: 6c77b9c62a260c44e9f7feee06a30a45, type: 3}
       propertyPath: m_Name
       value: Shell (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002333861647379190, guid: 6c77b9c62a260c44e9f7feee06a30a45, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9002333861647379193, guid: 6c77b9c62a260c44e9f7feee06a30a45, type: 3}
       propertyPath: m_RootOrder
@@ -438,6 +446,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeachBall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1994016246582154602, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2574861280951120581, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -502,6 +514,10 @@ PrefabInstance:
     - target: {fileID: 3429584769980368606, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
       propertyPath: m_Name
       value: Kokus (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3429584769980368606, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7485466854356523449, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
       propertyPath: m_Mesh
@@ -577,6 +593,10 @@ PrefabInstance:
     - target: {fileID: 3997400518253555658, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
       propertyPath: m_Name
       value: Mugiwara (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3997400518253555658, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9151441759896842413, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
       propertyPath: m_Mesh
@@ -735,6 +755,10 @@ PrefabInstance:
     - target: {fileID: 1994016246582154602, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
       propertyPath: m_Name
       value: BeachBall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994016246582154602, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2574861280951120581, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
       propertyPath: m_Mesh
@@ -1002,6 +1026,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeachBall (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1994016246582154602, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2574861280951120581, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1070,6 +1098,10 @@ PrefabInstance:
     - target: {fileID: 3336069112268034409, guid: 6feff01922bb9fa42a3f2ddb6d567ad8, type: 3}
       propertyPath: m_Name
       value: Conch (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336069112268034409, guid: 6feff01922bb9fa42a3f2ddb6d567ad8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5954620682005086993, guid: 6feff01922bb9fa42a3f2ddb6d567ad8, type: 3}
       propertyPath: m_Mesh
@@ -1141,6 +1173,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mugiwara (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3997400518253555658, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9151441759896842413, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1165,6 +1201,10 @@ PrefabInstance:
     - target: {fileID: 7573566749219996404, guid: 82871f959c25a2148813b5efb8f9a303, type: 3}
       propertyPath: m_Name
       value: Popsticle (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573566749219996404, guid: 82871f959c25a2148813b5efb8f9a303, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7573566749219996411, guid: 82871f959c25a2148813b5efb8f9a303, type: 3}
       propertyPath: m_RootOrder
@@ -1497,6 +1537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74ce05fdf7e56b849adf40272fa255b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StopAnim: 0
 --- !u!4 &725502636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3336069112268034406, guid: 6feff01922bb9fa42a3f2ddb6d567ad8, type: 3}
@@ -1556,6 +1597,10 @@ PrefabInstance:
     - target: {fileID: 1994016246582154602, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
       propertyPath: m_Name
       value: BeachBall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994016246582154602, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2574861280951120581, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
       propertyPath: m_Mesh
@@ -1951,7 +1996,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17fad25d04f4a5f4c8f2911a8bd00590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  emptySpaces: 0
   currentScene: 0
+  CheckedIfWon: 0
 --- !u!4 &951803053
 Transform:
   m_ObjectHideFlags: 0
@@ -2447,6 +2494,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTree (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8594399705290390012, guid: c330ab6623e485144bc97181ebdcd33b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c330ab6623e485144bc97181ebdcd33b, type: 3}
 --- !u!4 &1058647220 stripped
@@ -2614,6 +2665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kokus (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3429584769980368606, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7485466854356523449, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2648,6 +2703,10 @@ PrefabInstance:
     - target: {fileID: 9002333861647379190, guid: 6c77b9c62a260c44e9f7feee06a30a45, type: 3}
       propertyPath: m_Name
       value: Shell (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002333861647379190, guid: 6c77b9c62a260c44e9f7feee06a30a45, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9002333861647379193, guid: 6c77b9c62a260c44e9f7feee06a30a45, type: 3}
       propertyPath: m_RootOrder
@@ -2825,6 +2884,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kokus (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3429584769980368606, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7485466854356523449, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2874,6 +2937,10 @@ PrefabInstance:
     - target: {fileID: 9016149975089951937, guid: b727a657704e1074298b8d2201b3e984, type: 3}
       propertyPath: m_Name
       value: SurfBoard (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016149975089951937, guid: b727a657704e1074298b8d2201b3e984, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9016149975089951950, guid: b727a657704e1074298b8d2201b3e984, type: 3}
       propertyPath: m_RootOrder
@@ -2951,6 +3018,10 @@ PrefabInstance:
     - target: {fileID: 9016149975089951937, guid: b727a657704e1074298b8d2201b3e984, type: 3}
       propertyPath: m_Name
       value: SurfBoard (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016149975089951937, guid: b727a657704e1074298b8d2201b3e984, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9016149975089951950, guid: b727a657704e1074298b8d2201b3e984, type: 3}
       propertyPath: m_RootOrder
@@ -3052,6 +3123,10 @@ PrefabInstance:
     - target: {fileID: 3429584769980368606, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
       propertyPath: m_Name
       value: Kokus (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3429584769980368606, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7485466854356523449, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
       propertyPath: m_Mesh
@@ -3167,6 +3242,10 @@ PrefabInstance:
     - target: {fileID: 8594399705290390012, guid: c330ab6623e485144bc97181ebdcd33b, type: 3}
       propertyPath: m_Name
       value: PalmTree (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594399705290390012, guid: c330ab6623e485144bc97181ebdcd33b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c330ab6623e485144bc97181ebdcd33b, type: 3}
@@ -3288,6 +3367,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SurfBoard (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9016149975089951937, guid: b727a657704e1074298b8d2201b3e984, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9016149975089951950, guid: b727a657704e1074298b8d2201b3e984, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -3378,6 +3461,10 @@ PrefabInstance:
     - target: {fileID: 2336423036358462613, guid: 41aa1f5df94c29249ba5f99eaceaf3a3, type: 3}
       propertyPath: m_Name
       value: StarFish (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336423036358462613, guid: 41aa1f5df94c29249ba5f99eaceaf3a3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2336423036358462618, guid: 41aa1f5df94c29249ba5f99eaceaf3a3, type: 3}
       propertyPath: m_RootOrder
@@ -3492,6 +3579,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Conch (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3336069112268034409, guid: 6feff01922bb9fa42a3f2ddb6d567ad8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5954620682005086993, guid: 6feff01922bb9fa42a3f2ddb6d567ad8, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -3517,6 +3608,10 @@ PrefabInstance:
     - target: {fileID: 2336423036358462613, guid: 41aa1f5df94c29249ba5f99eaceaf3a3, type: 3}
       propertyPath: m_Name
       value: StarFish (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336423036358462613, guid: 41aa1f5df94c29249ba5f99eaceaf3a3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2336423036358462618, guid: 41aa1f5df94c29249ba5f99eaceaf3a3, type: 3}
       propertyPath: m_RootOrder
@@ -3713,6 +3808,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mugiwara (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3997400518253555658, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9151441759896842413, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -3749,6 +3848,10 @@ PrefabInstance:
     - target: {fileID: 9016149975089951937, guid: b727a657704e1074298b8d2201b3e984, type: 3}
       propertyPath: m_Name
       value: SurfBoard (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016149975089951937, guid: b727a657704e1074298b8d2201b3e984, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9016149975089951950, guid: b727a657704e1074298b8d2201b3e984, type: 3}
       propertyPath: m_RootOrder
@@ -4080,6 +4183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Popsticle (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7573566749219996404, guid: 82871f959c25a2148813b5efb8f9a303, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7573566749219996411, guid: 82871f959c25a2148813b5efb8f9a303, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -4149,6 +4256,10 @@ PrefabInstance:
     - target: {fileID: 9002333861647379190, guid: 6c77b9c62a260c44e9f7feee06a30a45, type: 3}
       propertyPath: m_Name
       value: Shell (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002333861647379190, guid: 6c77b9c62a260c44e9f7feee06a30a45, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9002333861647379193, guid: 6c77b9c62a260c44e9f7feee06a30a45, type: 3}
       propertyPath: m_RootOrder
@@ -4341,6 +4452,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Conch (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3336069112268034409, guid: 6feff01922bb9fa42a3f2ddb6d567ad8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5954620682005086993, guid: 6feff01922bb9fa42a3f2ddb6d567ad8, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -4365,6 +4480,10 @@ PrefabInstance:
     - target: {fileID: 7573566749219996404, guid: 82871f959c25a2148813b5efb8f9a303, type: 3}
       propertyPath: m_Name
       value: Popsticle (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573566749219996404, guid: 82871f959c25a2148813b5efb8f9a303, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7573566749219996411, guid: 82871f959c25a2148813b5efb8f9a303, type: 3}
       propertyPath: m_RootOrder
@@ -4481,6 +4600,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mugiwara (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3997400518253555658, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9151441759896842413, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -4501,6 +4624,10 @@ PrefabInstance:
     - target: {fileID: 2336423036358462613, guid: 41aa1f5df94c29249ba5f99eaceaf3a3, type: 3}
       propertyPath: m_Name
       value: StarFish (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336423036358462613, guid: 41aa1f5df94c29249ba5f99eaceaf3a3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2336423036358462618, guid: 41aa1f5df94c29249ba5f99eaceaf3a3, type: 3}
       propertyPath: m_RootOrder
@@ -4556,6 +4683,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41aa1f5df94c29249ba5f99eaceaf3a3, type: 3}
+--- !u!1001 &1830848009
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6744489182973296729, guid: e57476a57128e5a4c8aede48117764bd, type: 3}
+      propertyPath: m_Name
+      value: VFX Text Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744489182973296733, guid: e57476a57128e5a4c8aede48117764bd, type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744489182973296733, guid: e57476a57128e5a4c8aede48117764bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744489182973296733, guid: e57476a57128e5a4c8aede48117764bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744489182973296733, guid: e57476a57128e5a4c8aede48117764bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744489182973296733, guid: e57476a57128e5a4c8aede48117764bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744489182973296733, guid: e57476a57128e5a4c8aede48117764bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744489182973296733, guid: e57476a57128e5a4c8aede48117764bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744489182973296733, guid: e57476a57128e5a4c8aede48117764bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744489182973296733, guid: e57476a57128e5a4c8aede48117764bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744489182973296733, guid: e57476a57128e5a4c8aede48117764bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744489182973296733, guid: e57476a57128e5a4c8aede48117764bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e57476a57128e5a4c8aede48117764bd, type: 3}
 --- !u!4 &1881279197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1994016246582154597, guid: a5b411eff5bceda4ca4232fac717e4be, type: 3}
@@ -4619,6 +4803,10 @@ PrefabInstance:
     - target: {fileID: 8594399705290390012, guid: c330ab6623e485144bc97181ebdcd33b, type: 3}
       propertyPath: m_Name
       value: PalmTree (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594399705290390012, guid: c330ab6623e485144bc97181ebdcd33b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c330ab6623e485144bc97181ebdcd33b, type: 3}
@@ -4735,6 +4923,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Conch (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3336069112268034409, guid: 6feff01922bb9fa42a3f2ddb6d567ad8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5954620682005086993, guid: 6feff01922bb9fa42a3f2ddb6d567ad8, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -4821,6 +5013,10 @@ PrefabInstance:
     - target: {fileID: 9002333861647379190, guid: 6c77b9c62a260c44e9f7feee06a30a45, type: 3}
       propertyPath: m_Name
       value: Shell (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002333861647379190, guid: 6c77b9c62a260c44e9f7feee06a30a45, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9002333861647379193, guid: 6c77b9c62a260c44e9f7feee06a30a45, type: 3}
       propertyPath: m_RootOrder
@@ -4927,6 +5123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTree (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8594399705290390012, guid: c330ab6623e485144bc97181ebdcd33b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c330ab6623e485144bc97181ebdcd33b, type: 3}
 --- !u!4 &1977419299 stripped
@@ -4983,6 +5183,10 @@ PrefabInstance:
     - target: {fileID: 2336423036358462613, guid: 41aa1f5df94c29249ba5f99eaceaf3a3, type: 3}
       propertyPath: m_Name
       value: StarFish (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336423036358462613, guid: 41aa1f5df94c29249ba5f99eaceaf3a3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2336423036358462618, guid: 41aa1f5df94c29249ba5f99eaceaf3a3, type: 3}
       propertyPath: m_RootOrder
@@ -5208,6 +5412,10 @@ PrefabInstance:
     - target: {fileID: 3997400518253555658, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
       propertyPath: m_Name
       value: Mugiwara
+      objectReference: {fileID: 0}
+    - target: {fileID: 3997400518253555658, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9151441759896842413, guid: f7208989cbfb37148bd1e5d5d916da3b, type: 3}
       propertyPath: m_Mesh
@@ -5664,6 +5872,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kokus
       objectReference: {fileID: 0}
+    - target: {fileID: 3429584769980368606, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7485466854356523449, guid: 90a4d8bde593913438a3dccd3e07aed4, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -5737,6 +5949,10 @@ PrefabInstance:
     - target: {fileID: 8594399705290390012, guid: c330ab6623e485144bc97181ebdcd33b, type: 3}
       propertyPath: m_Name
       value: PalmTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594399705290390012, guid: c330ab6623e485144bc97181ebdcd33b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c330ab6623e485144bc97181ebdcd33b, type: 3}

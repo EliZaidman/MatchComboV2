@@ -7,7 +7,11 @@ using UnityEngine.SceneManagement;
 public class PlayState : MonoBehaviour
 {
     public static PlayState Instance { get; private set; }
+    BoardManager board;
     public int emptySpaces;
+    EventManager Emanager;
+    Magazine mag;
+    public int currentScene = 0;
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -21,23 +25,29 @@ public class PlayState : MonoBehaviour
             Instance = this;
         }
     }
-    Magazine mag;
-    public int currentScene = 0;
 
 
     private void Start()
     {
+        Emanager = EventManager.Instance;
         mag = Magazine.Instance;
-        EventManager.Instance.CheckLostEvent += LostEvent;
+        board = BoardManager.Instance;
+        Emanager.CheckLostEvent += LostEvent;
         //EventManager.Instance.CheckWinEvent += WinEvent;
     }
     private void Update()
     {
         emptySpaces = mag.MagazineSlots.Count - mag.SortedMagazine.Count;
-        if (BoardManager.Instance.TilesInBoard.Count <= emptySpaces && !CheckedIfWon)
+        if (board.TilesInBoard.Count <= emptySpaces && !CheckedIfWon)
         {
             StartCoroutine(WinEvent());
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+
+            StartCoroutine(WinEvent());
+        }
+
     }
     private void LostEvent(object sender, EventArgs e)
     {
@@ -67,7 +77,7 @@ public class PlayState : MonoBehaviour
                 }
             }
         }
-        else if(mag.JokerIsActive)
+        else if (mag.JokerIsActive)
         {
             if (mag.SortedMagazine.Count == mag.mSize
             && mag._NumberOfones < 2
@@ -105,16 +115,13 @@ public class PlayState : MonoBehaviour
         CheckedIfWon = true;
         print("You Win!!!!");
 
-
         // Version 1 // 
-        yield return new WaitForSeconds(0.4f);
-        EventManager.Instance.CorutineStarter?.Invoke(this, EventArgs.Empty);
-        foreach (var item in BoardManager.Instance.TilesInBoard)
+        foreach (var item in board.TilesInBoard)
         {
-            yield return new WaitForSeconds(0.4f);
-            item.GetComponent<Tile>().input.TileSelected();
-            yield return new WaitForSeconds(0.4f);
-            StartCoroutine(item.GetComponent<Tile>().input.DestoryTile());
+
+            item.input.TileSelected();
+            yield return new WaitUntil(() => item.transform.position == mag.MagazineSlots[0].transform.position || item.transform.position == mag.MagazineSlots[1].transform.position || item.transform.position == mag.MagazineSlots[2].transform.position);
+            StartCoroutine(item.input.WinDes());
         }
 
         //  Version 2 //
