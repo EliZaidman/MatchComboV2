@@ -45,6 +45,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -280,6 +281,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BenMatch_Assets_2_2: -3327462390159773373
+      BenMatch_Assets_2_6: -2141420559449834760
+      BenMatch_Assets_2_5: -2276420855691884681
+      BenMatch_Assets_2_4: -3398544502374018398
+      BenMatch_Assets_2_1: -2092996300997667625
+      BenMatch_Assets_2_3: 1932120982036767419
+      BenMatch_Assets_2_0: 3178803462896413786
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
