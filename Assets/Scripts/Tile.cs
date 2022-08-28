@@ -7,9 +7,12 @@ public class Tile : MonoBehaviour
     public int Type;
     public bool Joker;
     Magazine mag;
-    [HideInInspector]public TileInput input;
+    [HideInInspector] public TileInput input;
+    TileSorter sort;
+    int FindSlot;
     private void Start()
     {
+        sort = TileSorter.Instance;
         mag = Magazine.Instance;
         input = GetComponent<TileInput>();
         BoardManager.Instance.TilesInBoard.Add(this);
@@ -29,4 +32,5 @@ public class Tile : MonoBehaviour
         mag.SortedMagazine.Add(this);
 
     }
+
 }

@@ -1277,6 +1277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StarFish (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2336423036358462613, guid: 41aa1f5df94c29249ba5f99eaceaf3a3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2336423036358462618, guid: 41aa1f5df94c29249ba5f99eaceaf3a3, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1537,6 +1541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74ce05fdf7e56b849adf40272fa255b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileMoveSpeed: 0.25
   StopAnim: 0
 --- !u!4 &725502636 stripped
 Transform:
@@ -5725,7 +5730,7 @@ PrefabInstance:
       objectReference: {fileID: 994317096}
     - target: {fileID: 729445769481108488, guid: f5724896b90f09343ad68fbb8870ab1f, type: 3}
       propertyPath: NumOfJokers
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 729445769481108488, guid: f5724896b90f09343ad68fbb8870ab1f, type: 3}
       propertyPath: numTiles.Array.size

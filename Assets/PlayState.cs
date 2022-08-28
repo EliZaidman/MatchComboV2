@@ -113,7 +113,7 @@ public class PlayState : MonoBehaviour
     {
         EventManager.Instance.BurnClipEvent?.Invoke(this, EventArgs.Empty);
         CheckedIfWon = true;
-        print("You Win!!!!");
+        print("You Win!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
         // Version 1 // 
         foreach (var item in board.TilesInBoard)

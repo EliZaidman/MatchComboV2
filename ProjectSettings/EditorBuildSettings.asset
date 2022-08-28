@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ben/20.unity
     guid: cf61814d20ef8234b8d2a3d68261e1f7
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 831a57ce09f584446b152b706771e880, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: ba21dc36de5f7774197a5c799caee8b7, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 1adeeb400adc1e34cac262c60ef5a158, type: 2}
