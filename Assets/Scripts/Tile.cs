@@ -6,8 +6,8 @@ public class Tile : MonoBehaviour
 {
     public int Type;
     public bool Joker;
-    Magazine mag;
     [HideInInspector] public TileInput input;
+    Magazine mag;
     TileSorter sort;
     int FindSlot;
     private void Start()
