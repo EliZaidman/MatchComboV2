@@ -40,6 +40,7 @@ public class TileInput : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        skeleton.GetComponent<MeshRenderer>().sortingOrder = 55;
         //If You didnt win you can press on the tiles.
         if (!PlayState.Instance.CheckedIfWon)
         {

@@ -11,34 +11,62 @@ public class TileMover : MonoBehaviour
     Magazine mag;
     Tile tile;
     bool CanSort;
+    float duration;
     private void Start()
     {
-        EventManager.Instance.CorutineStopper += StopAnimCor;
-        EventManager.Instance.CorutineStarter += StartAnim;
         tile = GetComponent<Tile>();
         sort = TileSorter.Instance;
         mag = Magazine.Instance;
+        EventManager.Instance.CorutineStopper += StopAnimCor;
+        EventManager.Instance.CorutineStarter += StartAnim;
+        duration = sort.TileMoveSpeed;
     }
     private void Update()
     {
+        FindSlot = mag.SortedMagazine.IndexOf(this.tile);
+
+
+    }
+    private void LateUpdate()
+    {
         if (mag.SortedMagazine.Contains(this.tile) && CanSort)
         {
-            FindSlot = mag.SortedMagazine.IndexOf(this.tile);
             if (transform.position != mag.MagazineSlots[FindSlot].transform.position)
             {
-            StartCoroutine(Sort());
+                //Sort();
+                StartCoroutine(CoSort());
             }
         }
     }
-    IEnumerator Sort()
-    {
-        print("Sorting" + this);
-        yield return new WaitForEndOfFrame();
-        float t = 0;
-        t += Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, mag.MagazineSlots[FindSlot].position, t / sort.TileMoveSpeed);
-    }
 
+
+
+
+
+
+    IEnumerator CoSort()
+    {
+        Application.targetFrameRate = 50;
+        print("Sorting" + this);
+        float t = 0;
+        if (t < duration)
+        {
+            t += Time.deltaTime / duration;
+            transform.position = Vector2.Lerp(transform.position, mag.MagazineSlots[FindSlot].position, t / duration);
+            yield return new WaitUntil(() => transform.position == mag.MagazineSlots[FindSlot].position);
+        }
+    }
+    void Sort()
+    {
+        Application.targetFrameRate = 50;
+        print("Sorting" + this);
+        float t = 0;
+        if (t < duration)
+        {
+            t += Time.deltaTime / duration;
+            transform.position = Vector2.MoveTowards(transform.position, mag.MagazineSlots[FindSlot].position, t / duration);
+        }
+    }
     private void StartAnim(object sender, EventArgs e)
     {
         CanSort = true;
