@@ -111,11 +111,16 @@ public class PlayState : MonoBehaviour
     public bool CheckedIfWon = false;
     private IEnumerator WinEvent()
     {
-        EventManager.Instance.BurnClipEvent?.Invoke(this, EventArgs.Empty);
         CheckedIfWon = true;
-        print("You Win!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
+        bool clearClip = false;
+        if (!clearClip)
+        {
+            EventManager.Instance.BurnClipEvent?.Invoke(this, EventArgs.Empty);
+            clearClip = true;
+        }
+        print("You Win!!!!!!");
         // Version 1 // 
+        yield return new WaitUntil(() => clearClip);
         foreach (var item in board.TilesInBoard)
         {
 
