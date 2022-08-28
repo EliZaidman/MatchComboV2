@@ -1313,7 +1313,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74ce05fdf7e56b849adf40272fa255b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeWon: 0
+  TileMoveSpeed: 0.05
+  StopAnim: 0
 --- !u!1001 &754144458
 PrefabInstance:
   m_ObjectHideFlags: 0
