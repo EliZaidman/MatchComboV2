@@ -11,8 +11,10 @@ public class TileMover : MonoBehaviour
     Magazine mag;
     Tile tile;
     bool CanSort;
+    float duration;
     private void Start()
     {
+        duration = TileSorter.Instance.TileMoveSpeed;
         EventManager.Instance.CorutineStopper += StopAnimCor;
         EventManager.Instance.CorutineStarter += StartAnim;
         tile = GetComponent<Tile>();
@@ -32,11 +34,13 @@ public class TileMover : MonoBehaviour
     }
     IEnumerator Sort()
     {
-        print("Sorting" + this);
-        yield return new WaitForEndOfFrame();
         float t = 0;
-        t += Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, mag.MagazineSlots[FindSlot].position, t / sort.TileMoveSpeed);
+        if (t < duration)
+        {
+            t += Time.deltaTime / duration;
+            transform.position = Vector2.Lerp(transform.position, mag.MagazineSlots[FindSlot].position, t / duration);
+            yield return new WaitUntil(() => transform.position == mag.MagazineSlots[FindSlot].position);
+        }
     }
 
     private void StartAnim(object sender, EventArgs e)

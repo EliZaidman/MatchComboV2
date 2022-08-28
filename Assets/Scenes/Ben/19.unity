@@ -2036,7 +2036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74ce05fdf7e56b849adf40272fa255b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeWon: 0
+  TileMoveSpeed: 0.35
 --- !u!1001 &756026749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2966,6 +2966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emptySpaces: 0
   currentScene: 0
+  CheckedIfWon: 0
 --- !u!4 &951803053
 Transform:
   m_ObjectHideFlags: 0
