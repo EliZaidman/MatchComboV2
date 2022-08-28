@@ -11,7 +11,7 @@ public class TileMover : MonoBehaviour
     Magazine mag;
     Tile tile;
     bool CanSort;
-    float duration;
+    [HideInInspector] public float duration;
     private void Start()
     {
         tile = GetComponent<Tile>();
@@ -46,14 +46,14 @@ public class TileMover : MonoBehaviour
 
     IEnumerator CoSort()
     {
-        Application.targetFrameRate = 50;
         print("Sorting" + this);
         float t = 0;
         if (t < duration)
         {
             t += Time.deltaTime / duration;
             transform.position = Vector2.Lerp(transform.position, mag.MagazineSlots[FindSlot].position, t / duration);
-            yield return new WaitUntil(() => transform.position == mag.MagazineSlots[FindSlot].position);
+            //yield return new WaitUntil(() => transform.position == mag.MagazineSlots[FindSlot].position);
+            yield return null;
         }
 
     }

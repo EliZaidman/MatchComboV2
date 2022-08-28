@@ -7,10 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -5233263552046073154, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
-      propertyPath: PoofPS
-      value: 
-      objectReference: {fileID: 8893047669755082257}
     - target: {fileID: -989492822412582040, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: dim
       value: 
@@ -157,11 +153,6 @@ SpriteRenderer:
 --- !u!1 &9027110462638025641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4741940812301743007, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
-  m_PrefabInstance: {fileID: 4361876049536768054}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &8893047669755082257 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5179716354859707943, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
   m_PrefabInstance: {fileID: 4361876049536768054}
   m_PrefabAsset: {fileID: 0}
 --- !u!143 &805817521

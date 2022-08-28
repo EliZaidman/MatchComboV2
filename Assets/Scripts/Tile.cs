@@ -9,9 +9,11 @@ public class Tile : MonoBehaviour
     [HideInInspector] public TileInput input;
     Magazine mag;
     TileSorter sort;
+    [HideInInspector]public TileMover move;
     int FindSlot;
     private void Start()
     {
+        move = GetComponent<TileMover>();
         sort = TileSorter.Instance;
         mag = Magazine.Instance;
         input = GetComponent<TileInput>();

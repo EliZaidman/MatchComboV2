@@ -107,12 +107,11 @@ public class PlayState : MonoBehaviour
 
 
     }
-
+    bool clearClip = false;
     public bool CheckedIfWon = false;
     private IEnumerator WinEvent()
     {
         CheckedIfWon = true;
-        bool clearClip = false;
         if (!clearClip)
         {
             EventManager.Instance.BurnClipEvent?.Invoke(this, EventArgs.Empty);
@@ -120,11 +119,11 @@ public class PlayState : MonoBehaviour
         }
         print("You Win!!!!!!");
         // Version 1 // 
-        yield return new WaitUntil(() => clearClip);
         foreach (var item in board.TilesInBoard)
         {
 
             item.input.TileSelected();
+            item.move.duration /= 2;
             yield return new WaitUntil(() => item.transform.position == mag.MagazineSlots[0].transform.position || item.transform.position == mag.MagazineSlots[1].transform.position || item.transform.position == mag.MagazineSlots[2].transform.position);
             StartCoroutine(item.input.WinDes());
         }
