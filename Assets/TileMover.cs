@@ -23,24 +23,24 @@ public class TileMover : MonoBehaviour
     }
     private void Update()
     {
+        //Find The Slot in List
         FindSlot = mag.SortedMagazine.IndexOf(this.tile);
 
 
     }
     private void LateUpdate()
     {
+        //Only if you are inside aslot sort yourself
         if (mag.SortedMagazine.Contains(this.tile) && CanSort)
         {
-            if (transform.position != mag.MagazineSlots[FindSlot].transform.position)
+            //go to the right and lerp to it.
+            if (!TileInRightSlot())
             {
-                //Sort();
                 StartCoroutine(CoSort());
+
             }
         }
     }
-
-
-
 
 
 
@@ -51,7 +51,7 @@ public class TileMover : MonoBehaviour
         if (t < duration)
         {
             t += Time.deltaTime / duration;
-            transform.position = Vector2.Lerp(transform.position, mag.MagazineSlots[FindSlot].position, t / duration);
+            transform.position = Vector2.MoveTowards(transform.position, mag.MagazineSlots[FindSlot].position, t / duration);
             //yield return new WaitUntil(() => transform.position == mag.MagazineSlots[FindSlot].position);
             yield return null;
         }
@@ -75,5 +75,15 @@ public class TileMover : MonoBehaviour
     private void StopAnimCor(object sender, EventArgs e)
     {
         CanSort = false;
+    }
+
+    public bool TileInRightSlot()
+    {
+        if (transform.position == mag.MagazineSlots[FindSlot].transform.position)
+        {
+            print(this + "true");
+            return true;
+        }
+        else return false;
     }
 }

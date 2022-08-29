@@ -97,6 +97,7 @@ public class TileInput : MonoBehaviour
     }
     public void PressedOnTile()
     {
+        BoardManager.Instance.timer = 0;
         //Removes the tile from the Board list
         BoardManager.Instance.TilesInBoard.Remove(this.tile);
         //FailSafe for sorter not activating right

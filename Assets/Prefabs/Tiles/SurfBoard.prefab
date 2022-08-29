@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -7340035786919772590}
   - component: {fileID: 5555207068711049103}
   - component: {fileID: 6783643505410624150}
+  - component: {fileID: 8913512306365959506}
   m_Layer: 0
   m_Name: SurfBoard
   m_TagString: Untagged
@@ -123,6 +124,7 @@ MonoBehaviour:
   Type: 1
   Joker: 0
   input: {fileID: 0}
+  move: {fileID: 0}
 --- !u!114 &-989492822412582040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d35913899ed9b4bae419a383f2b8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 0
 --- !u!54 &5555207068711049103
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -182,6 +185,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.2299995, y: 6.021917, z: 0.19999999}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!111 &8913512306365959506
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6166212927735700162}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 05d35d04836dd9346ba4a31d978fc1ec, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 05d35d04836dd9346ba4a31d978fc1ec, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &6801965144878833895
 GameObject:
   m_ObjectHideFlags: 0

@@ -2036,7 +2036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74ce05fdf7e56b849adf40272fa255b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileMoveSpeed: 0.35
+  TileMoveSpeed: 0.3
 --- !u!1001 &756026749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6174,7 +6174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab018eeefb89e94d83fd874975cb9d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counter: 0
   TilesInBoard: []
+  TimeUntilHintPopUp: 2
+  timer: 0
 --- !u!4 &1939199374
 Transform:
   m_ObjectHideFlags: 0

@@ -28,6 +28,7 @@ public class Magazine : MonoBehaviour
     public int mSize;
     public int _NumberOfones, _NumberOftwos, _NumberOfthrees, _NumberOffours, _NumberOffives, _NumberOfsix, _NumberOfSeven, _NumberOfEight, NumberOfNine, NumOfJokers;
     public bool MagazineIsFull = false;
+    public bool MagazineIsEmpty = false;
     public GameObject UI;
 
 
@@ -52,6 +53,11 @@ public class Magazine : MonoBehaviour
             MagazineIsFull = true;
         else
             MagazineIsFull = false;
+
+        if (TilesInMagazine.Count == 0)
+            MagazineIsEmpty = true;
+        else
+            MagazineIsEmpty = false;
 
 
         if (NumOfJokers > 0) JokerIsActive = true;
@@ -324,7 +330,7 @@ public class Magazine : MonoBehaviour
     public IEnumerator Wait(Tile tile)
     {
 
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.7f);
         tile.input.Comboable = true;
 
     }
