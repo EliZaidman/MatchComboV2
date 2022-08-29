@@ -6176,7 +6176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   counter: 0
   TilesInBoard: []
-  TimeUntilHintPopUp: 2
+  TimeUntilHintPopUp: 5
   timer: 0
 --- !u!4 &1939199374
 Transform:

@@ -5860,7 +5860,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6229176190195715728, guid: e1640ac770e84a24fa6849b2071aee32, type: 3}
       propertyPath: TimeUntilHintPopUp
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6229176190195715729, guid: e1640ac770e84a24fa6849b2071aee32, type: 3}
       propertyPath: m_Name
