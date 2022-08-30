@@ -6677,27 +6677,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 812463121147830007, guid: f72da74ccfba97c44853863483017520, type: 3}
       propertyPath: ComboOf3Value
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 812463121147830007, guid: f72da74ccfba97c44853863483017520, type: 3}
       propertyPath: ComboOf4Value
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 812463121147830007, guid: f72da74ccfba97c44853863483017520, type: 3}
       propertyPath: ComboOf5Value
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 812463121147830007, guid: f72da74ccfba97c44853863483017520, type: 3}
       propertyPath: ComboOf6Value
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 812463121147830007, guid: f72da74ccfba97c44853863483017520, type: 3}
       propertyPath: ComboOf7Value
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 812463121147830007, guid: f72da74ccfba97c44853863483017520, type: 3}
       propertyPath: ChanceForJoker
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 812463121147830007, guid: f72da74ccfba97c44853863483017520, type: 3}
       propertyPath: ChanceForHammer

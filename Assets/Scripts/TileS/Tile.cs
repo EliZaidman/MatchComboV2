@@ -37,12 +37,6 @@ public class Tile : MonoBehaviour
         }
 
     }
-    private void OnDisable()
-    {
-        if (Joker)
-        {
-        }
-    }
 
     IEnumerator WaitBeforeRegister()
     {

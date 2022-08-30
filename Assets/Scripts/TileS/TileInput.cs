@@ -58,7 +58,7 @@ public class TileInput : MonoBehaviour
     public void TileSelected()
     {
         //Checking if there is LayerCheck its the same as ? and swapping to Spine instad
-        if (LayerCheck)
+        if (LayerCheck && !tile.Joker)
         {
             LayerCheck.ToggleSpine();
         }
@@ -67,6 +67,12 @@ public class TileInput : MonoBehaviour
         Interactable = false;
         _mag.TilesInMagazine.Add(gameObject.GetComponent<Tile>());
         Emanager.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
+        if (tile.Joker)
+        {
+            _mag.SortedMagazine.Add(gameObject.GetComponent<Tile>());
+            StartCoroutine(test());
+        }
+
         Emanager.CheckLostEvent?.Invoke(this, EventArgs.Empty);
     }
 
@@ -101,6 +107,11 @@ public class TileInput : MonoBehaviour
         _mag.TilesInMagazine.Remove(this.tile);
         yield return new WaitForSeconds(0.33f);
         gameObject.SetActive(false);
+    }    public IEnumerator test()
+    {
+        yield return new WaitForSeconds(0.11f);
+        Emanager.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
+
     }
     public void PressedOnTile()
     {
