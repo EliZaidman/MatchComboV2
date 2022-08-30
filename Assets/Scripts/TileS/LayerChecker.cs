@@ -46,7 +46,7 @@ public class LayerChecker : MonoBehaviour
                     if (tile.Joker)
                     {
                         _Sprite.sprite = D_SpriteJoker;
-                        print("JOKERRRRRRRRRRRRRRRRRRRRR");
+                        //print("JOKERRRRRRRRRRRRRRRRRRRRR");
                     }
                     else
                         _Sprite.sprite = D_Normal;

@@ -19,6 +19,8 @@ public class ComboManager : MonoBehaviour
         Emanager.JokerEvent += JokerCombo;
         Emanager.MagazineSizeIncrease += MagazineAddCombo;
         Emanager.BurnClipEvent += BurnClipEvent;
+        
+        
     }
 
     private void BurnClipEvent(object sender, EventArgs e)

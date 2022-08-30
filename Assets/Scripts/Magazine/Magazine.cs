@@ -271,11 +271,12 @@ public class Magazine : MonoBehaviour
             }
         }
     }
+    bool UsedJoker = false;
 
     public void ComboMaker(int TileAmountIs, int TileType)
     {
         //If Joker is active The Lowest amount of the same tiles is 2 for Combo
-        if (JokerIsActive && TileAmountIs > 1)
+        if (JokerIsActive && TileAmountIs > 1 && !UsedJoker)
         {
             foreach (var Combo in SortedMagazine)
             {
@@ -417,11 +418,13 @@ public class Magazine : MonoBehaviour
 
     private IEnumerator DelayedsSort(float SortDelay)
     {
+        UsedJoker = true;
         yield return new WaitForSeconds(SortDelay);
         TileCounter();
         SederInMachsanit();
         yield return new WaitForSeconds(SortDelay);
         Emanager.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
+        UsedJoker = false;
         //EventManager.Instance.CorutineStarter?.Invoke(this, EventArgs.Empty);
     }
 

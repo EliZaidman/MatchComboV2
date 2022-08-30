@@ -17,7 +17,6 @@ public class TileInput : MonoBehaviour
     public ParticleSystem PoofPS;
     private void Start()
     {
-
         //Caching alot of shit
         _mag = Magazine.Instance;
         Emanager = EventManager.Instance;
@@ -25,7 +24,15 @@ public class TileInput : MonoBehaviour
         tile = GetComponent<Tile>();
         skeleton = GetComponent<SkeletonAnimation>();
         // VFX = gameObject.transform.GetChild(0).GetComponent<SkeletonAnimation>();
+        Emanager.AllowInputEvent += ToggleInput;
     }
+
+    bool AllowInput = true;
+    private void ToggleInput(object sender, EventArgs e)
+    {
+        AllowInput = !AllowInput;
+    }
+
     private void Update()
     {
         //Active And Deactivate VFX
@@ -42,7 +49,7 @@ public class TileInput : MonoBehaviour
     {
         skeleton.GetComponent<MeshRenderer>().sortingOrder = 55;
         //If You didnt win you can press on the tiles.
-        if (!PlayState.Instance.CheckedIfWon)
+        if (!PlayState.Instance.CheckedIfWon && AllowInput)
         {
             PressedOnTile();
         }

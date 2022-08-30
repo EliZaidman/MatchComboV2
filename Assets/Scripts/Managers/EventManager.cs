@@ -26,6 +26,7 @@ public class EventManager : MonoBehaviour
     public EventHandler onComboMake;
     public EventHandler CorutineStopper;
     public EventHandler CorutineStarter;
+    public EventHandler AllowInputEvent;
 
     //Combo Events
     public EventHandler ComboEvent;
