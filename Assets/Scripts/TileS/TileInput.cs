@@ -70,7 +70,7 @@ public class TileInput : MonoBehaviour
         if (tile.Joker)
         {
             _mag.SortedMagazine.Add(gameObject.GetComponent<Tile>());
-            StartCoroutine(test());
+            StartCoroutine(DelayJokerSort());
         }
 
         Emanager.CheckLostEvent?.Invoke(this, EventArgs.Empty);
@@ -107,7 +107,7 @@ public class TileInput : MonoBehaviour
         _mag.TilesInMagazine.Remove(this.tile);
         yield return new WaitForSeconds(0.33f);
         gameObject.SetActive(false);
-    }    public IEnumerator test()
+    }    public IEnumerator DelayJokerSort()
     {
         yield return new WaitForSeconds(0.11f);
         Emanager.MagazineSorterEve?.Invoke(this, EventArgs.Empty);

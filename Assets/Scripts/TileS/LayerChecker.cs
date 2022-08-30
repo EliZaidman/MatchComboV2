@@ -45,8 +45,7 @@ public class LayerChecker : MonoBehaviour
                     tile.input.Interactable = false;
                     if (tile.Joker)
                     {
-                        _Sprite.sprite = D_SpriteJoker;
-                        //print("JOKERRRRRRRRRRRRRRRRRRRRR");
+
                     }
                     else
                         _Sprite.sprite = D_Normal;
@@ -61,7 +60,9 @@ public class LayerChecker : MonoBehaviour
     {
         tile.input.Interactable = true;
         if (tile.Joker)
-            _Sprite.sprite = SpriteJoker;
+        {
+
+        }
         else
             _Sprite.sprite = Normal;
     }

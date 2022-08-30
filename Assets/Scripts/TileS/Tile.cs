@@ -11,13 +11,15 @@ public class Tile : MonoBehaviour
     Magazine mag;
     TileSorter sort;
     [HideInInspector] public TileMover move;
+    [SerializeField] private Sprite JokerSprite;
 
-
+    bool swapped = false;
     private void Update()
     {
-        if (Joker)
+        if (Joker && !swapped)
         {
-            Type = 99;
+            GetComponentInChildren<SpriteRenderer>().sprite = JokerSprite;
+            swapped = true;
         }
     }
     int FindSlot;
@@ -29,14 +31,7 @@ public class Tile : MonoBehaviour
         input = GetComponent<TileInput>();
         BoardManager.Instance.TilesInBoard.Add(this);
     }
-    private void OnEnable()
-    {
-        if (Joker)
-        {
-            GetComponent<SpriteRenderer>().sprite = GetComponent<LayerChecker>().SpriteJoker;
-        }
 
-    }
 
     IEnumerator WaitBeforeRegister()
     {
