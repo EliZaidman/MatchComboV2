@@ -140,7 +140,9 @@ MonoBehaviour:
   dim: {fileID: 7684267052625914179, guid: 37dccb8e52ce6694da916333eb2ab656, type: 3}
   layerOrderID: 0
   Normal: {fileID: 0}
-  Dimmed: {fileID: 0}
+  D_Normal: {fileID: 0}
+  SpriteJoker: {fileID: 21300000, guid: c38c4142bbc7609459f38f5eee920730, type: 3}
+  D_SpriteJoker: {fileID: 21300000, guid: c38c4142bbc7609459f38f5eee920730, type: 3}
   SpineActivated: 0
   _Sprite: {fileID: 4682902005442146907}
 --- !u!114 &-7340035786919772590

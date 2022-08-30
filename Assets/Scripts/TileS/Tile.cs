@@ -9,7 +9,16 @@ public class Tile : MonoBehaviour
     [HideInInspector] public TileInput input;
     Magazine mag;
     TileSorter sort;
-    [HideInInspector]public TileMover move;
+    [HideInInspector] public TileMover move;
+
+
+    private void Update()
+    {
+        if (Joker)
+        {
+            Type = 99;
+        }
+    }
     int FindSlot;
     private void Start()
     {
@@ -23,9 +32,12 @@ public class Tile : MonoBehaviour
     {
         if (Joker)
         {
-            StartCoroutine(WaitBeforeRegister());
+            GetComponent<SpriteRenderer>().sprite = GetComponent<LayerChecker>().SpriteJoker;
         }
+
     }
+
+
     IEnumerator WaitBeforeRegister()
     {
         yield return new WaitForSeconds(0.35f);

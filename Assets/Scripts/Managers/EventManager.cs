@@ -47,4 +47,32 @@ public class EventManager : MonoBehaviour
     public EventHandler Match5Event;
     public EventHandler Match6Event;
 
+    //Bar Events
+
+
+    //Bar Incress Boosters
+    public EventHandler BarIncressCombo3;
+    public EventHandler BarIncressCombo4;
+    public EventHandler BarIncressCombo5;
+    public EventHandler BarIncressCombo6;
+    public EventHandler BarIncressCombo7;
+
+    //Pre-game boosters:
+    public EventHandler BarPreGameFasterFillingBar;
+    public EventHandler BarPreGameBarClipIncrease;
+ // public EventHandler *Better bar rewards*
+
+    //NormalBoosters
+    public EventHandler BarJoker;
+    public EventHandler BarHammer;
+    public EventHandler BarPropellor;
+    public EventHandler BarMagicTileChanger;
+
+    //Mid-game boosters:
+    public EventHandler BarUndo;
+    public EventHandler BarReshuffle;
+    public EventHandler BarMoveTilesFromClipToBoard;
+
+
+
 }

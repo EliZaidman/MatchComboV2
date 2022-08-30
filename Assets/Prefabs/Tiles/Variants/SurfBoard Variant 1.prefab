@@ -24,6 +24,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7525523555420626008}
     - target: {fileID: -989492822412582040, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
+      propertyPath: D_Normal
+      value: 
+      objectReference: {fileID: -1910527994477536908, guid: ceced54b2addb3b4f91a38e86ca073fa, type: 3}
+    - target: {fileID: -989492822412582040, guid: d3f19664169bcc348a2119a4836c3717, type: 3}
       propertyPath: layerOrderID
       value: 1
       objectReference: {fileID: 0}

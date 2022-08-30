@@ -13,7 +13,11 @@ public class LayerChecker : MonoBehaviour
     MeshRenderer layerOrder;
     public int layerOrderID;
     public Sprite Normal;
-    public Sprite Dimmed;
+    public Sprite D_Normal;
+
+    public Sprite SpriteJoker;
+    [SerializeField] Sprite D_SpriteJoker;
+
     public bool SpineActivated;
     public SpriteRenderer _Sprite;
     private void Awake()
@@ -39,7 +43,13 @@ public class LayerChecker : MonoBehaviour
                 if (_Sprite.sortingOrder < other.gameObject.GetComponent<LayerChecker>()._Sprite.sortingOrder)
                 {
                     tile.input.Interactable = false;
-                    _Sprite.sprite = Dimmed;
+                    if (tile.Joker)
+                    {
+                        _Sprite.sprite = D_SpriteJoker;
+                        print("JOKERRRRRRRRRRRRRRRRRRRRR");
+                    }
+                    else
+                        _Sprite.sprite = D_Normal;
                 }
 
             }
@@ -50,7 +60,10 @@ public class LayerChecker : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         tile.input.Interactable = true;
-        _Sprite.sprite = Normal;
+        if (tile.Joker)
+            _Sprite.sprite = SpriteJoker;
+        else
+            _Sprite.sprite = Normal;
     }
 
     public void ToggleSpine()

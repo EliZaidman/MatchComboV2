@@ -116,10 +116,10 @@ public class TileInput : MonoBehaviour
             TileSelected();
             print("ClickedOnTile");
         }
-        else if (tile.Joker && !Comboable)
-        {
-            TileSelected();
-        }
+        //else if (tile.Joker && !Comboable)
+        //{
+        //    TileSelected();
+        //}
         if (Comboable)
         {
             //If its Comboable use the Text VFX and destory the tiles Sadge

@@ -81,8 +81,7 @@ public class TileMover : MonoBehaviour
     {
         if (transform.position == mag.MagazineSlots[FindSlot].transform.position)
         {
-            print(this + "true");
-            return true;
+            return true;    
         }
         else return false;
     }

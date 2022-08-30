@@ -1,4 +1,4 @@
-using System;
+    using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -381,26 +381,31 @@ public class Magazine : MonoBehaviour
         switch (amount)
         {
             case 3:
-                Emanager.Match3Event?.Invoke(this, EventArgs.Empty);
+               // Emanager.Match3Event?.Invoke(this, EventArgs.Empty);
+                Emanager.BarIncressCombo3?.Invoke(this, EventArgs.Empty);
                 break;
             case 4:
-                Emanager.BurnClipEvent?.Invoke(this, EventArgs.Empty);
-                Emanager.Match4Event?.Invoke(this, EventArgs.Empty);
+               // Emanager.BurnClipEvent?.Invoke(this, EventArgs.Empty);
+              //  Emanager.Match4Event?.Invoke(this, EventArgs.Empty);
+                Emanager.BarIncressCombo4?.Invoke(this, EventArgs.Empty);
                 break;
             case 5:
-                Emanager.JokerEvent?.Invoke(this, EventArgs.Empty);
-                Emanager.Match5Event?.Invoke(this, EventArgs.Empty);
+               // Emanager.JokerEvent?.Invoke(this, EventArgs.Empty);
+               // Emanager.Match5Event?.Invoke(this, EventArgs.Empty);
+                Emanager.BarIncressCombo5?.Invoke(this, EventArgs.Empty);
                 break;
             case 6:
-                Emanager.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
-                Emanager.Match6Event?.Invoke(this, EventArgs.Empty);
+                //Emanager.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
+               // Emanager.Match6Event?.Invoke(this, EventArgs.Empty);
+                Emanager.BarIncressCombo6?.Invoke(this, EventArgs.Empty);
                 break;
             case 7:
-                Emanager.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
-                Emanager.Match6Event?.Invoke(this, EventArgs.Empty);
+                //Emanager.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
+                //Emanager.Match6Event?.Invoke(this, EventArgs.Empty);
+                Emanager.BarIncressCombo7?.Invoke(this, EventArgs.Empty);
                 break;
             case 8:
-                Emanager.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
+                //Emanager.MagazineSizeIncrease?.Invoke(this, EventArgs.Empty);
                 Emanager.Match6Event?.Invoke(this, EventArgs.Empty);
                 break;
             default:
