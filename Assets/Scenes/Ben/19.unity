@@ -6620,6 +6620,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 812463119664336233, guid: f72da74ccfba97c44853863483017520, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 812463119664336233, guid: f72da74ccfba97c44853863483017520, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -6669,6 +6673,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 812463121147830006, guid: f72da74ccfba97c44853863483017520, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 812463121147830007, guid: f72da74ccfba97c44853863483017520, type: 3}
+      propertyPath: ComboOf3Value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 812463121147830007, guid: f72da74ccfba97c44853863483017520, type: 3}
+      propertyPath: ComboOf4Value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 812463121147830007, guid: f72da74ccfba97c44853863483017520, type: 3}
+      propertyPath: ComboOf5Value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 812463121147830007, guid: f72da74ccfba97c44853863483017520, type: 3}
+      propertyPath: ComboOf6Value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 812463121147830007, guid: f72da74ccfba97c44853863483017520, type: 3}
+      propertyPath: ComboOf7Value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 812463121147830007, guid: f72da74ccfba97c44853863483017520, type: 3}
+      propertyPath: ChanceForJoker
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 812463121147830007, guid: f72da74ccfba97c44853863483017520, type: 3}
+      propertyPath: ChanceForHammer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 812463121147830007, guid: f72da74ccfba97c44853863483017520, type: 3}
+      propertyPath: ChanceForPropellor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 812463121147830007, guid: f72da74ccfba97c44853863483017520, type: 3}
+      propertyPath: ChanceForMagicTileChanger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6763,7 +6803,7 @@ PrefabInstance:
       objectReference: {fileID: 994317096}
     - target: {fileID: 729445769481108488, guid: f5724896b90f09343ad68fbb8870ab1f, type: 3}
       propertyPath: NumOfJokers
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 729445769481108488, guid: f5724896b90f09343ad68fbb8870ab1f, type: 3}
       propertyPath: numTiles.Array.size
