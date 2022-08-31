@@ -18,6 +18,7 @@ public class Tile : MonoBehaviour
     {
         if (Joker && !swapped)
         {
+            Type = 99;
             GetComponentInChildren<SpriteRenderer>().sprite = JokerSprite;
             swapped = true;
         }
