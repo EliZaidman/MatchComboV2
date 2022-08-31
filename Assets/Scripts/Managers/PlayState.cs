@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayState : MonoBehaviour
 {
-    public static PlayState Instance { get; private set; }
     BoardManager board;
     public int emptySpaces;
     EventManager Emanager;
     Magazine mag;
     public int currentScene = 0;
+    public static PlayState Instance { get; private set; }
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.

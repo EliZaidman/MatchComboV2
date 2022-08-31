@@ -122,7 +122,7 @@ public class Magazine : MonoBehaviour
                 if (item.Type == Mispar)
                 {
                     SortedMagazine.Add(item);
-                    print("NOT ACTIVE");
+                  //  print("NOT ACTIVE");
                 }
             }
         }

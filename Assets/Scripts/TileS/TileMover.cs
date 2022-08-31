@@ -46,7 +46,7 @@ public class TileMover : MonoBehaviour
 
     IEnumerator CoSort()
     {
-        print("Sorting" + this);
+        //print("Sorting" + this);
         float t = 0;
         if (t < duration)
         {
@@ -60,7 +60,7 @@ public class TileMover : MonoBehaviour
     void Sort()
     {
         Application.targetFrameRate = 50;
-        print("Sorting" + this);
+       // print("Sorting" + this);
         float t = 0;
         if (t < duration)
         {

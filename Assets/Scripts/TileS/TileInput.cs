@@ -78,8 +78,8 @@ public class TileInput : MonoBehaviour
             _mag.SortedMagazine.Add(gameObject.GetComponent<Tile>());
             StartCoroutine(DelayJokerSort());
         }
-
-        Emanager.CheckLostEvent?.Invoke(this, EventArgs.Empty);
+        else
+            Emanager.CheckLostEvent?.Invoke(this, EventArgs.Empty);
     }
 
     public IEnumerator DestoryTile()
@@ -118,6 +118,8 @@ public class TileInput : MonoBehaviour
     {
         yield return new WaitForSeconds(0.11f);
         Emanager.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
+        yield return new WaitForSeconds(0.11f);
+        Emanager.CheckLostEvent?.Invoke(this, EventArgs.Empty);
 
     }
     public void PressedOnTile()
@@ -186,6 +188,7 @@ public class TileInput : MonoBehaviour
         BoardManager.Instance.TilesInBoard.Remove(this.tile);
         Emanager.BarHammerFromTile?.Invoke(this, EventArgs.Empty);
         yield return new WaitForSeconds(0.2f);
+        BarManager.Instance.hammerSprite.SetActive(false);
         this.gameObject.SetActive(false);
     }
 }

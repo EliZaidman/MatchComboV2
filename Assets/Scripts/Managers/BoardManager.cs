@@ -31,6 +31,7 @@ public class BoardManager : MonoBehaviour
     [HideInInspector] public float timer;
     private void Update()
     {
+        
         timer += Time.deltaTime;
 
         if (timer >= TimeUntilHintPopUp && !gaveHint && !mag.MagazineIsFull && !mag.MagazineIsEmpty)
@@ -74,6 +75,30 @@ public class BoardManager : MonoBehaviour
         int itemIndex = Random.Range(0, (mag.TilesInMagazine.Count));
 
         randomTile = Magazine.Instance.TilesInMagazine[itemIndex];
-        print("Random Tile is " + randomTile);
+       // print("Random Tile is " + randomTile);
+    }
+
+    public bool JokerInBoard()
+    {
+        
+        bool HasJoker = false;
+        foreach (var item in TilesInBoard)
+        {
+            if (item.Joker)
+            {
+                HasJoker = true;
+                print("JOKERRRRRRRRRRRRRRRRRRRRRRRRR IN BOARD");
+                break;
+            }
+            else
+            {
+                HasJoker = false;
+            }
+        }
+
+        if (HasJoker == true)
+            return true;
+        else
+            return false;
     }
 }

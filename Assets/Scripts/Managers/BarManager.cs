@@ -7,8 +7,22 @@ using KaimiraGames;
 
 public class BarManager : MonoBehaviour
 {
+    public static BarManager Instance { get; private set; }
+    private void Awake()
+    {
+        // If there is an instance, and it's not me, delete myself.
 
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
     //WeightedList<string> ChanceForCombo;
+    public GameObject hammerSprite;
     Magazine mag;
     EventManager Emanager;
     BoardManager board;
@@ -37,28 +51,92 @@ public class BarManager : MonoBehaviour
         BoostValue = Mathf.Clamp(BoostValue, 0, 250);
         Bar.value = BoostValue;
 
-        if (BoostValue >= 100)
+        if (BoostValue >= 100 || JokerInBoard())
         {
+            if (BoostValue >= 100)
+            {
+                BoostValue -= 100;
+            }
             switch (Choose())
             {
                 case "Joker":
-                    print("Used Joker From Bar");
-                    int rand = UnityEngine.Random.Range(0, board.TilesInBoard.Count - 1);
-                    board.TilesInBoard[rand].Joker = true;
-                    board.TilesInBoard[rand].gameObject.SetActive(false);
-                    board.TilesInBoard[rand].gameObject.SetActive(true);
-                    board.TilesInBoard[rand].name = "Joker";
-                    break;
-
+                    if (board.JokerInBoard() || mag.JokerIsActive)
+                    {
+                        rerolled = false;
+                        ReRoll();
+                        break;
+                    }
+                    else
+                    {
+                        JokerInPlay = true;
+                        print("Used Joker From Bar");
+                        int rand = UnityEngine.Random.Range(0, board.TilesInBoard.Count - 1);
+                        board.TilesInBoard[rand].Joker = true;
+                        board.TilesInBoard[rand].gameObject.SetActive(false);
+                        board.TilesInBoard[rand].gameObject.SetActive(true);
+                        board.TilesInBoard[rand].name = "Joker";
+                        rerolled = true;
+                        break;
+                    }
                 case "Hammer":
                     print("Used Hammer From Bar");
                     Emanager.BarHammerFromTile?.Invoke(this, EventArgs.Empty);
-
+                    hammerSprite.SetActive(true);
+                    rerolled = true;
                     break;
 
                 case "Propellor":
-                    print("Used Propellor From Bar");
-
+                    List<Tile> type1 = new List<Tile>();
+                    List<Tile> type2 = new List<Tile>();
+                    List<Tile> type3 = new List<Tile>();
+                    List<Tile> type4 = new List<Tile>();
+                    List<Tile> type5 = new List<Tile>();
+                    List<Tile> type6 = new List<Tile>();
+                    List<Tile> type7 = new List<Tile>();
+                    List<Tile> type8 = new List<Tile>();
+                    foreach (var item in board.TilesInBoard)
+                    {
+                        if (item.Type == 1)
+                        {
+                            type1.Add(item);
+                        }
+                        if (item.Type == 2)
+                        {
+                            type2.Add(item);
+                        }
+                        if (item.Type == 3)
+                        {
+                            type3.Add(item);
+                        }
+                        if (item.Type == 4)
+                        {
+                            type4.Add(item);
+                        }
+                        if (item.Type == 5)
+                        {
+                            type5.Add(item);
+                        }
+                        if (item.Type == 6)
+                        {
+                            type6.Add(item);
+                        }
+                        if (item.Type == 7)
+                        {
+                            type7.Add(item);
+                        }
+                        if (item.Type == 8)
+                        {
+                            type8.Add(item);
+                        }
+                    }
+                    Delete(type1);
+                    Delete(type2);
+                    Delete(type3);
+                    Delete(type4);
+                    Delete(type5);
+                    Delete(type6);
+                    Delete(type7);
+                    Delete(type8);
                     break;
 
                 case "MagicTileChanger":
@@ -71,6 +149,27 @@ public class BarManager : MonoBehaviour
 
             }
         }
+    }
+
+    private void Delete(List<Tile> tile)
+    {
+        int min = 1;
+        for (int i = 0; i < 8; i++)
+        {
+            if (tile.Count < min)
+            {
+                int rand = UnityEngine.Random.Range(0, tile.Count - 1);
+                board.TilesInBoard.Remove(tile[rand]);
+                tile[rand].gameObject.SetActive(false);
+                break;
+            }
+            else
+            {
+                min++;
+                print("Added 1 to count");
+            }
+        }
+
     }
 
     protected WeightedList<string> ChanceForCombo = new WeightedList<string>();
@@ -182,8 +281,24 @@ public class BarManager : MonoBehaviour
 
     string Choose()
     {
-        BoostValue -= 100;
+
         return ChanceForCombo.Next();
+    }
+
+    bool JokerInPlay = false;
+    bool JokerInBoard()
+    {
+        if (JokerInPlay && !rerolled)
+            return true;
+        else
+            return false;
+    }
+
+    bool rerolled = false;
+    string ReRoll()
+    {
+        print("REROLL BOYYYYY");
+        return Choose();
     }
 
 
