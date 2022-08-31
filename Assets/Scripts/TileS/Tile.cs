@@ -12,7 +12,7 @@ public class Tile : MonoBehaviour
     TileSorter sort;
     [HideInInspector] public TileMover move;
     [SerializeField] private Sprite JokerSprite;
-
+    public bool DiedOfHammer = false;
     bool swapped = false;
     private void Update()
     {

@@ -15,6 +15,7 @@ public class TileInput : MonoBehaviour
     public SkeletonAnimation VFX;
     private LayerChecker LayerCheck;
     public ParticleSystem PoofPS;
+    bool HammemrIsActive = false;
     private void Start()
     {
         //Caching alot of shit
@@ -25,6 +26,7 @@ public class TileInput : MonoBehaviour
         skeleton = GetComponent<SkeletonAnimation>();
         // VFX = gameObject.transform.GetChild(0).GetComponent<SkeletonAnimation>();
         Emanager.AllowInputEvent += ToggleInput;
+        Emanager.BarHammerFromTile += ToggleHammer;
     }
 
     bool AllowInput = true;
@@ -32,7 +34,10 @@ public class TileInput : MonoBehaviour
     {
         AllowInput = !AllowInput;
     }
-
+    private void ToggleHammer(object sender, EventArgs e)
+    {
+        HammemrIsActive = !HammemrIsActive;
+    }
     private void Update()
     {
         //Active And Deactivate VFX
@@ -53,6 +58,7 @@ public class TileInput : MonoBehaviour
         {
             PressedOnTile();
         }
+
     }
 
     public void TileSelected()
@@ -107,7 +113,8 @@ public class TileInput : MonoBehaviour
         _mag.TilesInMagazine.Remove(this.tile);
         yield return new WaitForSeconds(0.33f);
         gameObject.SetActive(false);
-    }    public IEnumerator DelayJokerSort()
+    }
+    public IEnumerator DelayJokerSort()
     {
         yield return new WaitForSeconds(0.11f);
         Emanager.MagazineSorterEve?.Invoke(this, EventArgs.Empty);
@@ -115,14 +122,22 @@ public class TileInput : MonoBehaviour
     }
     public void PressedOnTile()
     {
-        BoardManager.Instance.timer = 0;
-        //Removes the tile from the Board list
-        BoardManager.Instance.TilesInBoard.Remove(this.tile);
-        //FailSafe for sorter not activating right
-        //Its Corutine beacuse i need delay in other placeses
-        StartCoroutine(PlayAnim(0));
-        if (Interactable && !_mag.MagazineIsFull && !Comboable)
+
+        if (Interactable && HammemrIsActive)
         {
+            StartCoroutine(HammerAnim());
+
+        }
+
+        else if (Interactable && !_mag.MagazineIsFull && !Comboable && !HammemrIsActive)
+        {
+            BoardManager.Instance.timer = 0;
+            //Removes the tile from the Board list
+            //FailSafe for sorter not activating right
+            BoardManager.Instance.TilesInBoard.Remove(this.tile);
+            //Its Corutine beacuse i need delay in other placeses
+            StartCoroutine(PlayAnim(0));
+
             //Force Removing The Layer Checker for Pain in the ass bugs
             Destroy(LayerCheck);
             Interactable = false;
@@ -134,10 +149,10 @@ public class TileInput : MonoBehaviour
             TileSelected();
             print("ClickedOnTile");
         }
-        //else if (tile.Joker && !Comboable)
-        //{
-        //    TileSelected();
-        //}
+
+
+
+
         if (Comboable)
         {
             //If its Comboable use the Text VFX and destory the tiles Sadge
@@ -162,6 +177,16 @@ public class TileInput : MonoBehaviour
     private void AllignVfxText(object sender, EventArgs e)
     {
         VFXTest.Instance.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z);
+    }
+
+    IEnumerator HammerAnim()
+    {
+        tile.DiedOfHammer = true;
+        BoardManager.Instance.timer = 0;
+        BoardManager.Instance.TilesInBoard.Remove(this.tile);
+        Emanager.BarHammerFromTile?.Invoke(this, EventArgs.Empty);
+        yield return new WaitForSeconds(0.2f);
+        this.gameObject.SetActive(false);
     }
 }
 

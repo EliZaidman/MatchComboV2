@@ -43,14 +43,13 @@ public class LayerChecker : MonoBehaviour
                 if (_Sprite.sortingOrder < other.gameObject.GetComponent<LayerChecker>()._Sprite.sortingOrder)
                 {
                     tile.input.Interactable = false;
-                    if (tile.Joker)
+                    if (other.GetComponent<Tile>().DiedOfHammer)
                     {
-
+                        _Sprite.sprite = Normal;
                     }
                     else
                         _Sprite.sprite = D_Normal;
                 }
-
             }
 
         }

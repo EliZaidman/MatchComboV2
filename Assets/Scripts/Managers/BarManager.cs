@@ -52,9 +52,8 @@ public class BarManager : MonoBehaviour
 
                 case "Hammer":
                     print("Used Hammer From Bar");
-                    int hammer = UnityEngine.Random.Range(0, board.TilesInBoard.Count - 1);
-                    board.TilesInBoard.Remove(board.TilesInBoard[hammer]);
-                    board.TilesInBoard[hammer].gameObject.SetActive(false);
+                    Emanager.BarHammerFromTile?.Invoke(this, EventArgs.Empty);
+
                     break;
 
                 case "Propellor":

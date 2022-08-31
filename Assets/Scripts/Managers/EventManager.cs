@@ -66,6 +66,7 @@ public class EventManager : MonoBehaviour
     //NormalBoosters
     public EventHandler BarJoker;
     public EventHandler BarHammer;
+    public EventHandler BarHammerFromTile;
     public EventHandler BarPropellor;
     public EventHandler BarMagicTileChanger;
 
